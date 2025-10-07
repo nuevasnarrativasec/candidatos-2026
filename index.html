@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candidatos - Visualización Interactiva</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="filter-container" id="filterContainer">
+        <label class="filter-label">Filtrar por:</label>
+        <select class="filter-select" id="filterSelect">
+            <option value="all">Todos los candidatos (39)</option>
+            <option value="denuncias">Con denuncias</option>
+            <option value="menores30">Menores de 30 años</option>
+            <option value="reeleccion">Buscan reelección</option>
+            <option value="nuevos">Nuevos candidatos</option>
+            <option value="experiencia">Con experiencia política</option>
+        </select>
+    </div>
+
+    <div class="scroll-container">
+        <div class="fixed-container">
+            <div class="grid-container" id="grid"></div>
+        </div>
+
+        <div class="info-block" id="infoBlock1">
+            <h2><span class="highlight">12</span> candidatos cuentan con denuncias.</h2>
+            <p>But also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem.</p>
+        </div>
+
+        <div class="info-block" id="infoBlock2">
+            <h2><span class="highlight">25</span> candidatos cuentan con experiencia política.</h2>
+            <p>But also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem.</p>
+        </div>
+    </div>
+
+    <div class="popup-overlay" id="popupOverlay"></div>
+    <div class="popup" id="popup">
+        <button class="popup-close" id="popupClose">&times;</button>
+        <div class="popup-header">
+            <div class="popup-image" id="popupImage"></div>
+            <div class="popup-title">
+                <div class="popup-name" id="popupName"></div>
+                <div class="popup-party" id="popupParty"></div>
+            </div>
+        </div>
+        <div class="popup-content" id="popupContent"></div>
+    </div>
+
+    <script>
+        const grid = document.getElementById('grid');
+        const filterSelect = document.getElementById('filterSelect');
+        const filterContainer = document.getElementById('filterContainer');
+        const infoBlock1 = document.getElementById('infoBlock1');
+        const infoBlock2 = document.getElementById('infoBlock2');
+        const popup = document.getElementById('popup');
+        const popupOverlay = document.getElementById('popupOverlay');
+        const popupClose = document.getElementById('popupClose');
+
+        const maleImage = '../img/hombre.jpg';
+        const femaleImage = '../img/mujer.jpg';
+
+        const partidos = ['Partido Morado', 'Fuerza Popular', 'Acción Popular', 'Alianza para el Progreso', 'Somos Perú', 'Podemos Perú', 'Avanza País', 'Renovación Popular'];
+
+        const candidatos = [
+            { nombre: 'Carlos Mendoza', genero: 'M', denuncias: true, edad: 28, reeleccion: false, experiencia: false, partido: 'Partido Morado', bio: 'Ingeniero de sistemas con enfoque en políticas de innovación tecnológica.' },
+            { nombre: 'Roberto Silva', genero: 'M', denuncias: false, edad: 45, reeleccion: true, experiencia: true, partido: 'Fuerza Popular', bio: 'Congresista actual, enfocado en desarrollo económico regional.' },
+            { nombre: 'Luis García', genero: 'M', denuncias: true, edad: 52, reeleccion: true, experiencia: true, partido: 'Acción Popular', bio: 'Ex alcalde con experiencia en gestión municipal y obras públicas.' },
+            { nombre: 'Diego Torres', genero: 'M', denuncias: false, edad: 29, reeleccion: false, experiencia: false, partido: 'Partido Morado', bio: 'Activista social enfocado en derechos de juventud y educación.' },
+            { nombre: 'Fernando Ruiz', genero: 'M', denuncias: false, edad: 38, reeleccion: false, experiencia: true, partido: 'Alianza para el Progreso', bio: 'Empresario con trayectoria en desarrollo social empresarial.' },
+            { nombre: 'Andrés López', genero: 'M', denuncias: true, edad: 41, reeleccion: true, experiencia: true, partido: 'Somos Perú', bio: 'Político de carrera con enfoque en agricultura.' },
+            { nombre: 'Miguel Ángel', genero: 'M', denuncias: false, edad: 27, reeleccion: false, experiencia: false, partido: 'Avanza País', bio: 'Economista joven especializado en finanzas públicas.' },
+            { nombre: 'Javier Soto', genero: 'M', denuncias: false, edad: 35, reeleccion: false, experiencia: true, partido: 'Renovación Popular', bio: 'Ex funcionario público con experiencia en transparencia.' },
+            { nombre: 'Pablo Ramírez', genero: 'M', denuncias: true, edad: 48, reeleccion: true, experiencia: true, partido: 'Fuerza Popular', bio: 'Congresista reeleccionista con historial controversial.' },
+            { nombre: 'Sergio Castro', genero: 'M', denuncias: false, edad: 33, reeleccion: false, experiencia: false, partido: 'Podemos Perú', bio: 'Abogado especializado en derechos humanos y justicia social.' },
+            { nombre: 'Ricardo Flores', genero: 'M', denuncias: false, edad: 42, reeleccion: false, experiencia: true, partido: 'Acción Popular', bio: 'Ex regidor con propuestas en medio ambiente.' },
+            { nombre: 'Martín Vega', genero: 'M', denuncias: true, edad: 29, reeleccion: false, experiencia: false, partido: 'Somos Perú', bio: 'Comunicador social con historial de denuncias por difamación.' },
+            { nombre: 'Eduardo Peña', genero: 'M', denuncias: false, edad: 36, reeleccion: true, experiencia: true, partido: 'Alianza para el Progreso', bio: 'Congresista con enfoque en salud pública.' },
+            { nombre: 'Gabriel Cruz', genero: 'M', denuncias: false, edad: 44, reeleccion: false, experiencia: true, partido: 'Renovación Popular', bio: 'Médico con propuestas de reforma sanitaria.' },
+            { nombre: 'Daniel Mora', genero: 'M', denuncias: true, edad: 50, reeleccion: true, experiencia: true, partido: 'Fuerza Popular', bio: 'Político veterano con múltiples investigaciones fiscales.' },
+            { nombre: 'Alejandro Ríos', genero: 'M', denuncias: false, edad: 28, reeleccion: false, experiencia: false, partido: 'Partido Morado', bio: 'Profesor universitario con enfoque en reforma educativa.' },
+            { nombre: 'Jorge Navarro', genero: 'M', denuncias: false, edad: 39, reeleccion: false, experiencia: true, partido: 'Avanza País', bio: 'Gestor público con experiencia en gobiernos locales.' },
+            { nombre: 'Pedro Herrera', genero: 'M', denuncias: false, edad: 46, reeleccion: true, experiencia: true, partido: 'Acción Popular', bio: 'Congresista reeleccionista enfocado en infraestructura.' },
+            { nombre: 'Antonio Vargas', genero: 'M', denuncias: true, edad: 34, reeleccion: false, experiencia: false, partido: 'Podemos Perú', bio: 'Empresario con denuncias laborales pendientes.' },
+            { nombre: 'Manuel Ortiz', genero: 'M', denuncias: false, edad: 40, reeleccion: false, experiencia: true, partido: 'Somos Perú', bio: 'Contador con propuestas de transparencia fiscal.' },
+            
+            { nombre: 'María González', genero: 'F', denuncias: false, edad: 32, reeleccion: false, experiencia: true, partido: 'Partido Morado', bio: 'Ex funcionaria con enfoque en igualdad de género.' },
+            { nombre: 'Ana Martínez', genero: 'F', denuncias: true, edad: 29, reeleccion: false, experiencia: false, partido: 'Fuerza Popular', bio: 'Periodista con denuncias por plagio.' },
+            { nombre: 'Carmen Rodríguez', genero: 'F', denuncias: false, edad: 43, reeleccion: true, experiencia: true, partido: 'Alianza para el Progreso', bio: 'Congresista reeleccionista enfocada en niñez.' },
+            { nombre: 'Laura Fernández', genero: 'F', denuncias: false, edad: 27, reeleccion: false, experiencia: false, partido: 'Avanza País', bio: 'Diseñadora con propuestas de espacios públicos.' },
+            { nombre: 'Patricia Jiménez', genero: 'F', denuncias: true, edad: 38, reeleccion: false, experiencia: true, partido: 'Renovación Popular', bio: 'Ex regidora con investigaciones por nepotismo.' },
+            { nombre: 'Isabel Moreno', genero: 'F', denuncias: false, edad: 45, reeleccion: true, experiencia: true, partido: 'Acción Popular', bio: 'Política experimentada en desarrollo rural.' },
+            { nombre: 'Rosa Álvarez', genero: 'F', denuncias: false, edad: 31, reeleccion: false, experiencia: false, partido: 'Partido Morado', bio: 'Arquitecta enfocada en vivienda social.' },
+            { nombre: 'Sofía Romero', genero: 'F', denuncias: false, edad: 36, reeleccion: false, experiencia: true, partido: 'Podemos Perú', bio: 'Psicóloga con experiencia en políticas de salud mental.' },
+            { nombre: 'Elena Sánchez', genero: 'F', denuncias: true, edad: 42, reeleccion: true, experiencia: true, partido: 'Somos Perú', bio: 'Congresista con denuncias por conflicto de intereses.' },
+            { nombre: 'Lucía Díaz', genero: 'F', denuncias: false, edad: 28, reeleccion: false, experiencia: false, partido: 'Alianza para el Progreso', bio: 'Bióloga con propuestas ambientales innovadoras.' },
+            { nombre: 'Cristina Muñoz', genero: 'F', denuncias: false, edad: 39, reeleccion: false, experiencia: true, partido: 'Fuerza Popular', bio: 'Administradora con experiencia en gestión pública.' },
+            { nombre: 'Verónica Gil', genero: 'F', denuncias: false, edad: 47, reeleccion: true, experiencia: true, partido: 'Avanza País', bio: 'Congresista reeleccionista enfocada en seguridad ciudadana.' },
+            { nombre: 'Beatriz Santos', genero: 'F', denuncias: true, edad: 33, reeleccion: false, experiencia: false, partido: 'Renovación Popular', bio: 'Empresaria con denuncias tributarias.' },
+            { nombre: 'Natalia Reyes', genero: 'F', denuncias: false, edad: 29, reeleccion: false, experiencia: false, partido: 'Partido Morado', bio: 'Nutricionista con propuestas en seguridad alimentaria.' },
+            { nombre: 'Andrea Campos', genero: 'F', denuncias: false, edad: 41, reeleccion: false, experiencia: true, partido: 'Acción Popular', bio: 'Ex viceministra con experiencia en cultura.' },
+            { nombre: 'Gloria Ramos', genero: 'F', denuncias: true, edad: 44, reeleccion: true, experiencia: true, partido: 'Podemos Perú', bio: 'Política con denuncias por enriquecimiento ilícito.' },
+            { nombre: 'Victoria Luna', genero: 'F', denuncias: false, edad: 35, reeleccion: false, experiencia: true, partido: 'Somos Perú', bio: 'Socióloga especializada en políticas sociales.' },
+            { nombre: 'Teresa Ibáñez', genero: 'F', denuncias: false, edad: 48, reeleccion: true, experiencia: true, partido: 'Alianza para el Progreso', bio: 'Congresista veterana enfocada en trabajo y empleo.' },
+            { nombre: 'Mónica Serrano', genero: 'F', denuncias: false, edad: 30, reeleccion: false, experiencia: false, partido: 'Fuerza Popular', bio: 'Ingeniera civil con propuestas de infraestructura sostenible.' }
+        ];
+
+        let candidateElements = [];
+        let currentFilter = 'all';
+        let isFilterMode = false;
+
+        // Crear elementos
+        candidatos.forEach((candidato, i) => {
+            const div = document.createElement('div');
+            div.className = 'candidate';
+            div.style.backgroundImage = `url(${candidato.genero === 'M' ? maleImage : femaleImage})`;
+            div.dataset.index = i;
+            div.dataset.denuncias = candidato.denuncias;
+            div.dataset.experiencia = candidato.experiencia;
+            
+            const nameDiv = document.createElement('div');
+            nameDiv.className = 'candidate-name';
+            nameDiv.textContent = candidato.nombre;
+            div.appendChild(nameDiv);
+            
+            // Badge
+            if (candidato.denuncias) {
+                const badge = document.createElement('div');
+                badge.className = 'badge';
+                badge.textContent = '⚠️';
+                div.appendChild(badge);
+            } else if (candidato.edad < 30) {
+                const badge = document.createElement('div');
+                badge.className = 'badge info';
+                badge.textContent = 'JOVEN';
+                div.appendChild(badge);
+            } else if (candidato.reeleccion) {
+                const badge = document.createElement('div');
+                badge.className = 'badge warning';
+                badge.textContent = 'RE';
+                div.appendChild(badge);
+            }
+            
+            div.addEventListener('click', () => {
+                if (isFilterMode) showPopup(candidato);
+            });
+            
+            grid.appendChild(div);
+            candidateElements.push({ element: div, data: candidato, originalIndex: i });
+        });
+
+        function showPopup(candidato) {
+            document.getElementById('popupImage').style.backgroundImage = `url(${candidato.genero === 'M' ? maleImage : femaleImage})`;
+            document.getElementById('popupName').textContent = candidato.nombre;
+            document.getElementById('popupParty').textContent = candidato.partido;
+            
+            const content = document.getElementById('popupContent');
+            content.innerHTML = `
+                <div class="info-row">
+                    <span class="info-label">Edad:</span>
+                    <span class="info-value">${candidato.edad} años</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Género:</span>
+                    <span class="info-value">${candidato.genero === 'M' ? 'Masculino' : 'Femenino'}</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Denuncias:</span>
+                    <span class="info-value ${candidato.denuncias ? 'alert' : 'success'}">
+                        ${candidato.denuncias ? 'Sí - Tiene denuncias' : 'No'}
+                    </span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Reelección:</span>
+                    <span class="info-value">${candidato.reeleccion ? 'Sí - Busca reelección' : 'No'}</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Experiencia:</span>
+                    <span class="info-value">${candidato.experiencia ? 'Con experiencia política' : 'Nuevo en política'}</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Biografía:</span>
+                </div>
+                <div style="padding: 10px; background: #f8f8f8; border-radius: 6px; font-size: 13px; line-height: 1.5;">
+                    ${candidato.bio}
+                </div>
+            `;
+            
+            popup.classList.add('active');
+            popupOverlay.classList.add('active');
+        }
+
+        function closePopup() {
+            popup.classList.remove('active');
+            popupOverlay.classList.remove('active');
+        }
+
+        popupClose.addEventListener('click', closePopup);
+        popupOverlay.addEventListener('click', closePopup);
+
+        function updateLayout() {
+            const scrollPercent = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+            const width = window.innerWidth;
+            
+            let cols;
+            if (width < 480) cols = 4;
+            else if (width < 768) cols = 6;
+            else cols = 13;
+            
+            grid.style.gridTemplateColumns = `repeat(${cols}, 1fr)`;
+
+            // Fase 1: Todas las caras con opacidad 0.3 (0% - 25%)
+            if (scrollPercent < 0.25) {
+                isFilterMode = false;
+                filterContainer.classList.remove('active');
+                infoBlock1.classList.remove('visible', 'center');
+                infoBlock2.classList.remove('visible', 'center');
+                
+                candidateElements.forEach(item => {
+                    item.element.classList.remove('active');
+                    item.element.style.opacity = '0.3';
+                });
+            }
+            // Fase 2: Aparece bloque 1 - Denuncias (25% - 50%)
+            else if (scrollPercent < 0.5) {
+                isFilterMode = false;
+                const progress = (scrollPercent - 0.25) / 0.25;
+                filterContainer.classList.remove('active');
+                infoBlock2.classList.remove('visible', 'center');
+                
+                // Animación del bloque: entra desde abajo, se centra, y sale por arriba
+                if (progress < 0.4) {
+                    // Entrando desde abajo
+                    infoBlock1.classList.remove('visible');
+                    infoBlock1.classList.add('center');
+                } else if (progress < 0.8) {
+                    // Centrado
+                    infoBlock1.classList.add('center');
+                    infoBlock1.classList.remove('visible');
+                } else {
+                    // Saliendo por arriba
+                    infoBlock1.classList.add('visible');
+                    infoBlock1.classList.remove('center');
+                }
+                
+                candidateElements.forEach(item => {
+                    if (item.data.denuncias) {
+                        item.element.classList.add('active');
+                        item.element.style.opacity = '1';
+                    } else {
+                        item.element.classList.remove('active');
+                        item.element.style.opacity = '0.3';
+                    }
+                });
+            }
+            // Fase 3: Aparece bloque 2 - Experiencia (50% - 75%)
+            else if (scrollPercent < 0.75) {
+                isFilterMode = false;
+                const progress = (scrollPercent - 0.5) / 0.25;
+                filterContainer.classList.remove('active');
+                infoBlock1.classList.add('visible');
+                
+                // Animación del bloque: entra desde abajo, se centra, y sale por arriba
+                if (progress < 0.4) {
+                    // Entrando desde abajo
+                    infoBlock2.classList.remove('visible');
+                    infoBlock2.classList.add('center');
+                } else if (progress < 0.8) {
+                    // Centrado
+                    infoBlock2.classList.add('center');
+                    infoBlock2.classList.remove('visible');
+                } else {
+                    // Saliendo por arriba
+                    infoBlock2.classList.add('visible');
+                    infoBlock2.classList.remove('center');
+                }
+                
+                candidateElements.forEach(item => {
+                    if (item.data.experiencia) {
+                        item.element.classList.add('active');
+                        item.element.style.opacity = '1';
+                    } else {
+                        item.element.classList.remove('active');
+                        item.element.style.opacity = '0.3';
+                    }
+                });
+            }
+            // Fase 4: Modo filtros activo (75% - 100%)
+            else {
+                isFilterMode = true;
+                infoBlock1.classList.add('visible');
+                infoBlock2.classList.add('visible');
+                filterContainer.classList.add('active');
+                
+                // Resetear todas las opacidades
+                candidateElements.forEach(item => {
+                    item.element.classList.remove('active');
+                    item.element.style.opacity = '1';
+                });
+            }
+        }
+
+        function applyFilter(filter) {
+            if (!isFilterMode) return;
+            
+            currentFilter = filter;
+            const width = window.innerWidth;
+            let cols;
+            if (width < 480) cols = 4;
+            else if (width < 768) cols = 6;
+            else cols = 13;
+            
+            grid.style.gridTemplateColumns = `repeat(${cols}, 1fr)`;
+
+            let filteredIndices = [];
+
+            candidatos.forEach((c, i) => {
+                let matches = false;
+                switch(filter) {
+                    case 'all':
+                        matches = true;
+                        break;
+                    case 'denuncias':
+                        matches = c.denuncias;
+                        break;
+                    case 'menores30':
+                        matches = c.edad < 30;
+                        break;
+                    case 'reeleccion':
+                        matches = c.reeleccion;
+                        break;
+                    case 'nuevos':
+                        matches = !c.experiencia;
+                        break;
+                    case 'experiencia':
+                        matches = c.experiencia;
+                        break;
+                }
+                if (matches) {
+                    filteredIndices.push(i);
+                }
+            });
+
+            // Guardar posiciones actuales
+            const currentPositions = new Map();
+            candidateElements.forEach(item => {
+                const rect = item.element.getBoundingClientRect();
+                currentPositions.set(item.originalIndex, {
+                    x: rect.left,
+                    y: rect.top
+                });
+            });
+
+            // Crear nuevo orden
+            const targetPositions = {};
+            let currentPosition = 0;
+
+            filteredIndices.forEach(index => {
+                targetPositions[index] = currentPosition++;
+            });
+
+            candidateElements.forEach((item) => {
+                if (!filteredIndices.includes(item.originalIndex)) {
+                    targetPositions[item.originalIndex] = currentPosition++;
+                }
+            });
+
+            const sortedElements = [...candidateElements].sort((a, b) => {
+                return targetPositions[a.originalIndex] - targetPositions[b.originalIndex];
+            });
+
+            // Aplicar estilos
+            candidateElements.forEach((item) => {
+                if (filter === 'all') {
+                    item.element.classList.remove('active');
+                    item.element.style.opacity = '1';
+                } else {
+                    if (filteredIndices.includes(item.originalIndex)) {
+                        item.element.classList.add('active');
+                        item.element.style.opacity = '1';
+                    } else {
+                        item.element.classList.remove('active');
+                        item.element.style.opacity = '0.3';
+                    }
+                }
+            });
+
+            // Reordenar en el DOM
+            grid.innerHTML = '';
+            sortedElements.forEach(item => {
+                grid.appendChild(item.element);
+            });
+
+            // Animación FLIP
+            requestAnimationFrame(() => {
+                sortedElements.forEach(item => {
+                    const newRect = item.element.getBoundingClientRect();
+                    const oldPos = currentPositions.get(item.originalIndex);
+                    
+                    if (oldPos) {
+                        const deltaX = oldPos.x - newRect.left;
+                        const deltaY = oldPos.y - newRect.top;
+                        
+                        item.element.style.transform = `translate(${deltaX}px, ${deltaY}px)`;
+                        item.element.style.transition = 'none';
+                    }
+                });
+
+                grid.offsetHeight;
+
+                requestAnimationFrame(() => {
+                    sortedElements.forEach(item => {
+                        item.element.style.transition = 'transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.6s ease, filter 0.6s ease, box-shadow 0.3s ease';
+                        item.element.style.transform = 'translate(0, 0)';
+                    });
+                });
+            });
+        }
+
+        filterSelect.addEventListener('change', (e) => {
+            applyFilter(e.target.value);
+        });
+
+        let ticking = false;
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    updateLayout();
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+
+        window.addEventListener('resize', () => {
+            updateLayout();
+            if (isFilterMode) {
+                applyFilter(currentFilter);
+            }
+        });
+
+        updateLayout();
+    </script>
+</body>
+</html>
