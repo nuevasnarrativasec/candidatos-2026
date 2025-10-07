@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Candidatos - Visualización Interactiva</title>
-    <link rel="stylesheet" href="./css/style.css?v2">
+    <link rel="stylesheet" href="./css/style.css?v5">
 </head>
 <body>
     <div class="filter-container" id="filterContainer">
@@ -20,7 +20,7 @@
     </div>
 
     <div class="scroll-container">
-        <div class="fixed-container">
+        <div class="fixed-container" id="fixedContainer">
             <div class="grid-container" id="grid"></div>
         </div>
 
@@ -50,6 +50,7 @@
 
     <script>
         const grid = document.getElementById('grid');
+        const fixedContainer = document.getElementById('fixedContainer');
         const filterSelect = document.getElementById('filterSelect');
         const filterContainer = document.getElementById('filterContainer');
         const infoBlock1 = document.getElementById('infoBlock1');
@@ -214,6 +215,8 @@
             if (scrollPercent < 0.25) {
                 isFilterMode = false;
                 filterContainer.classList.remove('active');
+                fixedContainer.classList.remove('scrollable');
+                grid.classList.remove('with-filter');
                 infoBlock1.classList.remove('visible', 'center');
                 infoBlock2.classList.remove('visible', 'center');
                 
@@ -227,6 +230,8 @@
                 isFilterMode = false;
                 const progress = (scrollPercent - 0.25) / 0.25;
                 filterContainer.classList.remove('active');
+                fixedContainer.classList.remove('scrollable');
+                grid.classList.remove('with-filter');
                 infoBlock2.classList.remove('visible', 'center');
                 
                 // Animación del bloque: entra desde abajo, se centra, y sale por arriba
@@ -259,6 +264,8 @@
                 isFilterMode = false;
                 const progress = (scrollPercent - 0.5) / 0.25;
                 filterContainer.classList.remove('active');
+                fixedContainer.classList.remove('scrollable');
+                grid.classList.remove('with-filter');
                 infoBlock1.classList.add('visible');
                 
                 // Animación del bloque: entra desde abajo, se centra, y sale por arriba
@@ -292,6 +299,8 @@
                 infoBlock1.classList.add('visible');
                 infoBlock2.classList.add('visible');
                 filterContainer.classList.add('active');
+                fixedContainer.classList.add('scrollable');
+                grid.classList.add('with-filter');
                 
                 // Resetear todas las opacidades
                 candidateElements.forEach(item => {
