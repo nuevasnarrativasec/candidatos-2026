@@ -352,8 +352,6 @@
                 padding: 20px;
                 width: fit-content;
                 max-width: 100%;
-
-                grid-template-columns: repeat(5, 1fr) !important;
             }
 
             .grid-container.with-filter {
@@ -411,15 +409,8 @@
                 justify-items: center;
             }
 
-            .grid-container.with-filter {                
+            .grid-container.with-filter {
                 padding-top: 85px;
-            }
-            .fixed-container.scrollable > .grid-container.with-filter{
-                grid-template-columns: repeat(5, 1fr) !important;
-            }
-
-            .candidate{
-                width: 4rem;
             }
 
             .candidate-name {
