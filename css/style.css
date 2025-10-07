@@ -410,7 +410,11 @@
             }
 
             .grid-container.with-filter {
-                padding-top: 85px;
+                padding-top: 120px;
+            }
+            
+            .candidate{
+                width: 4rem;
             }
 
             .candidate-name {
