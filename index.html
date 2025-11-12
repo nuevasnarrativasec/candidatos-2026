@@ -5,64 +5,191 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Candidatos - Visualización Interactiva</title>
     <link rel="stylesheet" href="./css/style.css?v9">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="filter-container" id="filterContainer">
-        <label class="filter-label">Filtrar por:</label>
-        <select class="filter-select" id="filterSelect">
-            <option value="all">Todos los candidatos (39)</option>
-            <option value="denuncias">Con denuncias</option>
-            <option value="menores30">Menores de 30 años</option>
-            <option value="reeleccion">Buscan reelección</option>
-            <option value="nuevos">Nuevos candidatos</option>
-            <option value="experiencia">Con experiencia política</option>
-        </select>
-    </div>
+    <main class="experience">
+        <div class="scroll-container" id="scrollContainer">
+            <div class="fixed-container" id="fixedContainer">
+                <div class="grid-wrapper">
+                    <div class="grid-container" id="grid"></div>
+                </div>
 
-    <div class="scroll-container">
-        <div class="fixed-container" id="fixedContainer">
-            <div class="grid-container" id="grid"></div>
-        </div>
+                <div class="story-layers">
+                    <section class="stage stage-hero" id="stageHero">
+                        <div class="hero-content">
+                            <div class="hero-badge">
+                                <div class="badge-text">
+                                    <span class="badge-title">TÚ DECIDES</span>
+                                    <div class="badge-subtitle">
+                                        <span>ELECCIONES</span>
+                                        <span>GENERALES</span>
+                                    </div>
+                                </div>
+                                <span class="badge-year">2026</span>
+                                <div class="badge-icon">🗳️</div>
+                            </div>
+                            <h1 class="hero-title">
+                                39 candidatos presidenciales, un solo voto
+                            </h1>
+                            <p class="hero-question">¿Sabes a quién elegir?</p>
+                            <p class="hero-description">
+                                Analizamos las hojas de vida presentadas ante el JNE y condensamos lo esencial de los aspirantes al sillón presidencial 2026-2031 para ayudarte a decidir con información clave.
+                            </p>
+                        </div>
+                    </section>
 
-        <div class="info-block" id="infoBlock1">
-            <h2><span class="highlight">12</span> candidatos cuentan con denuncias.</h2>
-            <p>But also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem.</p>
-        </div>
+                    <section class="stage stage-context dato-personal" id="stageContext">
+                        <div class="stage-inner">  
+                            <h6>No solo peruanos:</h6>                          
+                            <p>
+                                38 de los 39 candidatos nacieron en Perú. Sin embargo, un postulante (2.6%) registra nacimiento en el extranjero.
+                            </p>
+                        </div>
+                    </section>
 
-        <div class="info-block" id="infoBlock2">
-            <h2><span class="highlight">25</span> candidatos cuentan con experiencia política.</h2>
-            <p>But also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem.</p>
+                    <section class="stage stage-chart dato-personal dato-estudios" id="stageChart">
+                        <div class="stage-inner stage-split">
+                            <div>
+                                <h6>Estudios Inconclusos.</h6>
+                                <p>
+                                    Se evidencia una tendencia de estudios no finalizados. 10 candidatos reportan tener estudios de maestría en estado "inconcluso".
+                                </p>
+                            </div>
+                            <div class="chart-bars">
+                                <ul>
+                                    <li style="--value: 100%; --color: #ffbd00;">Maestro</li>
+                                    <li style="--value: 80%; --color: #ff5959;">Bachiller</li>
+                                    <li style="--value: 80%; --color: #6dd3c6;">Licenciado</li>
+                                    <li style="--value: 80%; --color: #6670ff;">Universitario</li>
+                                    <li style="--value: 60%; --color: #9f7aea;">No Universitario</li>
+                                    <li style="--value: 60%; --color: #ff6584;">Técnico</li>
+                                    <li style="--value: 40%; --color: #91c43c;">Secundaria</li>
+                                    <li style="--value: 20%; --color: #f5c211;">Primaria</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="stage stage-donut dato-sentencias" id="stageDonut">
+                        <div class="stage-inner">                           
+                            <h6>Nivel de reincidencia:</h6>                          
+                            <p>
+                                Se detectó dos candidatos con reincidencia, acumulando 2 sentencias cada uno.
+                            </p>                           
+                        </div>
+                    </section>
+
+                    <section class="stage stage-story dato-antecedentes" id="stageStory">
+                        <div class="stage-inner">                            
+                            <h6>Bajo la lupa:</h6>
+                            <p>
+                                4 de los 39 candidatos (un 25.6%) reportan antecedentes judiciales, contando con al menos una sentencia registrada. Los 29 candidatos restantes (74.4%) figuran "sin sentencias".
+                            </p>
+                        </div>
+                    </section>
+
+                    <!--<section class="stage stage-filter" id="stageFilter">
+                        <div class="stage-inner">
+                            <h3>Explora y compara</h3>
+                            <p>Activa el buscador para profundizar en la hoja de vida de cada aspirante. Usa los filtros para afinar tu análisis y descargar la ficha con todo el detalle.</p>
+                        </div>
+                    </section>-->
+                </div>
+
+                <div class="filter-panel" id="filterPanel">
+                    <header class="filter-heading">
+                        <h3>Busca un candidato o partido</h3>
+                        <p>Aplica filtros para encontrar perfiles específicos y comparar sus trayectorias.</p>
+                    </header>
+                    <form class="filter-controls" id="filterForm" autocomplete="off">
+                        <label class="sr-only" for="searchInput">Candidato o partido</label>
+                        <input type="search" id="searchInput" placeholder="Candidato o partido" spellcheck="false">
+
+                        <label class="sr-only" for="filterSelect">Filtrar por condición</label>
+                        <select id="filterSelect">
+                            <option value="all">Todos los candidatos (39)</option>
+                            <option value="denuncias">Con denuncias</option>
+                            <option value="menores30">Menores de 30 años</option>
+                            <option value="reeleccion">Buscan reelección</option>
+                            <option value="nuevos">Nuevos candidatos</option>
+                            <option value="experiencia">Con experiencia política</option>
+                        </select>
+
+                        <button type="button" id="clearFilters">Limpiar</button>
+                    </form>
+                    <div class="filter-feedback" id="filterFeedback">39 candidatos disponibles</div>
+                </div>
+            </div>
         </div>
-    </div>
+    </main>
 
     <div class="popup-overlay" id="popupOverlay"></div>
     <div class="popup" id="popup">
         <button class="popup-close" id="popupClose">&times;</button>
+        <button class="popup-download" id="popupDownload">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 11L3 6H6V2H10V6H13L8 11Z" fill="currentColor"/>
+                <path d="M2 13H14V14H2V13Z" fill="currentColor"/>
+            </svg>
+            Descargar Ficha completa
+        </button>
         <div class="popup-header">
-            <div class="popup-image" id="popupImage"></div>
+            <div class="popup-image-wrapper">
+                <div class="popup-image" id="popupImage"></div>
+                <div class="popup-party-logo" id="popupPartyLogo"></div>
+            </div>
             <div class="popup-title">
                 <div class="popup-name" id="popupName"></div>
                 <div class="popup-party" id="popupParty"></div>
             </div>
         </div>
         <div class="popup-content" id="popupContent"></div>
+        <div class="popup-footer">
+            <p>*Información declarada por el postulante en su hoja de vida</p>
+        </div>
     </div>
 
     <script>
         const grid = document.getElementById('grid');
+        const scrollContainer = document.getElementById('scrollContainer');
         const fixedContainer = document.getElementById('fixedContainer');
+        const filterPanel = document.getElementById('filterPanel');
         const filterSelect = document.getElementById('filterSelect');
-        const filterContainer = document.getElementById('filterContainer');
-        const infoBlock1 = document.getElementById('infoBlock1');
-        const infoBlock2 = document.getElementById('infoBlock2');
+        const searchInput = document.getElementById('searchInput');
+        const filterFeedback = document.getElementById('filterFeedback');
+        const filterForm = document.getElementById('filterForm');
+        const clearFiltersBtn = document.getElementById('clearFilters');
         const popup = document.getElementById('popup');
         const popupOverlay = document.getElementById('popupOverlay');
         const popupClose = document.getElementById('popupClose');
+        const stages = [
+            { id: 'stageHero', start: 0, end: 0.15, highlights: [], showFilter: false, enableFilter: false, hideHero: false },
+            { id: 'stageContext', start: 0.15, end: 0.34, highlights: [5], showFilter: false, enableFilter: false, hideHero: true },
+            { id: 'stageChart', start: 0.34, end: 0.53, highlights: [8, 9, 10, 11, 12, 13, 14, 15, 18, 21], showFilter: false, enableFilter: false, hideHero: true },
+            { id: 'stageDonut', start: 0.53, end: 0.7, highlights: [3, 20], showFilter: false, enableFilter: false, hideHero: true },
+            { id: 'stageStory', start: 0.7, end: 0.86, highlights: [15, 35, 5, 20], showFilter: false, enableFilter: false, hideHero: true },
+            { id: 'stageFilter', start: 0.86, end: 1.01, highlights: null, showFilter: true, enableFilter: true, hideHero: true }
+        ];
+        let activeStage = null;
 
         const maleImage = './img/hombre.jpg';
         const femaleImage = './img/mujer.jpg';
 
-        const partidos = ['Partido Morado', 'Fuerza Popular', 'Acción Popular', 'Alianza para el Progreso', 'Somos Perú', 'Podemos Perú', 'Avanza País', 'Renovación Popular'];
+        const partyStyles = {
+            'Partido Morado': { abbr: 'PM', color: '#673ab7' },
+            'Fuerza Popular': { abbr: 'FP', color: '#ff7a00' },
+            'Acción Popular': { abbr: 'AP', color: '#e53935' },
+            'Alianza para el Progreso': { abbr: 'APP', color: '#0d6efd' },
+            'Somos Perú': { abbr: 'SP', color: '#be123c' },
+            'Podemos Perú': { abbr: 'PP', color: '#4b5563' },
+            'Avanza País': { abbr: 'AP', color: '#0ea5e9' },
+            'Renovación Popular': { abbr: 'RP', color: '#22c55e' },
+            'Perú Patria Segura': { abbr: 'PPS', color: '#6670ff' }
+        };
 
         const candidatos = [
             { nombre: 'Carlos Mendoza', genero: 'M', denuncias: true, edad: 28, reeleccion: false, experiencia: false, partido: 'Partido Morado', bio: 'Ingeniero de sistemas con enfoque en políticas de innovación tecnológica.' },
@@ -109,82 +236,97 @@
 
         let candidateElements = [];
         let currentFilter = 'all';
+        let currentSearch = '';
         let isFilterMode = false;
 
         // Crear elementos
         candidatos.forEach((candidato, i) => {
-            const div = document.createElement('div');
-            div.className = 'candidate';
-            div.style.backgroundImage = `url(${candidato.genero === 'M' ? maleImage : femaleImage})`;
-            div.dataset.index = i;
-            div.dataset.denuncias = candidato.denuncias;
-            div.dataset.experiencia = candidato.experiencia;
-            
-            const nameDiv = document.createElement('div');
-            nameDiv.className = 'candidate-name';
-            nameDiv.textContent = candidato.nombre;
-            div.appendChild(nameDiv);
-            
-            // Badge
-            if (candidato.denuncias) {
-                const badge = document.createElement('div');
-                badge.className = 'badge';
-                badge.textContent = '⚠️';
-                div.appendChild(badge);
-            } else if (candidato.edad < 30) {
-                const badge = document.createElement('div');
-                badge.className = 'badge info';
-                badge.textContent = 'JOVEN';
-                div.appendChild(badge);
-            } else if (candidato.reeleccion) {
-                const badge = document.createElement('div');
-                badge.className = 'badge warning';
-                badge.textContent = 'RE';
-                div.appendChild(badge);
-            }
-            
-            div.addEventListener('click', () => {
+            const card = document.createElement('div');
+            card.className = 'candidate-card';
+            card.dataset.index = i;
+            card.dataset.denuncias = candidato.denuncias;
+            card.dataset.experiencia = candidato.experiencia;
+            card.dataset.nombre = candidato.nombre.toLowerCase();
+            card.dataset.partido = candidato.partido.toLowerCase();
+
+            const flip = document.createElement('div');
+            flip.className = 'candidate-flip';
+
+            const front = document.createElement('div');
+            front.className = 'candidate-face candidate-front';
+            front.innerHTML = `
+                <img src="${candidato.genero === 'M' ? maleImage : femaleImage}" alt="${candidato.nombre}">
+            `;
+
+            const partyInfo = partyStyles[candidato.partido] || { abbr: candidato.partido.slice(0, 3).toUpperCase(), color: '#222' };
+            const back = document.createElement('div');
+            back.className = 'candidate-face candidate-back';
+            back.innerHTML = `
+                <div class="party-logo" style="background:${partyInfo.color};">
+                    <span>${partyInfo.abbr}</span>
+                </div>
+                <span class="party-name">${candidato.partido}</span>
+            `;
+
+            flip.appendChild(front);
+            flip.appendChild(back);
+            card.appendChild(flip);
+
+            card.addEventListener('click', () => {
                 if (isFilterMode) showPopup(candidato);
             });
             
-            grid.appendChild(div);
-            candidateElements.push({ element: div, data: candidato, originalIndex: i });
+            grid.appendChild(card);
+            candidateElements.push({ element: card, data: candidato, originalIndex: i });
         });
 
         function showPopup(candidato) {
-            document.getElementById('popupImage').style.backgroundImage = `url(${candidato.genero === 'M' ? maleImage : femaleImage})`;
-            document.getElementById('popupName').textContent = candidato.nombre;
-            document.getElementById('popupParty').textContent = candidato.partido;
-            
+            const popupImage = document.getElementById('popupImage');
+            const popupName = document.getElementById('popupName');
+            const popupParty = document.getElementById('popupParty');
+            const popupPartyLogo = document.getElementById('popupPartyLogo');
             const content = document.getElementById('popupContent');
+            
+            popupImage.style.backgroundImage = `url(${candidato.genero === 'M' ? maleImage : femaleImage})`;
+            popupName.textContent = candidato.nombre;
+            popupParty.textContent = candidato.partido;
+            
+            // Logo del partido
+            const partyInfo = partyStyles[candidato.partido] || { abbr: candidato.partido.slice(0, 3).toUpperCase(), color: '#222' };
+            popupPartyLogo.style.backgroundColor = partyInfo.color;
+            popupPartyLogo.textContent = partyInfo.abbr;
+            
+            // Datos adicionales (usando valores de ejemplo o derivados de los datos existentes)
+            const departamento = candidato.departamento || 'LIMA';
+            const experienciaLaboral = candidato.experienciaLaboral || candidato.bio || 'No especificada';
+            const profesion = candidato.profesion || (candidato.experiencia ? 'Político' : 'Profesional');
+            const sentencias = candidato.sentencias !== undefined ? candidato.sentencias : (candidato.denuncias ? 'Sí' : 'No');
+            const ingresos = candidato.ingresos || 'S/.150,000.000';
+            
             content.innerHTML = `
-                <div class="info-row">
-                    <span class="info-label">Edad:</span>
-                    <span class="info-value">${candidato.edad} años</span>
+                <div class="info-section">
+                    <div class="info-label">EDAD</div>
+                    <div class="info-value">${candidato.edad} años</div>
                 </div>
-                <div class="info-row">
-                    <span class="info-label">Género:</span>
-                    <span class="info-value">${candidato.genero === 'M' ? 'Masculino' : 'Femenino'}</span>
+                <div class="info-section">
+                    <div class="info-label">DEPARTAMENTO</div>
+                    <div class="info-value">${departamento}</div>
                 </div>
-                <div class="info-row">
-                    <span class="info-label">Denuncias:</span>
-                    <span class="info-value ${candidato.denuncias ? 'alert' : 'success'}">
-                        ${candidato.denuncias ? 'Sí - Tiene denuncias' : 'No'}
-                    </span>
+                <div class="info-section">
+                    <div class="info-label">EXPERIENCIA LABORAL</div>
+                    <div class="info-value">${experienciaLaboral}</div>
                 </div>
-                <div class="info-row">
-                    <span class="info-label">Reelección:</span>
-                    <span class="info-value">${candidato.reeleccion ? 'Sí - Busca reelección' : 'No'}</span>
+                <div class="info-section">
+                    <div class="info-label">PROFESIÓN</div>
+                    <div class="info-value">${profesion}</div>
                 </div>
-                <div class="info-row">
-                    <span class="info-label">Experiencia:</span>
-                    <span class="info-value">${candidato.experiencia ? 'Con experiencia política' : 'Nuevo en política'}</span>
+                <div class="info-section">
+                    <div class="info-label">SENTENCIAS</div>
+                    <div class="info-value">${sentencias}</div>
                 </div>
-                <div class="info-row">
-                    <span class="info-label">Biografía:</span>
-                </div>
-                <div style="padding: 10px; background: #f8f8f8; border-radius: 6px; font-size: 13px; line-height: 1.5;">
-                    ${candidato.bio}
+                <div class="info-section info-section-income">
+                    <div class="info-label">INGRESOS DECLARADOS</div>
+                    <div class="info-value income-value">${ingresos}</div>
                 </div>
             `;
             
@@ -200,248 +342,176 @@
         popupClose.addEventListener('click', closePopup);
         popupOverlay.addEventListener('click', closePopup);
 
-        function updateLayout() {
-            const scrollPercent = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+        function setGridColumns() {
             const width = window.innerWidth;
+            const gridWrapper = grid.parentElement;
+            const wrapperWidth = gridWrapper.offsetWidth || Math.min(1400, width * 0.95);
             
-            let cols;
-            if (width < 480) cols = 5;
-            else if (width < 640) cols = 6;
-            else if (width < 768) cols = 8;
-            else if (width < 1024) cols = 10;
-            else if (width < 1280) cols = 13;
-            else cols = 13;
+            let cols, cellSize;
+            if (width < 480) {
+                cols = 4;
+            } else if (width < 640) {
+                cols = 6;
+            } else if (width < 900) {
+                cols = 8;
+            } else if (width < 1280) {
+                cols = 10;
+            } else {
+                cols = 13; // 13 columnas para 39 candidatos (3 filas de 13)
+            }
             
-            grid.style.gridTemplateColumns = `repeat(${cols}, 1fr)`;
+            // Calcular el tamaño de celda basado en el ancho del wrapper y el gap
+            const gapValue = parseFloat(getComputedStyle(grid).gap) || 10;
+            const totalGaps = gapValue * (cols - 1);
+            const availableWidth = wrapperWidth - (parseFloat(getComputedStyle(gridWrapper).paddingLeft) || 0) * 2;
+            cellSize = Math.floor((availableWidth - totalGaps) / cols);
+            
+            // Limitar el tamaño mínimo y máximo de las celdas
+            cellSize = Math.max(60, Math.min(cellSize, 120));
+            
+            grid.style.gridTemplateColumns = `repeat(${cols}, ${cellSize}px)`;
+        }
 
-            // Fase 1: Todas las caras con opacidad 0.3 (0% - 25%)
-            if (scrollPercent < 0.25) {
-                isFilterMode = false;
-                filterContainer.classList.remove('active');
-                fixedContainer.classList.remove('scrollable');
-                grid.classList.remove('with-filter');
-                infoBlock1.classList.remove('visible', 'center');
-                infoBlock2.classList.remove('visible', 'center');
-                
+        function applyHighlights(indices) {
+            if (indices === null) {
                 candidateElements.forEach(item => {
-                    item.element.classList.remove('active');
-                    item.element.style.opacity = '0.3';
+                    item.element.classList.remove('muted', 'highlight');
                 });
+                return;
             }
-            // Fase 2: Aparece bloque 1 - Denuncias (25% - 50%)
-            else if (scrollPercent < 0.5) {
-                isFilterMode = false;
-                const progress = (scrollPercent - 0.25) / 0.25;
-                filterContainer.classList.remove('active');
-                fixedContainer.classList.remove('scrollable');
-                grid.classList.remove('with-filter');
-                infoBlock2.classList.remove('visible', 'center');
-                
-                // Animación del bloque: entra desde abajo, se centra, y sale por arriba
-                if (progress < 0.4) {
-                    // Entrando desde abajo
-                    infoBlock1.classList.remove('visible');
-                    infoBlock1.classList.add('center');
-                } else if (progress < 0.8) {
-                    // Centrado
-                    infoBlock1.classList.add('center');
-                    infoBlock1.classList.remove('visible');
+
+            const indexSet = new Set(indices);
+            candidateElements.forEach(item => {
+                if (indexSet.has(item.originalIndex)) {
+                    item.element.classList.add('highlight');
+                    item.element.classList.remove('muted');
                 } else {
-                    // Saliendo por arriba
-                    infoBlock1.classList.add('visible');
-                    infoBlock1.classList.remove('center');
+                    item.element.classList.remove('highlight');
+                    item.element.classList.add('muted');
                 }
-                
-                candidateElements.forEach(item => {
-                    if (item.data.denuncias) {
-                        item.element.classList.add('active');
-                        item.element.style.opacity = '1';
-                    } else {
-                        item.element.classList.remove('active');
-                        item.element.style.opacity = '0.3';
-                    }
-                });
-            }
-            // Fase 3: Aparece bloque 2 - Experiencia (50% - 75%)
-            else if (scrollPercent < 0.75) {
-                isFilterMode = false;
-                const progress = (scrollPercent - 0.5) / 0.25;
-                filterContainer.classList.remove('active');
-                fixedContainer.classList.remove('scrollable');
-                grid.classList.remove('with-filter');
-                infoBlock1.classList.add('visible');
-                
-                // Animación del bloque: entra desde abajo, se centra, y sale por arriba
-                if (progress < 0.4) {
-                    // Entrando desde abajo
-                    infoBlock2.classList.remove('visible');
-                    infoBlock2.classList.add('center');
-                } else if (progress < 0.8) {
-                    // Centrado
-                    infoBlock2.classList.add('center');
-                    infoBlock2.classList.remove('visible');
-                } else {
-                    // Saliendo por arriba
-                    infoBlock2.classList.add('visible');
-                    infoBlock2.classList.remove('center');
-                }
-                
-                candidateElements.forEach(item => {
-                    if (item.data.experiencia) {
-                        item.element.classList.add('active');
-                        item.element.style.opacity = '1';
-                    } else {
-                        item.element.classList.remove('active');
-                        item.element.style.opacity = '0.3';
-                    }
-                });
-            }
-            // Fase 4: Modo filtros activo (75% - 100%)
-            else {
-                isFilterMode = true;
-                infoBlock1.classList.add('visible');
-                infoBlock2.classList.add('visible');
-                filterContainer.classList.add('active');
-                fixedContainer.classList.add('scrollable');
-                grid.classList.add('with-filter');
-                
-                // Resetear todas las opacidades
-                candidateElements.forEach(item => {
-                    item.element.classList.remove('active');
-                    item.element.style.opacity = '1';
-                });
+            });
+        }
+
+        function toggleFilterPanel(show) {
+            filterPanel.classList.toggle('active', show);
+            grid.classList.toggle('with-filter', show);
+            if (!show) {
+                filterFeedback.textContent = '39 candidatos disponibles';
             }
         }
 
-        function applyFilter(filter) {
+        function handleStageChange(stage) {
+            const heroStage = document.getElementById('stageHero');
+            if (stage.hideHero) {
+                heroStage.classList.add('hidden');
+            } else {
+                heroStage.classList.remove('hidden');
+            }
+            
+            applyHighlights(stage.highlights);
+            toggleFilterPanel(stage.showFilter);
+            isFilterMode = stage.enableFilter;
+            if (!isFilterMode) {
+                currentFilter = 'all';
+                currentSearch = '';
+                filterSelect.value = 'all';
+                searchInput.value = '';
+                candidateElements.forEach(item => {
+                    item.element.classList.remove('filtered-out');
+                });
+            } else {
+                filterCandidates();
+            }
+        }
+
+        function updateStages() {
+            const maxScroll = scrollContainer.offsetHeight - window.innerHeight;
+            const progress = maxScroll > 0 ? Math.min(1, Math.max(0, window.scrollY / maxScroll)) : 0;
+
+            let stageToActivate = stages[stages.length - 1];
+            for (const stage of stages) {
+                if (progress >= stage.start && progress < stage.end) {
+                    stageToActivate = stage;
+                    break;
+                }
+            }
+
+            if (!activeStage || activeStage.id !== stageToActivate.id) {
+                if (activeStage) {
+                    const prevEl = document.getElementById(activeStage.id);
+                    if (prevEl) prevEl.classList.remove('active');
+                }
+                const nextEl = document.getElementById(stageToActivate.id);
+                if (nextEl) nextEl.classList.add('active');
+                activeStage = stageToActivate;
+                handleStageChange(stageToActivate);
+            }
+        }
+
+        function matchesFilter(candidate, filter) {
+            switch (filter) {
+                case 'denuncias':
+                    return candidate.denuncias;
+                case 'menores30':
+                    return candidate.edad < 30;
+                case 'reeleccion':
+                    return candidate.reeleccion;
+                case 'nuevos':
+                    return !candidate.experiencia;
+                case 'experiencia':
+                    return candidate.experiencia;
+                default:
+                    return true;
+            }
+        }
+
+        function filterCandidates() {
             if (!isFilterMode) return;
-            
-            currentFilter = filter;
-            const width = window.innerWidth;
-            let cols;
-            if (width < 480) cols = 5;
-            else if (width < 640) cols = 6;
-            else if (width < 768) cols = 8;
-            else if (width < 1024) cols = 10;
-            else if (width < 1280) cols = 13;
-            else cols = 13;
-            
-            grid.style.gridTemplateColumns = `repeat(${cols}, 1fr)`;
 
-            let filteredIndices = [];
+            const term = currentSearch.trim().toLowerCase();
+            let visibleCount = 0;
 
-            candidatos.forEach((c, i) => {
-                let matches = false;
-                switch(filter) {
-                    case 'all':
-                        matches = true;
-                        break;
-                    case 'denuncias':
-                        matches = c.denuncias;
-                        break;
-                    case 'menores30':
-                        matches = c.edad < 30;
-                        break;
-                    case 'reeleccion':
-                        matches = c.reeleccion;
-                        break;
-                    case 'nuevos':
-                        matches = !c.experiencia;
-                        break;
-                    case 'experiencia':
-                        matches = c.experiencia;
-                        break;
-                }
-                if (matches) {
-                    filteredIndices.push(i);
-                }
-            });
-
-            // Guardar posiciones actuales
-            const currentPositions = new Map();
             candidateElements.forEach(item => {
-                const rect = item.element.getBoundingClientRect();
-                currentPositions.set(item.originalIndex, {
-                    x: rect.left,
-                    y: rect.top
-                });
+                const matchesByFilter = matchesFilter(item.data, currentFilter);
+                const matchesBySearch = !term ||
+                    item.data.nombre.toLowerCase().includes(term) ||
+                    item.data.partido.toLowerCase().includes(term);
+
+                const matches = matchesByFilter && matchesBySearch;
+                item.element.classList.toggle('filtered-out', !matches);
+                if (matches) visibleCount += 1;
             });
 
-            // Crear nuevo orden
-            const targetPositions = {};
-            let currentPosition = 0;
-
-            filteredIndices.forEach(index => {
-                targetPositions[index] = currentPosition++;
-            });
-
-            candidateElements.forEach((item) => {
-                if (!filteredIndices.includes(item.originalIndex)) {
-                    targetPositions[item.originalIndex] = currentPosition++;
-                }
-            });
-
-            const sortedElements = [...candidateElements].sort((a, b) => {
-                return targetPositions[a.originalIndex] - targetPositions[b.originalIndex];
-            });
-
-            // Aplicar estilos
-            candidateElements.forEach((item) => {
-                if (filter === 'all') {
-                    item.element.classList.remove('active');
-                    item.element.style.opacity = '1';
-                } else {
-                    if (filteredIndices.includes(item.originalIndex)) {
-                        item.element.classList.add('active');
-                        item.element.style.opacity = '1';
-                    } else {
-                        item.element.classList.remove('active');
-                        item.element.style.opacity = '0.3';
-                    }
-                }
-            });
-
-            // Reordenar en el DOM
-            grid.innerHTML = '';
-            sortedElements.forEach(item => {
-                grid.appendChild(item.element);
-            });
-
-            // Animación FLIP
-            requestAnimationFrame(() => {
-                sortedElements.forEach(item => {
-                    const newRect = item.element.getBoundingClientRect();
-                    const oldPos = currentPositions.get(item.originalIndex);
-                    
-                    if (oldPos) {
-                        const deltaX = oldPos.x - newRect.left;
-                        const deltaY = oldPos.y - newRect.top;
-                        
-                        item.element.style.transform = `translate(${deltaX}px, ${deltaY}px)`;
-                        item.element.style.transition = 'none';
-                    }
-                });
-
-                grid.offsetHeight;
-
-                requestAnimationFrame(() => {
-                    sortedElements.forEach(item => {
-                        item.element.style.transition = 'transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.6s ease, filter 0.6s ease, box-shadow 0.3s ease';
-                        item.element.style.transform = 'translate(0, 0)';
-                    });
-                });
-            });
+            filterFeedback.textContent = `${visibleCount} candidato${visibleCount !== 1 ? 's' : ''} disponible${visibleCount !== 1 ? 's' : ''}`;
         }
 
         filterSelect.addEventListener('change', (e) => {
-            applyFilter(e.target.value);
+            currentFilter = e.target.value;
+            filterCandidates();
+        });
+
+        searchInput.addEventListener('input', (e) => {
+            currentSearch = e.target.value;
+            filterCandidates();
+        });
+
+        filterForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+        });
+
+        clearFiltersBtn.addEventListener('click', () => {
+            currentFilter = 'all';
+            currentSearch = '';
+            filterSelect.value = 'all';
+            searchInput.value = '';
+            filterCandidates();
         });
 
         let ticking = false;
         window.addEventListener('scroll', () => {
             if (!ticking) {
                 window.requestAnimationFrame(() => {
-                    updateLayout();
+                    updateStages();
                     ticking = false;
                 });
                 ticking = true;
@@ -449,13 +519,18 @@
         });
 
         window.addEventListener('resize', () => {
-            updateLayout();
+            setGridColumns();
+            updateStages();
             if (isFilterMode) {
-                applyFilter(currentFilter);
+                filterCandidates();
             }
         });
 
-        updateLayout();
+        // Esperar a que el DOM esté completamente renderizado
+        setTimeout(() => {
+            setGridColumns();
+            updateStages();
+        }, 0);
     </script>
 </body>
 </html>
