@@ -176,23 +176,49 @@
         ];
         let activeStage = null;
 
-        const maleImage = './img/hombre.jpg';
-        const femaleImage = './img/mujer.jpg';
+        // Función helper para obtener la ruta de la foto del candidato
+        function getCandidatePhoto(candidato) {
+            // Si el candidato tiene una propiedad 'foto', usarla
+            if (candidato.foto) {
+                return candidato.foto;
+            }
+            // Si no, usar el nombre del candidato para construir la ruta
+            // Formato esperado: img/candidatos/nombre-apellido.jpg
+            const nombreNormalizado = candidato.nombre.toLowerCase()
+                .normalize('NFD')
+                .replace(/[\u0300-\u036f]/g, '')
+                .replace(/\s+/g, '-');
+            return `./img/candidatos/${nombreNormalizado}.png`;
+        }
+
+        // Función helper para obtener la ruta del logo del partido
+        function getPartyLogo(partido) {
+            const partyInfo = partyStyles[partido];
+            if (partyInfo && partyInfo.logo) {
+                return partyInfo.logo;
+            }
+            // Si no hay logo, usar el nombre del partido para construir la ruta
+            const partidoNormalizado = partido.toLowerCase()
+                .normalize('NFD')
+                .replace(/[\u0300-\u036f]/g, '')
+                .replace(/\s+/g, '-');
+            return `./img/logos/${partidoNormalizado}.png`;
+        }
 
         const partyStyles = {
-            'Partido Morado': { abbr: 'PM', color: '#673ab7' },
-            'Fuerza Popular': { abbr: 'FP', color: '#ff7a00' },
-            'Acción Popular': { abbr: 'AP', color: '#e53935' },
-            'Alianza para el Progreso': { abbr: 'APP', color: '#0d6efd' },
-            'Somos Perú': { abbr: 'SP', color: '#be123c' },
-            'Podemos Perú': { abbr: 'PP', color: '#4b5563' },
-            'Avanza País': { abbr: 'AP', color: '#0ea5e9' },
-            'Renovación Popular': { abbr: 'RP', color: '#22c55e' },
-            'Perú Patria Segura': { abbr: 'PPS', color: '#6670ff' }
+            'Ahora Nación': { abbr: 'AN', color: '#673ab7', logo: './img/logos/ahora-nacion.jpg' },
+            'Fuerza Popular': { abbr: 'FP', color: '#ff7a00', logo: './img/logos/fuerza-popular.png' },
+            'Acción Popular': { abbr: 'AP', color: '#e53935', logo: './img/logos/accion-popular.png' },
+            'Alianza para el Progreso': { abbr: 'APP', color: '#0d6efd', logo: './img/logos/alianza-para-el-progreso.png' },
+            'Somos Perú': { abbr: 'SP', color: '#be123c', logo: './img/logos/somos-peru.png' },
+            'Podemos Perú': { abbr: 'PP', color: '#4b5563', logo: './img/logos/podemos-peru.png' },
+            'Avanza País': { abbr: 'AP', color: '#0ea5e9', logo: './img/logos/avanza-pais.png' },
+            'Renovación Popular': { abbr: 'RP', color: '#22c55e', logo: './img/logos/renovacion-popular.png' },
+            'Perú Patria Segura': { abbr: 'PPS', color: '#6670ff', logo: './img/logos/peru-patria-segura.png' }
         };
 
         const candidatos = [
-            { nombre: 'Carlos Mendoza', genero: 'M', denuncias: true, edad: 28, reeleccion: false, experiencia: false, partido: 'Partido Morado', bio: 'Ingeniero de sistemas con enfoque en políticas de innovación tecnológica.' },
+            { nombre: 'Alfonso Lopez Chau', genero: 'M', denuncias: true, edad: 28, reeleccion: false, experiencia: false, partido: 'Ahora Nación', bio: 'Ingeniero de sistemas con enfoque en políticas de innovación tecnológica.' },
             { nombre: 'Roberto Silva', genero: 'M', denuncias: false, edad: 45, reeleccion: true, experiencia: true, partido: 'Fuerza Popular', bio: 'Congresista actual, enfocado en desarrollo económico regional.' },
             { nombre: 'Luis García', genero: 'M', denuncias: true, edad: 52, reeleccion: true, experiencia: true, partido: 'Acción Popular', bio: 'Ex alcalde con experiencia en gestión municipal y obras públicas.' },
             { nombre: 'Diego Torres', genero: 'M', denuncias: false, edad: 29, reeleccion: false, experiencia: false, partido: 'Partido Morado', bio: 'Activista social enfocado en derechos de juventud y educación.' },
@@ -254,19 +280,33 @@
 
             const front = document.createElement('div');
             front.className = 'candidate-face candidate-front';
+            const candidatePhoto = getCandidatePhoto(candidato);
             front.innerHTML = `
-                <img src="${candidato.genero === 'M' ? maleImage : femaleImage}" alt="${candidato.nombre}">
+                <img src="${candidatePhoto}" alt="${candidato.nombre}" onerror="this.src='./img/hombre.jpg'">
             `;
 
-            const partyInfo = partyStyles[candidato.partido] || { abbr: candidato.partido.slice(0, 3).toUpperCase(), color: '#222' };
+            const partyInfo = partyStyles[candidato.partido] || { abbr: candidato.partido.slice(0, 3).toUpperCase(), color: '#222', logo: null };
             const back = document.createElement('div');
             back.className = 'candidate-face candidate-back';
-            back.innerHTML = `
-                <div class="party-logo" style="background:${partyInfo.color};">
-                    <span>${partyInfo.abbr}</span>
-                </div>
-                <span class="party-name">${candidato.partido}</span>
-            `;
+            const partyLogo = getPartyLogo(candidato.partido);
+            
+            // Si hay logo, usar imagen; si no, usar el div con color y abreviatura
+            if (partyInfo.logo) {
+                back.innerHTML = `
+                    <img src="${partyLogo}" alt="${candidato.partido}" class="party-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="party-logo-fallback" style="display:none; background:${partyInfo.color};">
+                        <span>${partyInfo.abbr}</span>
+                    </div>
+                    <span class="party-name">${candidato.partido}</span>
+                `;
+            } else {
+                back.innerHTML = `
+                    <div class="party-logo" style="background:${partyInfo.color};">
+                        <span>${partyInfo.abbr}</span>
+                    </div>
+                    <span class="party-name">${candidato.partido}</span>
+                `;
+            }
 
             flip.appendChild(front);
             flip.appendChild(back);
@@ -287,14 +327,23 @@
             const popupPartyLogo = document.getElementById('popupPartyLogo');
             const content = document.getElementById('popupContent');
             
-            popupImage.style.backgroundImage = `url(${candidato.genero === 'M' ? maleImage : femaleImage})`;
+            const candidatePhoto = getCandidatePhoto(candidato);
+            popupImage.style.backgroundImage = `url(${candidatePhoto})`;
             popupName.textContent = candidato.nombre;
             popupParty.textContent = candidato.partido;
             
             // Logo del partido
-            const partyInfo = partyStyles[candidato.partido] || { abbr: candidato.partido.slice(0, 3).toUpperCase(), color: '#222' };
-            popupPartyLogo.style.backgroundColor = partyInfo.color;
-            popupPartyLogo.textContent = partyInfo.abbr;
+            const partyInfo = partyStyles[candidato.partido] || { abbr: candidato.partido.slice(0, 3).toUpperCase(), color: '#222', logo: null };
+            const partyLogo = getPartyLogo(candidato.partido);
+            
+            // Si hay logo, usar imagen; si no, usar el div con color y abreviatura
+            if (partyInfo.logo) {
+                popupPartyLogo.innerHTML = `<img src="${partyLogo}" alt="${candidato.partido}" onerror="this.style.display='none'; this.parentElement.style.backgroundColor='${partyInfo.color}'; this.parentElement.textContent='${partyInfo.abbr}';">`;
+                popupPartyLogo.style.backgroundColor = 'transparent';
+            } else {
+                popupPartyLogo.style.backgroundColor = partyInfo.color;
+                popupPartyLogo.textContent = partyInfo.abbr;
+            }
             
             // Datos adicionales (usando valores de ejemplo o derivados de los datos existentes)
             const departamento = candidato.departamento || 'LIMA';
