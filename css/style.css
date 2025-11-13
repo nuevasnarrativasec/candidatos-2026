@@ -436,7 +436,7 @@ body {
     }
 
 .candidate-front {
-    background: linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,0.58) 100%);
+    /*background: linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,0.58) 100%);*/
     overflow: hidden; /* Mantener hidden aquí para recortar la imagen */
 }
 
