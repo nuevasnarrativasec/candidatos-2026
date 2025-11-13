@@ -11,7 +11,7 @@
     --bg: #f5f5f5;
     --text: #161616;
     --muted: #9aa0ac;
-    --highlight: #ffed56;
+    /*--highlight: #ffed56;*/
     --panel: rgba(255, 255, 255, 0.94);
     --border: rgba(18, 18, 18, 0.12);
     --accent: #11153a;
@@ -509,7 +509,12 @@ body {
 }
 
 .candidate-card.highlight .candidate-flip {
-    box-shadow: 0 22px 55px rgba(255, 237, 86, 0.55);
+    /*box-shadow: 0 22px 55px rgba(255, 237, 86, 0.55);*/
+}
+
+.highlight{
+    background-color: #fffe54;
+    border-radius: 20px;
 }
 
 .candidate-card.highlight::before {
@@ -523,7 +528,7 @@ body {
 
 .candidate-card.muted {
     /*opacity: 0.2;*/
-    filter: grayscale(1);
+    /*filter: grayscale(1);*/
 }
 
 .candidate-card.filtered-out {
