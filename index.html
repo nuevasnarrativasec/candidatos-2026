@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Candidatos - Visualización Interactiva</title>
-    <link rel="stylesheet" href="./css/style.css?v11">
+    <link rel="stylesheet" href="./css/style.css?v16">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,143 +12,156 @@
 </head>
 <body>
     <div class="scroll-container">
-        <!-- Hero Section -->
-        <section class="hero-section" id="heroSection">
-            <div class="candidate-grid-hero" id="heroGrid"></div>
-            
-            <img src="./img/logo-tu-decides.jpg" alt="Tú decides" class="hero-logo">
-            
-            <h1 class="hero-title">39 candidatos, 39 historias,</h1>
-            <h2 class="hero-subtitle">¿Sabes por quién votar?</h2>
-            
-            <div class="hero-description">
-                <p>Analizamos las hojas de vida oficiales provistas por el JNE para conocer el perfil real de quienes aspiran a la presidencia</p>
-            </div>
-        </section>
+        <div class="fixed-stages">
+            <div class="stage-wrapper">
 
-        <!-- Data Section 1 -->
-        <section class="data-section" id="dataSection1">
-            <div class="data-container">
-                <div class="data-grid" id="dataGrid1">
-                    <div class="box-info-data-grid-1">
-                        <span>No solo peruanos</span>
-                        <span class="separador"></span>
-                        <p>
-                            <b>38 de los 39 candidatos nacieron en Perú.</b>
-                            Sin embargo, un postulante (2.6%) registra nacimiento en el extranjero.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Data Section 2 -->
-        <section class="data-section" id="dataSection2">
-            <div class="data-container">
-                <div class="data-grid large-grid" id="dataGrid2"></div>
-                <div class="data-content">
-                    <h2>Grado Alcanzado</h2>
-                    <p>El nivel de formación es variado. El grupo más grande, <b>15 candidatos (38.5%)</b>, tiene un grado <b>Universitario (Bachiller o Licenciado)</b>. Solo 8 candidatos (20.5%) han alcanzado un <b>Postgrado (Maestría o Doctorado)</b>.</p>
+                <!-- Hero Section -->
+                <section class="hero-section" id="heroSection">
+                    <div class="candidate-grid-hero" id="heroGrid"></div>
                     
-                    <div style="display: flex; flex-direction: column; gap: 15px;">
-                        <div style="display: flex; align-items: center; gap: 10px;">
-                            <span style="min-width: 120px; font-size: 14px;">Maestro</span>
-                            <div style="flex: 1; background: #e0e0e0; height: 8px; border-radius: 4px; position: relative;">
-                                <div style="position: absolute; left: 0; top: 0; height: 100%; width: 19.2%; background: #ffd700; border-radius: 4px;"></div>
+                    <img src="./img/logo-tu-decides.jpg" alt="Tú decides" class="hero-logo">
+                    
+                    <h1 class="hero-title">39 candidatos, 39 historias,</h1>
+                    <h2 class="hero-subtitle">¿Sabes por quién votar?</h2>
+                    
+                    <div class="hero-description">
+                        <p>Analizamos las hojas de vida oficiales provistas por el JNE para conocer el perfil real de quienes aspiran a la presidencia</p>
+                    </div>
+                </section>
+
+                <!-- Data Section 1 -->
+                <section class="data-section" id="dataSection1">
+                    <div class="data-container">
+                        <div class="data-grid" id="dataGrid1">
+                            <div class="box-info-data-grid-1">
+                                <span>No solo peruanos</span>
+                                <span class="separador"></span>
+                                <p>
+                                    <b>38 de los 39 candidatos nacieron en Perú.</b>
+                                    Sin embargo, un postulante (2.6%) registra nacimiento en el extranjero.
+                                </p>
                             </div>
-                            <span style="min-width: 30px; text-align: right; font-weight: bold;">5</span>
-                        </div>
-                        
-                        <div style="display: flex; align-items: center; gap: 10px;">
-                            <span style="min-width: 120px; font-size: 14px;">Bachiller</span>
-                            <div style="flex: 1; background: #e0e0e0; height: 8px; border-radius: 4px; position: relative;">
-                                <div style="position: absolute; left: 0; top: 0; height: 100%; width: 15.4%; background: #ff1493; border-radius: 4px;"></div>
-                            </div>
-                            <span style="min-width: 30px; text-align: right; font-weight: bold;">4</span>
-                        </div>
-                        
-                        <div style="display: flex; align-items: center; gap: 10px;">
-                            <span style="min-width: 120px; font-size: 14px;">Licenciado</span>
-                            <div style="flex: 1; background: #e0e0e0; height: 8px; border-radius: 4px; position: relative;">
-                                <div style="position: absolute; left: 0; top: 0; height: 100%; width: 15.4%; background: #ff7f00; border-radius: 4px;"></div>
-                            </div>
-                            <span style="min-width: 30px; text-align: right; font-weight: bold;">4</span>
-                        </div>
-                        
-                        <div style="display: flex; align-items: center; gap: 10px;">
-                            <span style="min-width: 120px; font-size: 14px;">Universitario</span>
-                            <div style="flex: 1; background: #e0e0e0; height: 8px; border-radius: 4px; position: relative;">
-                                <div style="position: absolute; left: 0; top: 0; height: 100%; width: 15.4%; background: #22c55e; border-radius: 4px;"></div>
-                            </div>
-                            <span style="min-width: 30px; text-align: right; font-weight: bold;">4</span>
-                        </div>
-                        
-                        <div style="display: flex; align-items: center; gap: 10px;">
-                            <span style="min-width: 120px; font-size: 14px;">No universitario</span>
-                            <div style="flex: 1; background: #e0e0e0; height: 8px; border-radius: 4px; position: relative;">
-                                <div style="position: absolute; left: 0; top: 0; height: 100%; width: 11.5%; background: #3b82f6; border-radius: 4px;"></div>
-                            </div>
-                            <span style="min-width: 30px; text-align: right; font-weight: bold;">3</span>
-                        </div>
-                        
-                        <div style="display: flex; align-items: center; gap: 10px;">
-                            <span style="min-width: 120px; font-size: 14px;">Técnico</span>
-                            <div style="flex: 1; background: #e0e0e0; height: 8px; border-radius: 4px; position: relative;">
-                                <div style="position: absolute; left: 0; top: 0; height: 100%; width: 11.5%; background: #8b5cf6; border-radius: 4px;"></div>
-                            </div>
-                            <span style="min-width: 30px; text-align: right; font-weight: bold;">3</span>
-                        </div>
-                        
-                        <div style="display: flex; align-items: center; gap: 10px;">
-                            <span style="min-width: 120px; font-size: 14px;">Secundaria</span>
-                            <div style="flex: 1; background: #e0e0e0; height: 8px; border-radius: 4px; position: relative;">
-                                <div style="position: absolute; left: 0; top: 0; height: 100%; width: 7.7%; background: #ef4444; border-radius: 4px;"></div>
-                            </div>
-                            <span style="min-width: 30px; text-align: right; font-weight: bold;">2</span>
-                        </div>
-                        
-                        <div style="display: flex; align-items: center; gap: 10px;">
-                            <span style="min-width: 120px; font-size: 14px;">Primaria</span>
-                            <div style="flex: 1; background: #e0e0e0; height: 8px; border-radius: 4px; position: relative;">
-                                <div style="position: absolute; left: 0; top: 0; height: 100%; width: 3.8%; background: #84cc16; border-radius: 4px;"></div>
-                            </div>
-                            <span style="min-width: 30px; text-align: right; font-weight: bold;">1</span>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
+                </section>
 
-        <!-- Data Section 3 -->
-        <section class="data-section" id="dataSection3">
-            <div class="data-container full-grid">
-                <div class="data-grid large-grid" id="dataGrid3"></div>
-                <div class="info-box">
-                    <h2>Bajo la lupa</h2>
-                    <p>4 de los 39 candidatos (un 25.6%) reportan antecedentes judiciales, contando con al menos una sentencia registrada. Los 29 candidatos restantes (74.4%) figuran "sin sentencias".</p>
-                    <div class="stats-row">
-                        <div class="stat-item">
-                            <div class="stat-number penal">5</div>
-                            <div class="stat-label penal">Penal</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number civil">1</div>
-                            <div class="stat-label civil">civil</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number sin">35</div>
-                            <div class="stat-label sin">Sin sentencia</div>
+                <!-- Data Section 2 -->
+                <section class="data-section" id="dataSection2">
+                    <div class="data-container">
+                        <div class="data-grid large-grid" id="dataGrid2"></div>
+                        <div class="data-content">
+                            <h2>Grado Alcanzado</h2>
+                            <p>El nivel de formación es variado. El grupo más grande, <b>15 candidatos (38.5%)</b>, tiene un grado <b>Universitario (Bachiller o Licenciado)</b>. Solo 8 candidatos (20.5%) han alcanzado un <b>Postgrado (Maestría o Doctorado)</b>.</p>
+                            
+                            <div style="display: flex; flex-direction: column; gap: 15px;">
+                                <div style="display: flex; align-items: center; gap: 10px;">
+                                    <span style="min-width: 120px; font-size: 14px;">Maestro</span>
+                                    <div style="flex: 1; background: #e0e0e0; height: 8px; border-radius: 4px; position: relative;">
+                                        <div style="position: absolute; left: 0; top: 0; height: 100%; width: 19.2%; background: #ffd700; border-radius: 4px;"></div>
+                                    </div>
+                                    <span style="min-width: 30px; text-align: right; font-weight: bold;">5</span>
+                                </div>
+                                
+                                <div style="display: flex; align-items: center; gap: 10px;">
+                                    <span style="min-width: 120px; font-size: 14px;">Bachiller</span>
+                                    <div style="flex: 1; background: #e0e0e0; height: 8px; border-radius: 4px; position: relative;">
+                                        <div style="position: absolute; left: 0; top: 0; height: 100%; width: 15.4%; background: #ff1493; border-radius: 4px;"></div>
+                                    </div>
+                                    <span style="min-width: 30px; text-align: right; font-weight: bold;">4</span>
+                                </div>
+                                
+                                <div style="display: flex; align-items: center; gap: 10px;">
+                                    <span style="min-width: 120px; font-size: 14px;">Licenciado</span>
+                                    <div style="flex: 1; background: #e0e0e0; height: 8px; border-radius: 4px; position: relative;">
+                                        <div style="position: absolute; left: 0; top: 0; height: 100%; width: 15.4%; background: #ff7f00; border-radius: 4px;"></div>
+                                    </div>
+                                    <span style="min-width: 30px; text-align: right; font-weight: bold;">4</span>
+                                </div>
+                                
+                                <div style="display: flex; align-items: center; gap: 10px;">
+                                    <span style="min-width: 120px; font-size: 14px;">Universitario</span>
+                                    <div style="flex: 1; background: #e0e0e0; height: 8px; border-radius: 4px; position: relative;">
+                                        <div style="position: absolute; left: 0; top: 0; height: 100%; width: 15.4%; background: #22c55e; border-radius: 4px;"></div>
+                                    </div>
+                                    <span style="min-width: 30px; text-align: right; font-weight: bold;">4</span>
+                                </div>
+                                
+                                <div style="display: flex; align-items: center; gap: 10px;">
+                                    <span style="min-width: 120px; font-size: 14px;">No universitario</span>
+                                    <div style="flex: 1; background: #e0e0e0; height: 8px; border-radius: 4px; position: relative;">
+                                        <div style="position: absolute; left: 0; top: 0; height: 100%; width: 11.5%; background: #3b82f6; border-radius: 4px;"></div>
+                                    </div>
+                                    <span style="min-width: 30px; text-align: right; font-weight: bold;">3</span>
+                                </div>
+                                
+                                <div style="display: flex; align-items: center; gap: 10px;">
+                                    <span style="min-width: 120px; font-size: 14px;">Técnico</span>
+                                    <div style="flex: 1; background: #e0e0e0; height: 8px; border-radius: 4px; position: relative;">
+                                        <div style="position: absolute; left: 0; top: 0; height: 100%; width: 11.5%; background: #8b5cf6; border-radius: 4px;"></div>
+                                    </div>
+                                    <span style="min-width: 30px; text-align: right; font-weight: bold;">3</span>
+                                </div>
+                                
+                                <div style="display: flex; align-items: center; gap: 10px;">
+                                    <span style="min-width: 120px; font-size: 14px;">Secundaria</span>
+                                    <div style="flex: 1; background: #e0e0e0; height: 8px; border-radius: 4px; position: relative;">
+                                        <div style="position: absolute; left: 0; top: 0; height: 100%; width: 7.7%; background: #ef4444; border-radius: 4px;"></div>
+                                    </div>
+                                    <span style="min-width: 30px; text-align: right; font-weight: bold;">2</span>
+                                </div>
+                                
+                                <div style="display: flex; align-items: center; gap: 10px;">
+                                    <span style="min-width: 120px; font-size: 14px;">Primaria</span>
+                                    <div style="flex: 1; background: #e0e0e0; height: 8px; border-radius: 4px; position: relative;">
+                                        <div style="position: absolute; left: 0; top: 0; height: 100%; width: 3.8%; background: #84cc16; border-radius: 4px;"></div>
+                                    </div>
+                                    <span style="min-width: 30px; text-align: right; font-weight: bold;">1</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
+                </section>
 
+                <!-- Data Section 3 -->
+                <section class="data-section" id="dataSection3">
+                    <div class="data-container full-grid">
+                        <div class="data-grid large-grid" id="dataGrid3"></div>
+                        <div class="info-box">
+                            <h2>Bajo la lupa</h2>
+                            <p>4 de los 39 candidatos (un 25.6%) reportan antecedentes judiciales, contando con al menos una sentencia registrada. Los 29 candidatos restantes (74.4%) figuran "sin sentencias".</p>
+                            <div class="stats-row">
+                                <div class="stat-item">
+                                    <div class="stat-number penal">5</div>
+                                    <div class="stat-label penal">Penal</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number civil">1</div>
+                                    <div class="stat-label civil">civil</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number sin">35</div>
+                                    <div class="stat-label sin">Sin sentencia</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+        <!-- fixed stages-->    
+         
         <!-- Search Section -->
         <section class="search-section" id="searchSection">
             <div class="search-container">
                 <div class="search-intro">
-                    <p>La visión política de Perú Patria Segura se fundamenta en la implementación de tecnologías digitales para fortalecer la transparencia en la gestión pública. Con un enfoque integral, el partido busca mejorar la calidad educativa y abordar desigualdades, mientras promueve la inversión y la estabilidad económica.</p>
+                    <p><strong>Fuentes y alcance.</strong> Las hojas de vida que cada postulante presentó al JNE al inscribirse representan una fotografía oficial de todos los candidatos, con valor legal, y sirven como base inmediata para comparar perfiles y alertar una posterior verificación. <strong>Al ser auto-declaradas, pueden incluir omisiones, imprecisiones o criterios dispares y reflejan un corte temporal al momento de su presentación, previo a verificación y tachas.</strong></p>
+                        
+                    <p><strong>Oferta en competencia.</strong> En estas elecciones participan 39 organizaciones: 36 partidos y 3 alianzas formalmente inscritas ante el JNE. Esta radiografía incluye agrupaciones recientemente incorporadas al Registro de Organizaciones Políticas (2024–2025), tras los cierres de inscripción y la ventana de conformación de alianzas.</p>
+                        
+                    <p><strong>Doble Valla.</strong> En Perú, el voto presidencial no garantiza escaños en el Congreso. Con la doble valla, un partido solo entra al reparto si supera 5% de votos y alcanza un mínimo de escaños. Así, incluso con 30% de votos en presidencial, puede quedarse sin bancada congresal.</p>
+                        
+                    <p><strong>Cabezas de lista.</strong> Dieciséis postulantes a la vicepresidencia llevarán el número 1 en una lista congresal para maximizar sus opciones de ingresar a alguna de las dos cámaras del nuevo Parlamento. Además, al menos 11 partidos han reservado el número 1 de su lista al Senado por Lima para un invitado (afiliado o no afiliado).</p>
                 </div>
 
                 <div class="search-box">
@@ -158,12 +171,61 @@
                     </svg>
                 </div>
 
-                <p class="search-hint">👆 Selecciona un candidato</p>
+                <div class="box-indicacion">
+                    <img src="./img/icon-click.png" alt="" width="100%">
+                    <p class="search-hint">Selecciona un candidato</p>
+                </div>                
 
                 <div class="candidates-carousel" id="candidatesCarousel"></div>
             </div>
+
+            <div class="footer-section">
+                <div class="footer-content">
+                    <span class="separador-logo"></span>
+                    <img src="https://nuevasnarrativasec.github.io/conclave/img/logo-comercio.png" alt="El Comercio" width="100%" class="logo-comercio">
+                    <span class="separador-logo"></span>   
+
+                    <ul>
+                        <li>
+                            <h4>Investigación y textos:</h4>
+                            <p>Gisella Salmón</p>
+                            <p>Mayte Oriaco</p>
+                            <p>Lorena Obregón</p>
+                        </li>
+                        <li>
+                            <h4>Diseño:</h4>
+                            <p>Marcelo Hidalgo</p>
+                        </li>
+                        <li>
+                            <h4>Ilustraciones y animación:</h4>
+                            <p>Kiomy Kanashiro</p>
+                        </li>
+                    </ul>
+
+                    <ul>
+                        <li>
+                            <h4>Programación:</h4>
+                            <p>Armando Scavoglioni C.</p>
+                        </li>
+                        <li>
+                            <h4>Edición visual:</h4>
+                            <p>Ángela Peña</p>
+                        </li>
+                        <li>
+                            <h4>Producción general:</h4>
+                            <p>Gisella Salmón</p>
+                        </li>
+                        <li>
+                            <h4>Director periodístico:</h4>
+                            <p>Juan Aurelio Arévalo</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </section>
     </div>
+
+    
 
     <!-- Modal -->
     <div class="modal-overlay" id="modalOverlay"></div>
