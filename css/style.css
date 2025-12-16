@@ -971,7 +971,7 @@ body {
         }
 
         .hero-title {
-            font-size: 56px;
+            font-size: 3rem;
             font-weight: bold;
             text-align: center;
             margin: 20px 0;
@@ -982,7 +982,7 @@ body {
             font: 2rem/1.1 'guardian_egypmedium';
             color: #999;
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 0;
         }
 
         .hero-description {
@@ -1657,6 +1657,38 @@ body {
         .info-value.large {
             font-size: 32px;
             font-weight: bold;
+        }
+
+        @media (max-height: 732px){
+
+            .hero-section{
+                padding: 15px;
+            }
+            .candidate-grid-hero{
+                gap: 5px;
+                margin-bottom: 20px;
+            }
+            .hero-title{
+                margin: 0 auto 5px;
+            }
+            .hero-description{
+                padding: 0;
+            }
+            .hero-subtitle{
+                margin-bottom: 15px;
+            }
+            .data-section{
+                padding: 20px;
+            }
+            #dataSection1 .data-container,
+            #dataSection3 .data-container.data-container.full-grid{
+                width: 65%;
+            }
+            .modal.active{
+                padding: 15px;
+                transform: translate(-50%, -50%) scale(0.8);
+            }
+
         }
 
         @media (max-width: 1024px) {
