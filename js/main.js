@@ -71,8 +71,7 @@
             'Perú Libre': { abbr: 'AP', color: '#22c55e', logo: './img/logos/peru-libre.jpg' },    
             'Cooperación Popular': { abbr: 'AP', color: '#22c55e', logo: './img/logos/cooperacion-popular.jpg' },   
             'Partido Verde': { abbr: 'PV', color: '#22c55e', logo: './img/logos/partido-verde.jpg' },   
-            'Somos Perú': { abbr: 'SP', color: '#be123c', logo: './img/logos/somos-peru.png' },
-            'Perú Patria Segura': { abbr: 'PPS', color: '#6670ff', logo: './img/logos/peru-patria-segura.png' }
+            'Venceremos': { abbr: 'V', color: '#be123c', logo: './img/logos/venceremos.jpg' },
         };
 
         const candidatos = [
@@ -109,10 +108,10 @@
             { nombre: 'Vladimir Cerrón', genero: 'M', denuncias: false, edad: 28, reeleccion: false, experiencia: false, partido: 'Perú Libre', departamento: 'LIMA', profesion: 'Bióloga', experienciaLaboral: 'Investigadora ambiental', sentencias: 'No', ingresos: 'S/.125,000', bio: 'Bióloga con propuestas ambientales innovadoras.' },
             { nombre: 'Yonhy Lescano', genero: 'M', denuncias: false, edad: 39, reeleccion: false, experiencia: true, partido: 'Cooperación Popular', departamento: 'MADRE DE DIOS', profesion: 'Administradora', experienciaLaboral: 'Gestora pública', sentencias: 'No', ingresos: 'S/.255,000', bio: 'Administradora con experiencia en gestión pública.' },
             { nombre: 'Alex Gonzáles', genero: 'M', denuncias: false, edad: 47, reeleccion: true, experiencia: true, partido: 'Partido Verde', departamento: 'PASCO', profesion: 'Abogada', experienciaLaboral: 'Congresista reeleccionista', sentencias: 'No', ingresos: 'S/.370,000', bio: 'Congresista reeleccionista enfocada en seguridad ciudadana.' },
-            { nombre: 'Hernán Garrido Lecca', genero: 'M', denuncias: true, edad: 33, reeleccion: false, experiencia: false, partido: 'Renovación Popular', departamento: 'HUANCAVELICA', profesion: 'Empresaria', experienciaLaboral: 'Directora comercial', sentencias: 'No', ingresos: 'S/.410,000', bio: 'Empresaria con denuncias tributarias.' },
-            { nombre: 'Julio Chávez', genero: 'M', denuncias: false, edad: 29, reeleccion: false, experiencia: false, partido: 'Partido Morado', departamento: 'LIMA', profesion: 'Nutricionista', experienciaLaboral: 'Especialista en salud', sentencias: 'No', ingresos: 'S/.115,000', bio: 'Nutricionista con propuestas en seguridad alimentaria.' },
-            { nombre: 'Ronald Atencio', genero: 'M', denuncias: false, edad: 41, reeleccion: false, experiencia: true, partido: 'Acción Popular', departamento: 'AMAZONAS', profesion: 'Socióloga', experienciaLaboral: 'Ex viceministra', sentencias: 'No', ingresos: 'S/.285,000', bio: 'Ex viceministra con experiencia en cultura.' },
-            { nombre: 'Mesias Guevara', genero: 'M', denuncias: true, edad: 44, reeleccion: true, experiencia: true, partido: 'Podemos Perú', departamento: 'CALLAO', profesion: 'Política', experienciaLaboral: 'Congresista actual', sentencias: 'No', ingresos: 'S/.395,000', bio: 'Política con denuncias por enriquecimiento ilícito.' }
+            { nombre: 'Hernán Garrido Lecca', genero: 'M', denuncias: true, edad: 33, reeleccion: false, experiencia: false, partido: 'APRA', departamento: 'HUANCAVELICA', profesion: 'Empresaria', experienciaLaboral: 'Directora comercial', sentencias: 'No', ingresos: 'S/.410,000', bio: 'Empresaria con denuncias tributarias.' },
+            { nombre: 'Julio Chávez', genero: 'M', denuncias: false, edad: 29, reeleccion: false, experiencia: false, partido: 'Acción Popular', departamento: 'LIMA', profesion: 'Nutricionista', experienciaLaboral: 'Especialista en salud', sentencias: 'No', ingresos: 'S/.115,000', bio: 'Nutricionista con propuestas en seguridad alimentaria.' },
+            { nombre: 'Ronald Atencio', genero: 'M', denuncias: false, edad: 41, reeleccion: false, experiencia: true, partido: 'Venceremos', departamento: 'AMAZONAS', profesion: 'Socióloga', experienciaLaboral: 'Ex viceministra', sentencias: 'No', ingresos: 'S/.285,000', bio: 'Ex viceministra con experiencia en cultura.' },
+            { nombre: 'Mesias Guevara', genero: 'M', denuncias: true, edad: 44, reeleccion: true, experiencia: true, partido: 'Partido Morado', departamento: 'CALLAO', profesion: 'Política', experienciaLaboral: 'Congresista actual', sentencias: 'No', ingresos: 'S/.395,000', bio: 'Política con denuncias por enriquecimiento ilícito.' }
         ];
 
         let currentStage = 0;
