@@ -1658,7 +1658,7 @@ body {
         .info-value.large {
             font-size: 32px;
             font-weight: bold;
-        }
+        }        
 
         @media (max-height: 732px){
 
@@ -1803,6 +1803,54 @@ body {
             .modal-name h2 {
                 font-size: 20px;
             }
+        }
+
+        @media (max-width: 640px){
+
+            .hero-section{
+                padding: 10px;
+            }
+                .candidate-grid-hero {
+                    grid-template-columns: repeat(5, 60px);
+                    gap: 6px;
+                    margin-bottom: 5px;
+                }
+                .hero-section img.hero-logo{
+                    margin-bottom: 0;
+                    max-width: 150px;
+                }
+                .hero-title{
+                    font-size: 1.5rem;
+                    margin: 5px auto;
+                }
+                .hero-description{
+                    font-size: 1rem;
+                    padding: 0;
+                }
+                .data-section{
+                    padding: 10px;
+                }
+                    .data-grid {
+                        grid-template-columns: repeat(5, 1fr);
+                    }
+                    #dataSection1 .data-container {
+                        width: 90%;
+                    }
+                    #dataSection1.data-section.visible{
+                        transform: translateY(-15%);
+                    }
+                    .box-info-data-grid-1{
+                        bottom: -40%;
+                        height: auto;
+                        padding: 5px;
+                        width: 100%;
+                    }
+                        .box-info-data-grid-1 p{
+                            font: 1rem / 1.4 "Roboto", sans-serif;
+                            padding: 0;
+                            width: 60%;
+                        }
+
         }
 
 
