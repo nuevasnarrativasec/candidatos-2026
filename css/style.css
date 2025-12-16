@@ -1487,13 +1487,14 @@ body {
         .candidate-party {
             transform: rotateY(180deg);
             background-color: #f0f0f0;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 10px;
             font-weight: bold;
             text-align: center;
-            padding: 5px;
+            padding: 0;
         }
 
         #dataSection1 .data-container{
