@@ -860,6 +860,7 @@ body {
 
 @media (max-width: 768px) {
     .scroll-container {
+        box-sizing: border-box;
         height: 800vh;
     }
 
@@ -1850,7 +1851,7 @@ body {
                             padding: 0;
                             width: 60%;
                         }
-                    #dataSection2 .data-container {
+                    #dataSection2 .data-container{
                         gap: 10px;
                         grid-template-columns: 1fr 1fr;
                     }
@@ -1870,6 +1871,30 @@ body {
                                 display: inline-block;
                                 width: 85%;
                             }
+                    #dataSection3 .data-container {
+
+                    }
+                        #dataSection3 .data-grid.large-grid{
+                            grid-template-columns: repeat(5, 1fr);
+                        }
+                        #dataSection3 .data-container.data-container.full-grid {
+                            width: 90%;
+                        }
+                        .info-box{
+                            left: 50%;
+                            padding: 20px 10px;
+                            right: inherit;
+                            width: 100%;
+                        }
+                    .search-input{
+                        width: 90%;
+                    }
+                    .search-icon{
+                        right: 40px;
+                    }
+                    .footer-content ul{
+                        display: block
+                    }
                     
 
         }
