@@ -1850,6 +1850,27 @@ body {
                             padding: 0;
                             width: 60%;
                         }
+                    #dataSection2 .data-container {
+                        gap: 10px;
+                        grid-template-columns: 1fr 1fr;
+                    }
+                    #dataSection2 .data-grid.large-grid{
+                        grid-template-columns: repeat(3, 1fr);
+                    }
+                    #dataSection2 .main-grados{
+                        display: inherit !important;
+                    }
+                        #dataSection2 .barra-grados{
+                            display: inherit !important;
+                        }
+                            #dataSection2 .data-content span.grado{
+                                display: block;
+                            }
+                            #dataSection2 .box-barra-grado{
+                                display: inline-block;
+                                width: 85%;
+                            }
+                    
 
         }
 
