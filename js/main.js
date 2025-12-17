@@ -284,6 +284,10 @@
                 case 5:
                     dataSection3.classList.add('hide');
                     searchSection.classList.add('visible');
+                    // Auto-scroll al inicio de la sección para que el usuario vea el contenido completo
+                    setTimeout(() => {
+                        searchSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }, 300);
                     break;
             }
         }
