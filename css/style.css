@@ -1299,6 +1299,8 @@ body {
             opacity: 1;
             transform: translateY(0);
             pointer-events: all;
+
+            padding-top: 50px;
         }
 
         .search-container {
@@ -1904,3 +1906,22 @@ img.hero-logo{
     margin-bottom: 20px;
     width: 200px;   
 }
+
+.box-metodologia{
+    border: 1px solid #707070;
+    box-sizing: border-box;
+    margin: 80px auto 0;
+    max-width: 550px;
+    padding: 30px 40px;
+}
+    .box-metodologia h6{
+        font: 1rem/1.5 "Roboto", sans-serif;
+        font-weight: 800;
+        margin: 0 auto;
+        text-transform: uppercase;
+    }
+        .box-metodologia p{
+            font: 1rem/1.6 "Roboto", sans-serif;
+            font-weight: 400;
+            text-align: left;
+        }
