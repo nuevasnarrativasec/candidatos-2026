@@ -1897,6 +1897,9 @@ body {
                     .footer-content ul{
                         display: block
                     }
+            #searchSection .box-metodologia{
+                max-width: 350px;
+            }
                     
 
         }
