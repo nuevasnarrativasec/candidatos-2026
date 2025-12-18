@@ -217,6 +217,11 @@ body {
     max-width: 800px;
     margin: 0;
 }
+    .hero-description img{
+        cursor: pointer;
+        margin: 10px auto;
+        max-width: 40px;
+    }
 
 .stage-context h2 {
     font-size: clamp(22px, 3vw, 32px);
@@ -1317,6 +1322,13 @@ body {
             padding: 40px;            
         }
 
+        .search-intro h3{
+            font: 1.3rem / 1.2 "Roboto";
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #000;
+        }
+
         .search-intro p {
             font: .9rem / 1.7 "Roboto";
             color: #333;
@@ -1752,8 +1764,8 @@ body {
             }
 
             .candidate-hero {
-                width: 60px;
-                height: 60px;
+                width: 55px;
+                height: 55px;
             }
 
             .hero-title {
