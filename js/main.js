@@ -484,3 +484,19 @@
 
         window.addEventListener('scroll', handleScroll);
         handleScroll();
+
+        // Scroll suave al hacer clic en el botón bajar
+        const btnBajar = document.querySelector('.btn-bajar');
+
+        if (btnBajar) {
+            btnBajar.addEventListener('click', () => {
+                console.log('dataSection1:', dataSection1);
+                console.log('offsetTop:', dataSection1?.offsetTop);
+                
+                // Prueba con window.scrollTo
+                window.scrollTo({
+                    top: window.innerHeight,
+                    behavior: 'smooth'
+                });
+            });
+        }
