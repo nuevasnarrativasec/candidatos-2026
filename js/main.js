@@ -119,12 +119,50 @@
 
         let currentStage = 0;
 
-        // Crear hero grid
+        // Crear hero grid con flip
         candidatos.forEach(c => {
             const div = document.createElement('div');
             div.className = 'candidate-hero';
+            
+            // Crear estructura para flip
+            const flipContainer = document.createElement('div');
+            flipContainer.className = 'hero-flip';
+            
+            // Cara frontal (foto del candidato)
+            const front = document.createElement('div');
+            front.className = 'hero-face hero-front';
             const candidatePhoto = getCandidatePhoto(c);
-            div.style.backgroundImage = `url(${candidatePhoto})`;
+            front.style.backgroundImage = `url(${candidatePhoto})`;
+            
+            // Cara trasera (logo del partido)
+            const back = document.createElement('div');
+            back.className = 'hero-face hero-back';
+            const partyInfo = partyStyles[c.partido] || { abbr: c.partido.slice(0, 3).toUpperCase(), color: '#222', logo: null };
+            back.style.backgroundColor = partyInfo.color;
+            
+            const partyLogo = getPartyLogo(c.partido);
+            if (partyInfo.logo) {
+                back.innerHTML = `<img src="${partyLogo}" alt="${c.partido}" style="width:100%; height:100%; object-fit:contain; border-radius: 10px;" onerror="this.style.display='none';">`;
+            } else {
+                back.textContent = partyInfo.abbr;
+                back.style.display = 'flex';
+                back.style.alignItems = 'center';
+                back.style.justifyContent = 'center';
+                back.style.color = '#fff';
+                back.style.fontWeight = 'bold';
+                back.style.fontSize = '12px';
+            }
+            
+            flipContainer.appendChild(front);
+            flipContainer.appendChild(back);
+            div.appendChild(flipContainer);
+            
+            // Prevenir cualquier acción al hacer click
+            div.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+            });
+            
             heroGrid.appendChild(div);
         });
 
@@ -504,6 +542,7 @@
         searchInput.addEventListener('input', (e) => {
             const query = e.target.value.toLowerCase();
             const carouselCandidates = carousel.querySelectorAll('.carousel-candidate');
+            const hasSearch = query !== '';
             
             carouselCandidates.forEach((card, i) => {
                 const candidato = candidatos[i];
@@ -511,6 +550,13 @@
                              candidato.partido.toLowerCase().includes(query);
                 
                 card.style.opacity = query === '' ? '1' : (match ? '1' : '0.2');
+                
+                // Desactivar flip para candidatos que coinciden con la búsqueda
+                if (hasSearch && match) {
+                    card.classList.add('no-flip');
+                } else {
+                    card.classList.remove('no-flip');
+                }
             });
         });
 
