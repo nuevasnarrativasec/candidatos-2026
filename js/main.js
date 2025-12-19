@@ -114,6 +114,9 @@
             { nombre: 'Mesias Guevara', genero: 'M', denuncias: true, edad: 44, reeleccion: true, experiencia: true, partido: 'Partido Morado', departamento: 'CALLAO', profesion: 'Política', experienciaLaboral: 'Congresista actual', sentencias: 'No', ingresos: 'S/.395,000', bio: 'Política con denuncias por enriquecimiento ilícito.' }
         ];
 
+        // Constante para número de columnas del grid
+        const GRID_COLUMNS = 8;
+
         let currentStage = 0;
 
         // Crear hero grid
@@ -178,6 +181,35 @@
             
             dataGrid3.appendChild(div3);
         });
+
+        // Ajustar dinámicamente el ancho del box-info para llenar la última fila
+        function adjustInfoBoxWidth() {
+            const infoBox = document.querySelector('.box-info-data-grid-1');
+            if (infoBox) {
+                const totalCandidates = candidatos.length;
+                const candidatesInLastRow = totalCandidates % GRID_COLUMNS;
+                
+                // Si la última fila está completa, el box va en una nueva fila completa
+                // Si no, el box ocupa las columnas restantes
+                let columnsForBox;
+                if (candidatesInLastRow === 0) {
+                    columnsForBox = GRID_COLUMNS; // Fila completa
+                } else {
+                    columnsForBox = GRID_COLUMNS - candidatesInLastRow;
+                }
+                
+                // Asegurar que el box tenga al menos 4 columnas para legibilidad
+                if (columnsForBox < 4 && candidatesInLastRow !== 0) {
+                    // Si no cabe bien, que vaya a la siguiente fila
+                    columnsForBox = GRID_COLUMNS;
+                }
+                
+                infoBox.style.gridColumn = `span ${columnsForBox}`;
+            }
+        }
+
+        // Llamar después de crear los candidatos
+        adjustInfoBoxWidth();
 
         // Crear carousel
         candidatos.forEach((c, i) => {
