@@ -427,6 +427,16 @@ body {
     transform: rotateY(180deg);
 }
 
+/* Hero flip en hover */
+.candidate-hero:hover .hero-flip {
+    transform: rotateY(180deg);
+}
+
+/* Desactivar flip en carousel durante búsqueda */
+.carousel-candidate.no-flip:hover {
+    transform: none !important;
+}
+
 .candidate-face {
     position: absolute;
     inset: 0;
@@ -961,14 +971,62 @@ body {
         }
 
         .candidate-hero {
+            cursor: default;
             width: 80px;
             height: 80px;
             border-radius: 12px;
             border: 2px solid #333;
+            background-image: none !important;
+            background-size: cover;
+            background-position: center;
+            /*filter: grayscale(100%);*/
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Contenedor del flip */
+        .hero-flip {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        /* Activar flip en hover */
+        .candidate-hero:hover .hero-flip {
+            transform: rotateY(180deg);
+        }
+
+        /* Caras del flip */
+        .hero-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 10px;
+            /*border: 2px solid #333;*/
+            overflow: hidden;
+        }
+
+        /* Cara frontal - foto del candidato */
+        .hero-front {
             background-size: cover;
             background-position: center;
             filter: grayscale(100%);
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Cara trasera - logo del partido */
+        .hero-back {
+            transform: rotateY(180deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-back img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 10px;
         }
 
         .logo-badge {
