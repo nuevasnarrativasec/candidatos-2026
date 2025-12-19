@@ -1515,44 +1515,61 @@ body {
         #dataSection1 .data-container{
             width: 70%;
         }
+        /* NUEVO: Wrapper que contiene grid + bloque info como CSS Grid */
+        .data-grid-wrapper {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            gap: 8px;
+        }
         #dataGrid1{
+            display: contents;
             position: relative;
         }
         .box-info-data-grid-1{
+            grid-column: span 6;
             border: 1px solid #000;
             border-radius: 10px;
-            bottom: 0;
             box-sizing: border-box;
-            height: 110px;
-            position: absolute;           
-            right: 0;
-            text-align: center;
-            width: 60%;
+            padding: 20px 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            background: #fff;
             z-index: 2;
+            /* Eliminar posicionamiento absoluto */
+            position: static;
+            height: auto;
+            width: auto;
+            bottom: auto;
+            right: auto;
         }
-            .box-info-data-grid-1 span{
-                display: inline-block;
+            .box-info-data-grid-1 span:first-child {
                 font: 1.1rem / 1.2 "Roboto", sans-serif;
                 font-weight: 800;
-                padding-top: 30px;
-                vertical-align: top;
-                width: 25%;
+                flex-shrink: 0;
+                display: inline-block;
+                padding: 0;
+                width: auto;
+                vertical-align: middle;
             }
             span.separador{
                 background-color: #000;
-                display: inline-block;
-                height: 90px;
-                margin: 10px;
-                vertical-align: bottom;
-                width: 1px;;
+                display: block;
+                height: 60px;
+                width: 1px;
+                flex-shrink: 0;
+                margin: 0;
+                vertical-align: middle;
             }
             .box-info-data-grid-1 p{
-                display: inline-block;
-                font: 1rem / 1.2 "Roboto", sans-serif;
-                padding-top: 25px;  
+                font: 0.95rem / 1.5 "Roboto", sans-serif;
                 text-align: left;
-                vertical-align: top;
-                width: 68%;
+                margin: 0;
+                padding: 0;
+                display: inline-block;
+                width: auto;
+                vertical-align: middle;
             }
                 .box-info-data-grid-1 p b{
                     font-weight: 600;
@@ -1755,6 +1772,14 @@ body {
                 width: 70px;
                 height: 70px;
             }
+
+            .data-grid-wrapper {
+                grid-template-columns: repeat(6, 1fr);
+            }
+            
+            .box-info-data-grid-1 {
+                grid-column: span 4;
+            }
         }
 
         @media (max-width: 768px) {
@@ -1845,25 +1870,37 @@ body {
                 .data-section{
                     padding: 10px;
                 }
-                    .data-grid {
+                    #dataSection1 .data-grid {
                         grid-template-columns: repeat(5, 1fr);
                     }
                     #dataSection1 .data-container {
                         width: 90%;
                     }
-                    #dataSection1.data-section.visible{
-                        transform: translateY(-15%);
+                    #dataSection1 .data-grid-wrapper {
+                        grid-template-columns: repeat(6, 1fr);
                     }
-                    .box-info-data-grid-1{
-                        bottom: -40%;
-                        height: auto;
-                        padding: 5px;
-                        width: 100%;
+                    #dataSection1.data-section.visible{
+                        /*transform: translateY(-15%);*/
+                    }
+                    .box-info-data-grid-1 {
+                        grid-column: span 5; /* En móvil ocupa todo el ancho */
+                        flex-direction: column;
+                        padding: 15px;
+                        gap: 10px;
+                        text-align: left;
                     }
                         .box-info-data-grid-1 p{
                             font: 1rem / 1.4 "Roboto", sans-serif;
                             padding: 0;
-                            width: 60%;
+                            width: 100%;
+                        }
+                        .box-info-data-grid-1 span:first-child{
+                            display: block;
+                            width: 100%;
+                        }
+                        span.separador{
+                            height: 1px;
+                            width: 100%;
                         }
                     #dataSection2 .data-container{
                         gap: 10px;
