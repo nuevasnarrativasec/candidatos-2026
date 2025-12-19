@@ -1064,7 +1064,7 @@ body {
             min-height: 100vh;
             display: flex;
             align-items: center;
-            padding: 80px 40px;
+            padding: 0;
             position: fixed;
             top: 0;
             left: 0;
@@ -1571,13 +1571,16 @@ body {
         }
 
         #dataSection1 .data-container{
-            width: 70%;
+            /*width: 70%;*/
         }
         /* NUEVO: Wrapper que contiene grid + bloque info como CSS Grid */
         .data-grid-wrapper {
             display: grid;
             grid-template-columns: repeat(8, 1fr);
             gap: 8px;
+            margin: 0 auto;
+            position: relative;   
+            width: 66%;
         }
         #dataGrid1{
             display: contents;
@@ -1769,11 +1772,20 @@ body {
                 margin-bottom: 15px;
             }
             .data-section{
-                padding: 20px;
+                /*padding: 20px;*/
             }
             #dataSection1 .data-container,
             #dataSection3 .data-container.data-container.full-grid{
-                width: 65%;
+                /*width: 65%;*/
+            }
+            #dataSection3 .data-container.data-container.full-grid{
+                width: 60%;
+            }
+            .data-grid-wrapper{
+                grid-template-columns: repeat(9, 1fr);
+            }
+            .box-info-data-grid-1{
+                width: 150%;
             }
             .modal.active{
                 padding: 15px;
@@ -1784,7 +1796,7 @@ body {
 
         @media (max-width: 1024px) {
             .candidate-grid-hero {
-                grid-template-columns: repeat(8, 70px);
+                grid-template-columns: repeat(12, 70px);
                 gap: 8px;
             }
 
@@ -1832,18 +1844,36 @@ body {
             }
 
             .data-grid-wrapper {
-                grid-template-columns: repeat(6, 1fr);
+                grid-template-columns: repeat(9, 1fr);
+                width: 90%;
             }
             
             .box-info-data-grid-1 {
                 grid-column: span 4;
             }
+
+            #dataSection2 .data-container {
+                padding: 0 30px;
+            }
+
+            #dataSection3 .data-container.data-container.full-grid{
+                width: 95%;
+            }
+
+            #dataSection3 .data-grid.large-grid{
+                grid-template-columns: repeat(9, 1fr);
+            }
+
         }
 
         @media (max-width: 768px) {
             .candidate-grid-hero {
-                grid-template-columns: repeat(4, 60px);
+                grid-template-columns: repeat(9, 60px);
                 gap: 6px;
+            }
+
+            .box-info-data-grid-1{
+                width: 150%;
             }
 
             .candidate-hero {
@@ -1909,13 +1939,13 @@ body {
                 padding: 10px;
             }
                 .candidate-grid-hero {
-                    grid-template-columns: repeat(5, 60px);
-                    gap: 6px;
+                    grid-template-columns: repeat(6, 51px);
+                    gap: 8px;
                     margin-bottom: 5px;
                 }
                 .hero-section img.hero-logo{
-                    margin-bottom: 0;
-                    max-width: 150px;
+                    margin: 10px auto;
+                    max-width: 140px;
                 }
                 .hero-title{
                     font-size: 1.5rem;
@@ -1940,12 +1970,16 @@ body {
                     #dataSection1.data-section.visible{
                         /*transform: translateY(-15%);*/
                     }
+                    .data-grid-wrapper{
+                        width: 100%;
+                    }
                     .box-info-data-grid-1 {
                         grid-column: span 5; /* En móvil ocupa todo el ancho */
                         flex-direction: column;
                         padding: 15px;
                         gap: 10px;
                         text-align: left;
+                        width: 150%;
                     }
                         .box-info-data-grid-1 p{
                             font: 1rem / 1.4 "Roboto", sans-serif;
