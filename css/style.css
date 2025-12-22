@@ -1636,7 +1636,7 @@ body {
                     font-weight: 600;
                 }
 
-        /* Modal */
+        /* Modal - Nuevo diseño completo */
         .modal-overlay {
             position: fixed;
             inset: 0;
@@ -1659,15 +1659,17 @@ body {
             left: 50%;
             transform: translate(-50%, -50%) scale(0.9);
             background: white;
-            border-radius: 16px;
-            padding: 40px;
+            border-radius: 20px;
+            padding: 0;
             box-shadow: 0 20px 60px rgba(0,0,0,0.3);
             z-index: 2000;
-            max-width: 500px;
-            width: 90%;
+            max-width: 480px;
+            width: 92%;
+            max-height: 90vh;
             opacity: 0;
             pointer-events: none;
             transition: all 0.3s ease;
+            overflow: hidden;
         }
 
         .modal.active {
@@ -1676,82 +1678,309 @@ body {
             pointer-events: all;
         }
 
+        .modal-scroll-container {
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 30px;
+            scrollbar-width: thin;
+            scrollbar-color: #ccc transparent;
+        }
+
+        .modal-scroll-container::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .modal-scroll-container::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .modal-scroll-container::-webkit-scrollbar-thumb {
+            background-color: #ccc;
+            border-radius: 3px;
+        }
+
         .modal-close {
             position: absolute;
-            top: 20px;
-            right: 20px;
-            background: none;
-            border: none;
-            font-size: 32px;
+            top: 15px;
+            right: 15px;
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            font-size: 24px;
             cursor: pointer;
-            color: #999;
-            transition: color 0.2s ease;
+            color: #666;
+            transition: all 0.2s ease;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
         }
 
         .modal-close:hover {
             color: #333;
+            border-color: #333;
         }
 
-        .modal-header {
+        /* Header del modal */
+        .modal-header-new {
+            display: flex;
+            gap: 15px;
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .modal-party-logo {
+            position: absolute;
+            top: -10px;
+            left: 75px;
+            width: 32px;
+            height: 32px;
+            border-radius: 6px;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: #f0f0f0;
+            border: 2px solid #fff;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+            z-index: 2;
+        }
+
+        .modal-photo-new {
+            width: 100px;
+            height: 120px;
+            border-radius: 12px;
+            background-size: cover;
+            background-position: center top;
+            flex-shrink: 0;
+            filter: grayscale(100%);
+        }
+
+        .modal-header-info {
+            flex: 1;
+            padding-top: 5px;
+        }
+
+        .modal-header-info h2 {
+            font: 1.3rem/1.2 'Roboto', sans-serif;
+            font-weight: 700;
+            margin: 0 0 5px 0;
+            color: #000;
+        }
+
+        .modal-party-name {
+            font: 0.9rem/1.3 'Roboto', sans-serif;
+            color: #e67e22;
+            margin: 0 0 10px 0;
+        }
+
+        .modal-basic-info {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .modal-basic-info li {
+            font: 0.85rem/1.5 'Roboto', sans-serif;
+            color: #333;
+            margin-bottom: 2px;
+        }
+
+        .modal-basic-info strong {
+            font-weight: 600;
+        }
+
+        .modal-divider {
+            border: none;
+            border-top: 1px solid #e0e0e0;
+            margin: 0 0 20px 0;
+        }
+
+        /* Secciones del modal */
+        .modal-section {
+            margin-bottom: 25px;
+        }
+
+        .section-header {
             display: flex;
             align-items: center;
-            gap: 20px;
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 2px solid #f0f0f0;
+            gap: 10px;
+            margin-bottom: 15px;
         }
 
-        .modal-photo {
-            width: 100px;
-            height: 100px;
+        .section-header h3 {
+            font: 0.95rem/1.3 'Roboto', sans-serif;
+            font-weight: 600;
+            color: #333;
+            margin: 0;
+        }
+
+        .section-icon {
+            width: 36px;
+            height: 36px;
             border-radius: 50%;
-            background-size: cover;
-            background-position: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
         }
 
-        .modal-name {
-            flex: 1;
+        .section-icon svg {
+            width: 18px;
+            height: 18px;
         }
 
-        .modal-name h2 {
-            font-size: 24px;
-            margin-bottom: 5px;
+        .icon-green {
+            background: #d4edda;
+            color: #28a745;
         }
 
-        .modal-name p {
-            color: #999;
-            font-size: 14px;
+        .icon-pink {
+            background: #f8d7da;
+            color: #dc3545;
         }
 
-        .modal-info {
+        .icon-blue {
+            background: #cce5ff;
+            color: #007bff;
+        }
+
+        .icon-orange {
+            background: #fff3cd;
+            color: #e67e22;
+        }
+
+        .section-grid {
             display: grid;
-            gap: 20px;
+            gap: 15px;
         }
 
-        .info-item {
-            padding: 15px;
-            background: #f8f8f8;
-            border-radius: 8px;
+        .section-grid.three-cols {
+            grid-template-columns: repeat(3, 1fr);
         }
 
-        .info-label {
-            font-weight: bold;
-            font-size: 12px;
-            color: #666;
-            text-transform: uppercase;
-            margin-bottom: 5px;
+        .section-grid.two-cols {
+            grid-template-columns: repeat(2, 1fr);
         }
 
-        .info-value {
-            font-size: 16px;
+        .section-item {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .item-label {
+            font: 0.75rem/1.3 'Roboto', sans-serif;
+            color: #999;
+        }
+
+        .item-value {
+            font: 0.85rem/1.4 'Roboto', sans-serif;
+            font-weight: 500;
             color: #333;
         }
 
-        .info-value.large {
-            font-size: 32px;
-            font-weight: bold;
-        }        
+        .item-value.large {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .highlight-box {
+            background: #fff9e6;
+            padding: 12px;
+            border-radius: 8px;
+        }
+
+        /* Secciones duales */
+        .modal-section-dual {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        .modal-section-half {
+            padding: 0;
+        }
+
+        .modal-section-half .section-header {
+            margin-bottom: 12px;
+        }
+
+        .modal-section-half .section-header h3 {
+            font-size: 0.85rem;
+        }
+
+        .section-items-vertical {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        /* Resumen */
+        .modal-resumen {
+            background: #fff9e6;
+            border-radius: 12px;
+            padding: 18px;
+            margin-bottom: 25px;
+        }
+
+        .modal-resumen h4 {
+            font: 0.9rem/1.3 'Roboto', sans-serif;
+            font-weight: 700;
+            color: #333;
+            margin: 0 0 10px 0;
+        }
+
+        .modal-resumen p {
+            font: 0.85rem/1.5 'Roboto', sans-serif;
+            color: #555;
+            margin: 0;
+        }
+
+        /* Footer del modal */
+        .modal-footer {
+            border-top: 1px solid #e0e0e0;
+            padding-top: 20px;
+        }
+
+        .modal-footer h4 {
+            font: 0.95rem/1.3 'Roboto', sans-serif;
+            font-weight: 700;
+            color: #333;
+            margin: 0 0 10px 0;
+        }
+
+        .modal-footer p {
+            font: 0.8rem/1.5 'Roboto', sans-serif;
+            color: #666;
+            margin: 0 0 10px 0;
+        }
+
+        .btn-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #e67e22;
+            color: white;
+            padding: 10px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font: 0.8rem/1 'Roboto', sans-serif;
+            font-weight: 500;
+            transition: background 0.2s ease;
+        }
+
+        .btn-download:hover {
+            background: #d35400;
+        }
+
+        .btn-download svg {
+            width: 16px;
+            height: 16px;
+        }     
 
         @media (max-height: 732px){
 
@@ -1920,7 +2149,7 @@ body {
             }
 
             .modal {
-                padding: 30px;
+                padding: 10px;
             }
 
             .modal-photo {
@@ -2040,6 +2269,59 @@ body {
                     }
             #searchSection .box-metodologia{
                 max-width: 350px;
+            }
+
+            .modal {
+                width: 95%;
+                max-height: 85vh;
+            }
+
+            .modal-scroll-container {
+                padding: 20px;
+                max-height: 85vh;
+            }
+
+            .modal-header-new {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .modal-party-logo {
+                left: calc(50% + 35px);
+            }
+
+            .modal-header-info {
+                text-align: center;
+            }
+
+            .modal-basic-info li {
+                text-align: left;
+            }
+
+            .section-grid.three-cols {
+                grid-template-columns: 1fr;
+            }
+
+            .section-grid.two-cols {
+                grid-template-columns: 1fr;
+            }
+
+            .modal-section-dual {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .section-header h3 {
+                font-size: 0.9rem;
+            }
+
+            .modal-close {
+                top: 10px;
+                right: 10px;
+                width: 32px;
+                height: 32px;
+                font-size: 20px;
             }
                     
 
