@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Candidatos 2026</title>
-    <link rel="stylesheet" href="./css/style.css?v35">
+    <link rel="stylesheet" href="./css/style.css?v37">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -259,43 +259,208 @@
     <div class="modal-overlay" id="modalOverlay"></div>
     <div class="modal" id="modal">
         <button class="modal-close" id="modalClose">&times;</button>
-        <div class="modal-header">
-            <div class="modal-photo" id="modalPhoto"></div>
-            <div class="modal-name">
-                <h2 id="modalName"></h2>
-                <p id="modalParty"></p>
-            </div>
-        </div>
-        <div class="modal-info">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                <div class="info-item">
-                    <div class="info-label">Edad</div>
-                    <div class="info-value" id="modalEdad"></div>
-                </div>
-                <div class="info-item">
-                    <div class="info-label">Departamento</div>
-                    <div class="info-value" id="modalDepartamento"></div>
+        
+        <div class="modal-scroll-container">
+            <!-- Header -->
+            <div class="modal-header-new">
+                <div class="modal-party-logo" id="modalPartyLogo"></div>
+                <div class="modal-photo-new" id="modalPhoto"></div>
+                <div class="modal-header-info">
+                    <h2 id="modalName"></h2>
+                    <p class="modal-party-name" id="modalParty"></p>
+                    <ul class="modal-basic-info">
+                        <li>• Postula a <strong>Presidente de la República</strong></li>
+                        <li>• <span id="modalEdad"></span> años</li>
+                        <li>• <strong>Vicepresidentes:</strong> <span id="modalVicepresidentes"></span></li>
+                    </ul>
                 </div>
             </div>
-            <div class="info-item">
-                <div class="info-label">Experiencia Laboral</div>
-                <div class="info-value" id="modalExperiencia"></div>
+
+            <hr class="modal-divider">
+
+            <!-- Perfil Profesional -->
+            <div class="modal-section">
+                <div class="section-header">
+                    <div class="section-icon icon-green">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </div>
+                    <h3>¿Cuál es su perfil profesional?</h3>
+                </div>
+                <div class="section-grid three-cols">
+                    <div class="section-item">
+                        <span class="item-label">Profesión declarada</span>
+                        <span class="item-value" id="modalProfesion"></span>
+                    </div>
+                    <div class="section-item">
+                        <span class="item-label">Formación más alta alcanzada</span>
+                        <span class="item-value" id="modalFormacion"></span>
+                    </div>
+                    <div class="section-item">
+                        <span class="item-label">Campo principal de especialización</span>
+                        <span class="item-value" id="modalEspecializacion"></span>
+                    </div>
+                </div>
             </div>
-            <div class="info-item">
-                <div class="info-label">Profesión</div>
-                <div class="info-value" id="modalProfesion"></div>
+
+            <!-- Experiencia en el Estado -->
+            <div class="modal-section">
+                <div class="section-header">
+                    <div class="section-icon icon-pink">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 21h18"></path>
+                            <path d="M5 21V7l8-4v18"></path>
+                            <path d="M19 21V11l-6-4"></path>
+                            <path d="M9 9v.01"></path>
+                            <path d="M9 12v.01"></path>
+                            <path d="M9 15v.01"></path>
+                            <path d="M9 18v.01"></path>
+                        </svg>
+                    </div>
+                    <h3>¿Qué experiencia tiene en el Estado o en funciones de poder?</h3>
+                </div>
+                <div class="section-grid three-cols">
+                    <div class="section-item">
+                        <span class="item-label">Experiencia en el sector público</span>
+                        <span class="item-value" id="modalExpPublica"></span>
+                    </div>
+                    <div class="section-item">
+                        <span class="item-label">Rol más relevante declarado</span>
+                        <span class="item-value" id="modalRolRelevante"></span>
+                    </div>
+                    <div class="section-item">
+                        <span class="item-label">Experiencia internacional</span>
+                        <span class="item-value" id="modalExpInternacional"></span>
+                    </div>
+                </div>
             </div>
-            <div class="info-item">
-                <div class="info-label">Sentencias</div>
-                <div class="info-value" id="modalSentencias"></div>
+
+            <!-- Trayectoria y Sentencias (dos columnas) -->
+            <div class="modal-section-dual">
+                <div class="modal-section-half">
+                    <div class="section-header">
+                        <div class="section-icon icon-blue">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </div>
+                        <h3>¿Ha tenido trayectoria política previa?</h3>
+                    </div>
+                    <div class="section-items-vertical">
+                        <div class="section-item">
+                            <span class="item-label">Cargos de elección popular</span>
+                            <span class="item-value" id="modalCargosEleccion"></span>
+                        </div>
+                        <div class="section-item">
+                            <span class="item-label">Cargos políticos o partidarios</span>
+                            <span class="item-value" id="modalCargosPartidarios"></span>
+                        </div>
+                        <div class="section-item">
+                            <span class="item-label">Continuidad política</span>
+                            <span class="item-value" id="modalContinuidad"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-section-half">
+                    <div class="section-header">
+                        <div class="section-icon icon-pink">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M12 8v4"></path>
+                                <path d="M12 16h.01"></path>
+                            </svg>
+                        </div>
+                        <h3>¿Registra sentencias o procesos judiciales?</h3>
+                    </div>
+                    <div class="section-items-vertical">
+                        <div class="section-item">
+                            <span class="item-label">Sentencias judiciales declaradas</span>
+                            <span class="item-value" id="modalSentencias"></span>
+                        </div>
+                        <div class="section-item">
+                            <span class="item-label">Demandas fundadas en su contra</span>
+                            <span class="item-value" id="modalDemandas"></span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="info-item">
-                <div class="info-label">Ingresos Declarados</div>
-                <div class="info-value large" id="modalIngresos"></div>
+
+            <!-- Ingresos -->
+            <div class="modal-section">
+                <div class="section-header">
+                    <div class="section-icon icon-orange">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M12 6v12"></path>
+                            <path d="M15 9.5c-.5-1-1.5-1.5-3-1.5s-2.5.5-2.5 1.5c0 1 1 1.5 2.5 2s2.5 1 2.5 2c0 1-1 1.5-2.5 1.5s-2.5-.5-3-1.5"></path>
+                        </svg>
+                    </div>
+                    <h3>¿Cuánto dinero declara haber ganado?</h3>
+                </div>
+                <div class="section-grid two-cols">
+                    <div class="section-item highlight-box">
+                        <span class="item-label">Ingresos anuales declarados (último año)</span>
+                        <span class="item-value large" id="modalIngresos"></span>
+                    </div>
+                    <div class="section-item">
+                        <span class="item-label">Origen principal de los ingresos</span>
+                        <span class="item-value" id="modalOrigenIngresos"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Patrimonio -->
+            <div class="modal-section">
+                <div class="section-header">
+                    <div class="section-icon icon-orange">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                        </svg>
+                    </div>
+                    <h3>¿Qué patrimonio declara?</h3>
+                </div>
+                <div class="section-grid two-cols">
+                    <div class="section-item">
+                        <span class="item-label">Bienes inmuebles</span>
+                        <span class="item-value" id="modalInmuebles"></span>
+                    </div>
+                    <div class="section-item">
+                        <span class="item-label">Bienes muebles (vehículos u otros)</span>
+                        <span class="item-value" id="modalMuebles"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Resumen -->
+            <div class="modal-resumen">
+                <h4>¿Qué nos dice su hoja de vida en conjunto?</h4>
+                <p id="modalResumen"></p>
+            </div>
+
+            <!-- Footer -->
+            <div class="modal-footer">
+                <h4>¿De dónde sale esta información?</h4>
+                <p><strong>Fuente:</strong><br>
+                Declaración Jurada de Hoja de Vida presentada ante el Jurado Nacional de Elecciones (JNE).</p>
+                <p><strong>Transparencia:</strong></p>
+                <a href="#" class="btn-download" id="modalPdfLink" target="_blank">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                    Descargar hoja de vida original en PDF
+                </a>
             </div>
         </div>
     </div>
 
-    <script src="./js/main.js?v15"></script>
+    <script src="./js/main.js?v17"></script>
 </body>
 </html>
