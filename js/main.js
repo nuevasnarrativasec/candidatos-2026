@@ -1,4 +1,4 @@
-        const heroSection = document.getElementById('heroSection');
+const heroSection = document.getElementById('heroSection');
         const dataSection1 = document.getElementById('dataSection1');
         const dataSection2 = document.getElementById('dataSection2');
         const dataSection3 = document.getElementById('dataSection3');
@@ -80,7 +80,34 @@
         };
 
         const candidatos = [
-            { nombre: 'Alfonso Lopez Chau', genero: 'M', denuncias: true, edad: 28, reeleccion: false, experiencia: false, partido: 'Ahora Nación', departamento: 'LIMA', profesion: 'Ingeniero de Sistemas', experienciaLaboral: 'Conductor en Compañía Latinoamericana de Radiodifusión SA', sentencias: 'No', ingresos: 'S/.150,000', bio: 'Ingeniero de sistemas con enfoque en políticas de innovación tecnológica.' },
+            { 
+                nombre: 'Alfonso Lopez Chau', 
+                genero: 'M', 
+                denuncias: true, 
+                edad: 28, 
+                reeleccion: false, 
+                experiencia: false, 
+                partido: 'Ahora Nación', 
+                vicepresidentes: 'Ana Maria Choquehuanca',
+                departamento: 'Lima', 
+                profesion: 'Ingeniero de Sistemas', 
+                formacion: 'Universidad Nacional de Ingeniería',
+                especializacion: 'Políticas de Innovación Tecnológica',
+                experiencia: 'Desarrollador de Software en Tech Solutions',
+                experienciaLaboral: 'Conductor en Compañía Latinoamericana de Radiodifusión SA', 
+                expInternacional: 'No',
+                cargosEleccion: 'No registra',
+                cargosPartidarios: 'No registra cargos partidarios relevantes',
+                continuidad: 'No se declara militancia previa distinta a la actual',
+                sentencias: 'No registra sentencias', 
+                demandas: 'No registra demandas',
+                ingresos: 'S/.150,000', 
+                origenIngresos: 'Sector público y ejercicio profesional',
+                inmuebles: 'Sí registra bienes inmuebles',
+                muebles: 'Sí registra',
+                bio: 'Ingeniero de sistemas con enfoque en políticas de innovación tecnológica.',
+                pdfLink: 'https://drive.google.com/file/d/1UXqW050ZnRkQJs5Pp4m_oLEwDrJObYlX/view'
+            },
             { nombre: 'Alvaro Paz de la Barra', genero: 'M', denuncias: false, edad: 45, reeleccion: true, experiencia: true, partido: 'Fe en el Perú', departamento: 'AREQUIPA', profesion: 'Economista', experienciaLaboral: 'Asesor económico del Congreso', sentencias: 'No', ingresos: 'S/.280,000', bio: 'Congresista actual, enfocado en desarrollo económico regional.' },
             { nombre: 'Armando Masse', genero: 'M', denuncias: true, edad: 52, reeleccion: true, experiencia: true, partido: 'Perú Federal', departamento: 'CUSCO', profesion: 'Abogado', experienciaLaboral: 'Ex alcalde provincial', sentencias: 'No', ingresos: 'S/.420,000', bio: 'Ex alcalde con experiencia en gestión municipal y obras públicas.' },
             { nombre: 'Carlos Alvarez', genero: 'M', denuncias: false, edad: 29, reeleccion: false, experiencia: false, partido: 'País para todos', departamento: 'LIMA', profesion: 'Sociólogo', experienciaLaboral: 'Activista social', sentencias: 'No', ingresos: 'S/.95,000', bio: 'Activista social enfocado en derechos de juventud y educación.' },
@@ -288,18 +315,62 @@
         // Modal functions
         function openModal(candidato) {
             const candidatePhoto = getCandidatePhoto(candidato);
+            const partyLogo = getPartyLogo(candidato.partido);
+            
+            // Header
             document.getElementById('modalPhoto').style.backgroundImage = `url(${candidatePhoto})`;
+            document.getElementById('modalPartyLogo').style.backgroundImage = `url(${partyLogo})`;
             document.getElementById('modalName').textContent = candidato.nombre;
             document.getElementById('modalParty').textContent = candidato.partido;
-            document.getElementById('modalEdad').textContent = `${candidato.edad} años`;
-            document.getElementById('modalDepartamento').textContent = candidato.departamento;
-            document.getElementById('modalExperiencia').textContent = candidato.experienciaLaboral;
-            document.getElementById('modalProfesion').textContent = candidato.profesion;
-            document.getElementById('modalSentencias').textContent = candidato.sentencias;
+            document.getElementById('modalEdad').textContent = candidato.edad;
+            document.getElementById('modalVicepresidentes').textContent = candidato.vicepresidentes || 'No disponible';
+            
+            // Perfil profesional
+            document.getElementById('modalProfesion').textContent = candidato.profesion || 'No disponible';
+            document.getElementById('modalFormacion').textContent = candidato.formacion || candidato.profesion || 'No disponible';
+            document.getElementById('modalEspecializacion').textContent = candidato.especializacion || 'No disponible';
+            
+            // Experiencia en el Estado
+            document.getElementById('modalExpPublica').textContent = candidato.expPublica || (candidato.experiencia ? 'Sí' : 'No');
+            document.getElementById('modalRolRelevante').textContent = candidato.rolRelevante || candidato.experienciaLaboral || 'No disponible';
+            document.getElementById('modalExpInternacional').textContent = candidato.expInternacional || 'No registra';
+            
+            // Trayectoria política
+            document.getElementById('modalCargosEleccion').textContent = candidato.cargosEleccion || (candidato.reeleccion ? 'Cargo actual' : 'No registra');
+            document.getElementById('modalCargosPartidarios').textContent = candidato.cargosPartidarios || 'No disponible';
+            document.getElementById('modalContinuidad').textContent = candidato.continuidad || 'No disponible';
+            
+            // Sentencias y demandas
+            document.getElementById('modalSentencias').textContent = candidato.sentencias === 'No' ? 'No registra sentencias' : candidato.sentencias;
+            document.getElementById('modalDemandas').textContent = candidato.demandas || 'No registra';
+            
+            // Ingresos
             document.getElementById('modalIngresos').textContent = candidato.ingresos;
+            document.getElementById('modalOrigenIngresos').textContent = candidato.origenIngresos || 'No especificado';
+            
+            // Patrimonio
+            document.getElementById('modalInmuebles').textContent = candidato.inmuebles || 'No disponible';
+            document.getElementById('modalMuebles').textContent = candidato.muebles || 'No disponible';
+            
+            // Resumen
+            document.getElementById('modalResumen').textContent = candidato.resumen || candidato.bio || 'Información no disponible.';
+            
+            // PDF Link
+            const pdfLink = document.getElementById('modalPdfLink');
+            if (candidato.pdfLink) {
+                pdfLink.href = candidato.pdfLink;
+            } else {
+                pdfLink.href = '#';
+            }
             
             modal.classList.add('active');
             modalOverlay.classList.add('active');
+            
+            // Scroll al inicio del modal
+            const scrollContainer = document.querySelector('.modal-scroll-container');
+            if (scrollContainer) {
+                scrollContainer.scrollTop = 0;
+            }
         }
 
         function closeModal() {
