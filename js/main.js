@@ -43,7 +43,7 @@ const partyStyles = {
     'Alianza para el Progreso': { abbr: 'APP', color: '#0d6efd', logo: './img/logos/alianza-para-el-progreso.jpg' },
     'Unido Perú': { abbr: 'UP', color: '#ff7a00', logo: './img/logos/unido-peru.jpg' },
     'Frente Esperanza': { abbr: 'FE', color: '#ff7a00', logo: './img/logos/frente-esperanza.jpg' },
-    'Fuerza Moderna': { abbr: 'FM', color: '#ff7a00', logo: './img/logos/fuerza-moderna.jpg' },
+    'Alianza Fuerza y Libertad': { abbr: 'FM', color: '#ff7a00', logo: './img/logos/alianza-fuerza-y-libertad.jpg' },
     'Perú Acción': { abbr: 'PA', color: '#ff7a00', logo: './img/logos/peru-accion.jpg' },
     'APRA': { abbr: 'APRA', color: '#ff7a00', logo: './img/logos/apra.jpg' },
     'Partido del Buen Gobierno': { abbr: 'PDBG', color: '#ff7a00', logo: './img/logos/partido-del-buen-gobierno.jpg' },
@@ -59,7 +59,7 @@ const partyStyles = {
     'Renovación Popular': { abbr: 'RP', color: '#22c55e', logo: './img/logos/renovacion-popular.jpg' },  
     'Obras': { abbr: 'OB', color: '#22c55e', logo: './img/logos/obras.jpg' },       
     'Partido Morado': { abbr: 'PM', color: '#22c55e', logo: './img/logos/partido-morado.jpg' },   
-    'Unidad y Paz': { abbr: 'UYP', color: '#22c55e', logo: './img/logos/unidad-y-paz.jpg' },    
+    'Alianza Unidad Nacional': { abbr: 'UYP', color: '#22c55e', logo: './img/logos/alianza-unidad-nacional.jpg' },    
     'Juntos por el Perú': { abbr: 'JPP', color: '#22c55e', logo: './img/logos/juntos-por-el-peru.jpg' }, 
     'Un Camino Diferente': { abbr: 'UCD', color: '#22c55e', logo: './img/logos/un-camino-diferente.jpg' },     
     'Nuevo Perú': { abbr: 'NP', color: '#22c55e', logo: './img/logos/nuevo-peru.jpg' },     
@@ -77,6 +77,7 @@ const partyStyles = {
 
 // Candidates data with attributes for each section
 const candidatos = [
+    { nombre: 'Carlos Alvarez', genero: 'M', denuncias: false, edad: 29, reeleccion: false, experiencia: false, partido: 'País para todos', departamento: 'LIMA', profesion: 'Sociólogo', experienciaLaboral: 'Activista social', sentencias: 'No', ingresos: 'S/.95,000', bio: 'Activista social enfocado en derechos de juventud y educación.', extranjero: false, millennial: true, movilidad: false, educacionGrupo: 'bachiller', inconclusos: false, delitos: false, reincidencia: false, sentenciaTipo: 'sin' },
     { 
         nombre: 'Alfonso Lopez Chau', 
         genero: 'M', 
@@ -115,12 +116,12 @@ const candidatos = [
     },
     { nombre: 'Alvaro Paz de la Barra', genero: 'M', denuncias: false, edad: 45, reeleccion: true, experiencia: true, partido: 'Fe en el Perú', departamento: 'AREQUIPA', profesion: 'Economista', experienciaLaboral: 'Asesor económico del Congreso', sentencias: 'No', ingresos: 'S/.280,000', bio: 'Congresista actual, enfocado en desarrollo económico regional.', extranjero: false, millennial: false, movilidad: true, educacionGrupo: 'maestro', inconclusos: false, delitos: false, reincidencia: false, sentenciaTipo: 'sin' },
     { nombre: 'Armando Masse', genero: 'M', denuncias: true, edad: 52, reeleccion: true, experiencia: true, partido: 'Perú Federal', departamento: 'CUSCO', profesion: 'Abogado', experienciaLaboral: 'Ex alcalde provincial', sentencias: 'Sí - Penal', ingresos: 'S/.420,000', bio: 'Ex alcalde con experiencia en gestión municipal y obras públicas.', extranjero: false, millennial: false, movilidad: true, educacionGrupo: 'maestro', inconclusos: true, delitos: true, reincidencia: false, sentenciaTipo: 'penal' },
-    { nombre: 'Carlos Alvarez', genero: 'M', denuncias: false, edad: 29, reeleccion: false, experiencia: false, partido: 'País para todos', departamento: 'LIMA', profesion: 'Sociólogo', experienciaLaboral: 'Activista social', sentencias: 'No', ingresos: 'S/.95,000', bio: 'Activista social enfocado en derechos de juventud y educación.', extranjero: false, millennial: true, movilidad: false, educacionGrupo: 'bachiller', inconclusos: false, delitos: false, reincidencia: false, sentenciaTipo: 'sin' },
+    
     { nombre: 'Carlos Espá', genero: 'M', denuncias: false, edad: 38, reeleccion: false, experiencia: true, partido: 'Sí creo', departamento: 'LA LIBERTAD', profesion: 'Administrador', experienciaLaboral: 'Gerente regional', sentencias: 'No', ingresos: 'S/.350,000', bio: 'Empresario con trayectoria en desarrollo social empresarial.', extranjero: false, millennial: true, movilidad: true, educacionGrupo: 'licenciado', inconclusos: false, delitos: false, reincidencia: false, sentenciaTipo: 'sin' },
     { nombre: 'César Acuña', genero: 'M', denuncias: true, edad: 41, reeleccion: true, experiencia: true, partido: 'Alianza para el Progreso', departamento: 'PIURA', profesion: 'Ingeniero Agrónomo', experienciaLaboral: 'Congresista actual', sentencias: 'Sí - Civil', ingresos: 'S/.290,000', bio: 'Político de carrera con enfoque en agricultura.', extranjero: false, millennial: false, movilidad: true, educacionGrupo: 'maestro', inconclusos: true, delitos: false, reincidencia: false, sentenciaTipo: 'civil' },
     { nombre: 'Charlie Carrasco', genero: 'M', denuncias: false, edad: 27, reeleccion: false, experiencia: false, partido: 'Unido Perú', departamento: 'LIMA', profesion: 'Economista', experienciaLaboral: 'Analista financiero', sentencias: 'No', ingresos: 'S/.120,000', bio: 'Economista joven especializado en finanzas públicas.', extranjero: false, millennial: true, movilidad: false, educacionGrupo: 'universitario', inconclusos: false, delitos: false, reincidencia: false, sentenciaTipo: 'sin' },
     { nombre: 'Fernando Olivera', genero: 'M', denuncias: false, edad: 35, reeleccion: false, experiencia: true, partido: 'Frente Esperanza', departamento: 'LAMBAYEQUE', profesion: 'Contador', experienciaLaboral: 'Ex funcionario público', sentencias: 'No', ingresos: 'S/.180,000', bio: 'Ex funcionario público con experiencia en transparencia.', extranjero: false, millennial: true, movilidad: true, educacionGrupo: 'licenciado', inconclusos: false, delitos: false, reincidencia: false, sentenciaTipo: 'sin' },
-    { nombre: 'Fiorella Mollineli', genero: 'F', denuncias: true, edad: 48, reeleccion: true, experiencia: true, partido: 'Fuerza Moderna', departamento: 'JUNÍN', profesion: 'Médico', experienciaLaboral: 'Congresista reeleccionista', sentencias: 'No', ingresos: 'S/.510,000', bio: 'Congresista reeleccionista con historial controversial.', extranjero: false, millennial: false, movilidad: true, educacionGrupo: 'maestro', inconclusos: true, delitos: false, reincidencia: false, sentenciaTipo: 'sin', internacional: true },
+    { nombre: 'Fiorella Mollineli', genero: 'F', denuncias: true, edad: 48, reeleccion: true, experiencia: true, partido: 'Alianza Fuerza y Libertad', departamento: 'JUNÍN', profesion: 'Médico', experienciaLaboral: 'Congresista reeleccionista', sentencias: 'No', ingresos: 'S/.510,000', bio: 'Congresista reeleccionista con historial controversial.', extranjero: false, millennial: false, movilidad: true, educacionGrupo: 'maestro', inconclusos: true, delitos: false, reincidencia: false, sentenciaTipo: 'sin', internacional: true },
     { nombre: 'Francisco Diez Canseco', genero: 'M', denuncias: false, edad: 33, reeleccion: false, experiencia: false, partido: 'Perú Acción', departamento: 'LIMA', profesion: 'Abogado', experienciaLaboral: 'Especialista en DDHH', sentencias: 'No', ingresos: 'S/.160,000', bio: 'Abogado especializado en derechos humanos y justicia social.', extranjero: false, millennial: true, movilidad: false, educacionGrupo: 'bachiller', inconclusos: false, delitos: false, reincidencia: false, sentenciaTipo: 'sin' },
     { nombre: 'Enrique Valderrama', genero: 'M', denuncias: false, edad: 42, reeleccion: false, experiencia: true, partido: 'APRA', departamento: 'AYACUCHO', profesion: 'Ingeniero Civil', experienciaLaboral: 'Ex regidor', sentencias: 'No', ingresos: 'S/.240,000', bio: 'Ex regidor con propuestas en medio ambiente.', extranjero: false, millennial: false, movilidad: true, educacionGrupo: 'no-universitario', inconclusos: true, delitos: false, reincidencia: false, sentenciaTipo: 'sin' },
     { nombre: 'Jorge Nieto', genero: 'M', denuncias: true, edad: 29, reeleccion: false, experiencia: false, partido: 'Partido del Buen Gobierno', departamento: 'LIMA', profesion: 'Comunicador', experienciaLaboral: 'Periodista independiente', sentencias: 'Sí - Penal', ingresos: 'S/.105,000', bio: 'Comunicador social con historial de denuncias por difamación.', extranjero: false, millennial: true, movilidad: false, educacionGrupo: 'tecnico', inconclusos: false, delitos: true, reincidencia: false, sentenciaTipo: 'penal' },
@@ -135,7 +136,7 @@ const candidatos = [
     { nombre: 'Rafael Belaúnde', genero: 'M', denuncias: false, edad: 32, reeleccion: false, experiencia: true, partido: 'Libertad Popular', departamento: 'LIMA', profesion: 'Politóloga', experienciaLaboral: 'Ex funcionaria ministerial', sentencias: 'No', ingresos: 'S/.195,000', bio: 'Ex funcionaria con enfoque en igualdad de género.', extranjero: true, millennial: true, movilidad: true, educacionGrupo: 'universitario', inconclusos: false, delitos: false, reincidencia: false, sentenciaTipo: 'sin', internacional: true },
     { nombre: 'Rafael López Aliaga', genero: 'M', denuncias: true, edad: 29, reeleccion: false, experiencia: false, partido: 'Renovación Popular', departamento: 'ICA', profesion: 'Periodista', experienciaLaboral: 'Conductora de noticias', sentencias: 'Sí - Penal', ingresos: 'S/.140,000', bio: 'Periodista con denuncias por plagio.', extranjero: false, millennial: true, movilidad: true, educacionGrupo: 'tecnico', inconclusos: true, delitos: true, reincidencia: false, sentenciaTipo: 'penal' },
     { nombre: 'Ricardo Belmont', genero: 'M', denuncias: false, edad: 43, reeleccion: true, experiencia: true, partido: 'Obras', departamento: 'ANCASH', profesion: 'Educadora', experienciaLaboral: 'Congresista reeleccionista', sentencias: 'No', ingresos: 'S/.265,000', bio: 'Congresista reeleccionista enfocada en niñez.', extranjero: false, millennial: false, movilidad: true, educacionGrupo: 'secundaria', inconclusos: true, delitos: false, reincidencia: false, sentenciaTipo: 'sin' },
-    { nombre: 'Roberto Chiabra', genero: 'M', denuncias: true, edad: 38, reeleccion: false, experiencia: true, partido: 'Unidad y Paz', departamento: 'CAJAMARCA', profesion: 'Ingeniera', experienciaLaboral: 'Ex regidora provincial', sentencias: 'Sí - Penal', ingresos: 'S/.220,000', bio: 'Ex regidora con investigaciones por nepotismo.', extranjero: false, millennial: true, movilidad: true, educacionGrupo: 'no-universitario', inconclusos: true, delitos: true, reincidencia: true, sentenciaTipo: 'penal' },
+    { nombre: 'Roberto Chiabra', genero: 'M', denuncias: true, edad: 38, reeleccion: false, experiencia: true, partido: 'Alianza Unidad Nacional', departamento: 'CAJAMARCA', profesion: 'Ingeniera', experienciaLaboral: 'Ex regidora provincial', sentencias: 'Sí - Penal', ingresos: 'S/.220,000', bio: 'Ex regidora con investigaciones por nepotismo.', extranjero: false, millennial: true, movilidad: true, educacionGrupo: 'no-universitario', inconclusos: true, delitos: true, reincidencia: true, sentenciaTipo: 'penal' },
     { nombre: 'Roberto Sanchez', genero: 'M', denuncias: false, edad: 45, reeleccion: true, experiencia: true, partido: 'Juntos por el Perú', departamento: 'PUNO', profesion: 'Administradora', experienciaLaboral: 'Política veterana', sentencias: 'No', ingresos: 'S/.315,000', bio: 'Política experimentada en desarrollo rural.', extranjero: false, millennial: false, movilidad: true, educacionGrupo: 'bachiller', inconclusos: false, delitos: false, reincidencia: false, sentenciaTipo: 'sin' },
     { nombre: 'Rosario Fernández', genero: 'F', denuncias: false, edad: 31, reeleccion: false, experiencia: false, partido: 'Un Camino Diferente', departamento: 'LIMA', profesion: 'Arquitecta', experienciaLaboral: 'Especialista en vivienda', sentencias: 'No', ingresos: 'S/.175,000', bio: 'Arquitecta enfocada en vivienda social.', extranjero: false, millennial: true, movilidad: false, educacionGrupo: 'primaria', inconclusos: false, delitos: false, reincidencia: false, sentenciaTipo: 'sin' },
     { nombre: 'Vladimir Cerrón', genero: 'M', denuncias: false, edad: 28, reeleccion: false, experiencia: false, partido: 'Perú Libre', departamento: 'LIMA', profesion: 'Bióloga', experienciaLaboral: 'Investigadora ambiental', sentencias: 'Sí - Penal', ingresos: 'S/.125,000', bio: 'Bióloga con propuestas ambientales innovadoras.', extranjero: false, millennial: true, movilidad: false, educacionGrupo: 'maestro', inconclusos: false, delitos: true, reincidencia: false, sentenciaTipo: 'penal' },
@@ -150,313 +151,323 @@ const candidatos = [
     { nombre: 'George Forsyth', genero: 'M', denuncias: true, edad: 44, reeleccion: true, experiencia: true, partido: 'Somos Perú', departamento: 'CALLAO', profesion: 'Política', experienciaLaboral: 'Congresista actual', sentencias: 'No', ingresos: 'S/.395,000', bio: 'Política con denuncias por enriquecimiento ilícito.', extranjero: false, millennial: false, movilidad: true, educacionGrupo: 'licenciado', inconclusos: false, delitos: false, reincidencia: false, sentenciaTipo: 'sin' }
 ];
 
-// Create hero grid with flip
-candidatos.forEach(c => {
-    const div = document.createElement('div');
-    div.className = 'candidate-hero';
     
-    const flipContainer = document.createElement('div');
-    flipContainer.className = 'hero-flip';
-    
-    const front = document.createElement('div');
-    front.className = 'hero-face hero-front';
-    const candidatePhoto = getCandidatePhoto(c);
-    front.style.backgroundImage = `url(${candidatePhoto})`;
-    
-    const back = document.createElement('div');
-    back.className = 'hero-face hero-back';
-    const partyInfo = partyStyles[c.partido] || { abbr: c.partido.slice(0, 3).toUpperCase(), color: '#222', logo: null };
-    back.style.backgroundColor = partyInfo.color;
-    
-    const partyLogo = getPartyLogo(c.partido);
-    if (partyInfo.logo) {
-        back.innerHTML = `<img src="${partyLogo}" alt="${c.partido}" style="width:100%; height:100%; object-fit:contain; border-radius: 10px;" onerror="this.style.display='none';">`;
-    } else {
-        back.textContent = partyInfo.abbr;
-        back.style.display = 'flex';
-        back.style.alignItems = 'center';
-        back.style.justifyContent = 'center';
-        back.style.color = '#fff';
-        back.style.fontWeight = 'bold';
-        back.style.fontSize = '12px';
-    }
-    
-    flipContainer.appendChild(front);
-    flipContainer.appendChild(back);
-    div.appendChild(flipContainer);
-    
-    div.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-    });
-    
-    heroGrid.appendChild(div);
-});
 
-// Create fixed grid for data sections
-candidatos.forEach((c, idx) => {
-    const div = document.createElement('div');
-    div.className = 'data-candidate-fixed';
-    div.dataset.index = idx;
-    const candidatePhoto = getCandidatePhoto(c);
-    div.style.backgroundImage = `url(${candidatePhoto})`;
-    fixedGrid.appendChild(div);
-});
-
-// Create carousel
-candidatos.forEach((c, i) => {
-    const div = document.createElement('div');
-    div.className = 'carousel-candidate';
-    
-    const face = document.createElement('div');
-    face.className = 'candidate-face';
-    const candidatePhoto = getCandidatePhoto(c);
-    face.style.backgroundImage = `url(${candidatePhoto})`;
-    
-    const party = document.createElement('div');
-    party.className = 'candidate-party';
-    const partyInfo = partyStyles[c.partido] || { abbr: c.partido.slice(0, 3).toUpperCase(), color: '#222', logo: null };
-    party.style.backgroundColor = partyInfo.color;
-    
-    const partyLogo = getPartyLogo(c.partido);
-    if (partyInfo.logo) {
-        party.innerHTML = `<img src="${partyLogo}" alt="${c.partido}" style="width:100%; height:100%; object-fit:contain; border-radius: 10px;" onerror="this.style.display='none';">`;
-    } else {
-        party.textContent = partyInfo.abbr;
-    }
-    
-    div.appendChild(face);
-    div.appendChild(party);
-    div.addEventListener('click', () => openModal(c));
-    carousel.appendChild(div);
-});
-
-// Modal functions
-function openModal(candidato) {
-    const candidatePhoto = getCandidatePhoto(candidato);
-    const partyLogo = getPartyLogo(candidato.partido);
-    
-    document.getElementById('modalPhoto').style.backgroundImage = `url(${candidatePhoto})`;
-    document.getElementById('modalPartyLogo').style.backgroundImage = `url(${partyLogo})`;
-    document.getElementById('modalName').textContent = candidato.nombre;
-    document.getElementById('modalParty').textContent = candidato.partido;
-    document.getElementById('modalEdad').textContent = candidato.edad;
-    document.getElementById('modalVicepresidentes').textContent = candidato.vicepresidentes || 'No disponible';
-    
-    document.getElementById('modalProfesion').textContent = candidato.profesion || 'No disponible';
-    document.getElementById('modalFormacion').textContent = candidato.formacion || candidato.profesion || 'No disponible';
-    document.getElementById('modalEspecializacion').textContent = candidato.especializacion || 'No disponible';
-    
-    document.getElementById('modalExpPublica').textContent = candidato.expPublica || (candidato.experiencia ? 'Sí' : 'No');
-    document.getElementById('modalRolRelevante').textContent = candidato.rolRelevante || candidato.experienciaLaboral || 'No disponible';
-    document.getElementById('modalExpInternacional').textContent = candidato.expInternacional || 'No registra';
-    
-    document.getElementById('modalCargosEleccion').textContent = candidato.cargosEleccion || (candidato.reeleccion ? 'Cargo actual' : 'No registra');
-    document.getElementById('modalCargosPartidarios').textContent = candidato.cargosPartidarios || 'No disponible';
-    document.getElementById('modalContinuidad').textContent = candidato.continuidad || 'No disponible';
-    
-    document.getElementById('modalSentencias').textContent = candidato.sentencias === 'No' ? 'No registra sentencias' : candidato.sentencias;
-    document.getElementById('modalDemandas').textContent = candidato.demandas || 'No registra';
-    
-    document.getElementById('modalIngresos').textContent = candidato.ingresos;
-    document.getElementById('modalOrigenIngresos').textContent = candidato.origenIngresos || 'No especificado';
-    
-    document.getElementById('modalInmuebles').textContent = candidato.inmuebles || 'No disponible';
-    document.getElementById('modalMuebles').textContent = candidato.muebles || 'No disponible';
-    
-    document.getElementById('modalResumen').textContent = candidato.resumen || candidato.bio || 'Información no disponible.';
-    
-    const pdfLink = document.getElementById('modalPdfLink');
-    if (candidato.pdfLink) {
-        pdfLink.href = candidato.pdfLink;
-    } else {
-        pdfLink.href = '#';
-    }
-    
-    modal.classList.add('active');
-    modalOverlay.classList.add('active');
-    
-    const scrollContainer = document.querySelector('.modal-scroll-container');
-    if (scrollContainer) {
-        scrollContainer.scrollTop = 0;
-    }
-}
-
-function closeModal() {
-    modal.classList.remove('active');
-    modalOverlay.classList.remove('active');
-}
-
-modalClose.addEventListener('click', closeModal);
-modalOverlay.addEventListener('click', closeModal);
-
-// Section highlight configurations
-const sectionConfigs = {
-    'extranjero': {
-        filter: (c) => c.extranjero,
-        color: 'active-yellow'
-    },
-    'mujeres': {
-        filter: (c) => c.genero === 'F',
-        color: 'active-yellow'
-    },
-    'internacional': {
-        filter: (c) => c.internacional,
-        color: 'active-yellow'
-    },
-    'millennial': {
-        filter: (c) => c.millennial,
-        color: 'active-yellow'
-    },
-    'movilidad': {
-        filter: (c) => c.movilidad,
-        color: 'active-yellow'
-    },
-    'educacion': {
-        filter: (c) => true, // All candidates
-        colorMap: {
-            'maestro': 'active-yellow',
-            'bachiller': 'active-pink',
-            'licenciado': 'active-orange',
-            'universitario': 'active-green',
-            'no-universitario': 'active-blue',
-            'tecnico': 'active-blue',
-            'secundaria': 'active-red',
-            'primaria': 'active-lime'
+    candidatos.forEach((c, idx) => {
+        // Insertar el logo en la posición correcta (después del candidato 31, índice 30)
+        // Para que quede centrado en la fila 3: 5 candidatos + logo (span 3) + 5 candidatos
+        if (idx === 18) {
+            const logoDiv = document.createElement('div');
+            logoDiv.className = 'hero-logo-cell';
+            logoDiv.innerHTML = `<img src="./img/logo-tu-decides.jpg" alt="Tú decides" class="hero-logo-integrated">`;
+            heroGrid.appendChild(logoDiv);
         }
-    },
-    'inconclusos': {
-        filter: (c) => c.inconclusos,
-        color: 'active-red'
-    },
-    'delitos': {
-        filter: (c) => c.delitos,
-        color: 'active-red'
-    },
-    'reincidencia': {
-        filter: (c) => c.reincidencia,
-        color: 'active-red'
-    },
-    'sentencias': {
-        filter: (c) => c.sentenciaTipo !== 'sin',
-        colorMap: {
-            'penal': 'active-red',
-            'civil': 'active-blue',
-            'sin': null
-        }
-    }
-};
 
-// Clear all highlights from grid
-function clearHighlights() {
-    const gridCandidates = fixedGrid.querySelectorAll('.data-candidate-fixed');
-    gridCandidates.forEach(el => {
-        el.classList.remove('active-yellow', 'active-red', 'active-blue', 'active-pink', 'active-orange', 'active-green', 'active-lime');
-    });
-}
-
-// Apply highlights for a section
-function applyHighlights(sectionName) {
-    clearHighlights();
-    
-    const config = sectionConfigs[sectionName];
-    if (!config) return;
-    
-    const gridCandidates = fixedGrid.querySelectorAll('.data-candidate-fixed');
-    
-    gridCandidates.forEach((el, idx) => {
-        const candidato = candidatos[idx];
-        if (!candidato) return;
+        const div = document.createElement('div');
+        div.className = 'candidate-hero';
         
-        if (config.colorMap) {
-            // Multiple colors based on attribute
-            if (sectionName === 'educacion') {
-                const colorClass = config.colorMap[candidato.educacionGrupo];
-                if (colorClass) {
-                    el.classList.add(colorClass);
-                }
-            } else if (sectionName === 'sentencias') {
-                const colorClass = config.colorMap[candidato.sentenciaTipo];
-                if (colorClass) {
-                    el.classList.add(colorClass);
-                }
-            }
+        const flipContainer = document.createElement('div');
+        flipContainer.className = 'hero-flip';
+        
+        const front = document.createElement('div');
+        front.className = 'hero-face hero-front';
+        const candidatePhoto = getCandidatePhoto(c);
+        front.style.backgroundImage = `url(${candidatePhoto})`;
+        
+        const back = document.createElement('div');
+        back.className = 'hero-face hero-back';
+        const partyInfo = partyStyles[c.partido] || { abbr: c.partido.slice(0, 3).toUpperCase(), color: '#222', logo: null };
+        back.style.backgroundColor = partyInfo.color;
+        
+        const partyLogo = getPartyLogo(c.partido);
+        if (partyInfo.logo) {
+            back.innerHTML = `<img src="${partyLogo}" alt="${c.partido}" style="width:100%; height:100%; object-fit:contain; border-radius: 10px;" onerror="this.style.display='none';">`;
         } else {
-            // Single color
-            if (config.filter(candidato)) {
-                el.classList.add(config.color);
+            back.textContent = partyInfo.abbr;
+            back.style.display = 'flex';
+            back.style.alignItems = 'center';
+            back.style.justifyContent = 'center';
+            back.style.color = '#fff';
+            back.style.fontWeight = 'bold';
+            back.style.fontSize = '12px';
+        }
+        
+        flipContainer.appendChild(front);
+        flipContainer.appendChild(back);
+        div.appendChild(flipContainer);
+        
+        div.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+        });
+        
+        heroGrid.appendChild(div);
+    });
+
+    // Create fixed grid for data sections
+    candidatos.forEach((c, idx) => {
+        const div = document.createElement('div');
+        div.className = 'data-candidate-fixed';
+        div.dataset.index = idx;
+        const candidatePhoto = getCandidatePhoto(c);
+        div.style.backgroundImage = `url(${candidatePhoto})`;
+        fixedGrid.appendChild(div);
+    });
+
+    // Create carousel
+    candidatos.forEach((c, i) => {
+        const div = document.createElement('div');
+        div.className = 'carousel-candidate';
+        
+        const face = document.createElement('div');
+        face.className = 'candidate-face';
+        const candidatePhoto = getCandidatePhoto(c);
+        face.style.backgroundImage = `url(${candidatePhoto})`;
+        
+        const party = document.createElement('div');
+        party.className = 'candidate-party';
+        const partyInfo = partyStyles[c.partido] || { abbr: c.partido.slice(0, 3).toUpperCase(), color: '#222', logo: null };
+        party.style.backgroundColor = partyInfo.color;
+        
+        const partyLogo = getPartyLogo(c.partido);
+        if (partyInfo.logo) {
+            party.innerHTML = `<img src="${partyLogo}" alt="${c.partido}" style="width:100%; height:100%; object-fit:contain; border-radius: 10px;" onerror="this.style.display='none';">`;
+        } else {
+            party.textContent = partyInfo.abbr;
+        }
+        
+        div.appendChild(face);
+        div.appendChild(party);
+        div.addEventListener('click', () => openModal(c));
+        carousel.appendChild(div);
+    });
+
+    // Modal functions
+    function openModal(candidato) {
+        const candidatePhoto = getCandidatePhoto(candidato);
+        const partyLogo = getPartyLogo(candidato.partido);
+        
+        document.getElementById('modalPhoto').style.backgroundImage = `url(${candidatePhoto})`;
+        document.getElementById('modalPartyLogo').style.backgroundImage = `url(${partyLogo})`;
+        document.getElementById('modalName').textContent = candidato.nombre;
+        document.getElementById('modalParty').textContent = candidato.partido;
+        document.getElementById('modalEdad').textContent = candidato.edad;
+        document.getElementById('modalVicepresidentes').textContent = candidato.vicepresidentes || 'No disponible';
+        
+        document.getElementById('modalProfesion').textContent = candidato.profesion || 'No disponible';
+        document.getElementById('modalFormacion').textContent = candidato.formacion || candidato.profesion || 'No disponible';
+        document.getElementById('modalEspecializacion').textContent = candidato.especializacion || 'No disponible';
+        
+        document.getElementById('modalExpPublica').textContent = candidato.expPublica || (candidato.experiencia ? 'Sí' : 'No');
+        document.getElementById('modalRolRelevante').textContent = candidato.rolRelevante || candidato.experienciaLaboral || 'No disponible';
+        document.getElementById('modalExpInternacional').textContent = candidato.expInternacional || 'No registra';
+        
+        document.getElementById('modalCargosEleccion').textContent = candidato.cargosEleccion || (candidato.reeleccion ? 'Cargo actual' : 'No registra');
+        document.getElementById('modalCargosPartidarios').textContent = candidato.cargosPartidarios || 'No disponible';
+        document.getElementById('modalContinuidad').textContent = candidato.continuidad || 'No disponible';
+        
+        document.getElementById('modalSentencias').textContent = candidato.sentencias === 'No' ? 'No registra sentencias' : candidato.sentencias;
+        document.getElementById('modalDemandas').textContent = candidato.demandas || 'No registra';
+        
+        document.getElementById('modalIngresos').textContent = candidato.ingresos;
+        document.getElementById('modalOrigenIngresos').textContent = candidato.origenIngresos || 'No especificado';
+        
+        document.getElementById('modalInmuebles').textContent = candidato.inmuebles || 'No disponible';
+        document.getElementById('modalMuebles').textContent = candidato.muebles || 'No disponible';
+        
+        document.getElementById('modalResumen').textContent = candidato.resumen || candidato.bio || 'Información no disponible.';
+        
+        const pdfLink = document.getElementById('modalPdfLink');
+        if (candidato.pdfLink) {
+            pdfLink.href = candidato.pdfLink;
+        } else {
+            pdfLink.href = '#';
+        }
+        
+        modal.classList.add('active');
+        modalOverlay.classList.add('active');
+        
+        const scrollContainer = document.querySelector('.modal-scroll-container');
+        if (scrollContainer) {
+            scrollContainer.scrollTop = 0;
+        }
+    }
+
+    function closeModal() {
+        modal.classList.remove('active');
+        modalOverlay.classList.remove('active');
+    }
+
+    modalClose.addEventListener('click', closeModal);
+    modalOverlay.addEventListener('click', closeModal);
+
+    // Section highlight configurations
+    const sectionConfigs = {
+        'extranjero': {
+            filter: (c) => c.extranjero,
+            color: 'active-yellow'
+        },
+        'mujeres': {
+            filter: (c) => c.genero === 'F',
+            color: 'active-yellow'
+        },
+        'internacional': {
+            filter: (c) => c.internacional,
+            color: 'active-yellow'
+        },
+        'millennial': {
+            filter: (c) => c.millennial,
+            color: 'active-yellow'
+        },
+        'movilidad': {
+            filter: (c) => c.movilidad,
+            color: 'active-yellow'
+        },
+        'educacion': {
+            filter: (c) => true, // All candidates
+            colorMap: {
+                'maestro': 'active-yellow',
+                'bachiller': 'active-pink',
+                'licenciado': 'active-orange',
+                'universitario': 'active-green',
+                'no-universitario': 'active-blue',
+                'tecnico': 'active-blue',
+                'secundaria': 'active-red',
+                'primaria': 'active-lime'
+            }
+        },
+        'inconclusos': {
+            filter: (c) => c.inconclusos,
+            color: 'active-red'
+        },
+        'delitos': {
+            filter: (c) => c.delitos,
+            color: 'active-red'
+        },
+        'reincidencia': {
+            filter: (c) => c.reincidencia,
+            color: 'active-red'
+        },
+        'sentencias': {
+            filter: (c) => c.sentenciaTipo !== 'sin',
+            colorMap: {
+                'penal': 'active-red',
+                'civil': 'active-blue',
+                'sin': null
             }
         }
-    });
-}
-
-// Intersection Observer for info boxes
-function setupIntersectionObserver() {
-    const sections = document.querySelectorAll('.data-section-new');
-    
-    const observerOptions = {
-        root: null,
-        rootMargin: '-40% 0px -40% 0px',
-        threshold: 0
     };
-    
-    const sectionObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            const infoBox = entry.target.querySelector('.info-box-centered');
+
+    // Clear all highlights from grid
+    function clearHighlights() {
+        const gridCandidates = fixedGrid.querySelectorAll('.data-candidate-fixed');
+        gridCandidates.forEach(el => {
+            el.classList.remove('active-yellow', 'active-red', 'active-blue', 'active-pink', 'active-orange', 'active-green', 'active-lime');
+        });
+    }
+
+    // Apply highlights for a section
+    function applyHighlights(sectionName) {
+        clearHighlights();
+        
+        const config = sectionConfigs[sectionName];
+        if (!config) return;
+        
+        const gridCandidates = fixedGrid.querySelectorAll('.data-candidate-fixed');
+        
+        gridCandidates.forEach((el, idx) => {
+            const candidato = candidatos[idx];
+            if (!candidato) return;
             
-            if (entry.isIntersecting) {
-                infoBox.classList.add('visible');
-                const sectionName = entry.target.dataset.section;
-                applyHighlights(sectionName);
+            if (config.colorMap) {
+                // Multiple colors based on attribute
+                if (sectionName === 'educacion') {
+                    const colorClass = config.colorMap[candidato.educacionGrupo];
+                    if (colorClass) {
+                        el.classList.add(colorClass);
+                    }
+                } else if (sectionName === 'sentencias') {
+                    const colorClass = config.colorMap[candidato.sentenciaTipo];
+                    if (colorClass) {
+                        el.classList.add(colorClass);
+                    }
+                }
             } else {
-                infoBox.classList.remove('visible');
+                // Single color
+                if (config.filter(candidato)) {
+                    el.classList.add(config.color);
+                }
             }
         });
-    }, observerOptions);
-    
-    sections.forEach(section => {
-        sectionObserver.observe(section);
-    });
-}
+    }
 
-// Search functionality
-searchInput.addEventListener('input', (e) => {
-    const query = e.target.value.toLowerCase();
-    const carouselCandidates = carousel.querySelectorAll('.carousel-candidate');
-    const hasSearch = query !== '';
-    
-    carouselCandidates.forEach((card, i) => {
-        const candidato = candidatos[i];
-        const match = candidato.nombre.toLowerCase().includes(query) || 
-                     candidato.partido.toLowerCase().includes(query);
+    // Intersection Observer for info boxes
+    function setupIntersectionObserver() {
+        const sections = document.querySelectorAll('.data-section-new');
         
-        card.style.opacity = query === '' ? '1' : (match ? '1' : '0.2');
+        const observerOptions = {
+            root: null,
+            rootMargin: '-40% 0px -40% 0px',
+            threshold: 0
+        };
         
-        if (hasSearch && match) {
-            card.classList.add('no-flip');
-        } else {
-            card.classList.remove('no-flip');
-        }
-    });
-});
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const infoBox = entry.target.querySelector('.info-box-centered');
+                
+                if (entry.isIntersecting) {
+                    infoBox.classList.add('visible');
+                    const sectionName = entry.target.dataset.section;
+                    applyHighlights(sectionName);
+                } else {
+                    infoBox.classList.remove('visible');
+                }
+            });
+        }, observerOptions);
+        
+        sections.forEach(section => {
+            sectionObserver.observe(section);
+        });
+    }
 
-// Scroll button
-const btnBajar = document.querySelector('.btn-bajar');
-if (btnBajar) {
-    btnBajar.addEventListener('click', () => {
-        window.scrollTo({
-            top: window.innerHeight,
-            behavior: 'smooth'
+    // Search functionality
+    searchInput.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase();
+        const carouselCandidates = carousel.querySelectorAll('.carousel-candidate');
+        const hasSearch = query !== '';
+        
+        carouselCandidates.forEach((card, i) => {
+            const candidato = candidatos[i];
+            const match = candidato.nombre.toLowerCase().includes(query) || 
+                        candidato.partido.toLowerCase().includes(query);
+            
+            card.style.opacity = query === '' ? '1' : (match ? '1' : '0.2');
+            
+            if (hasSearch && match) {
+                card.classList.add('no-flip');
+            } else {
+                card.classList.remove('no-flip');
+            }
         });
     });
-}
 
-// Initialize
-document.addEventListener('DOMContentLoaded', () => {
-    setupIntersectionObserver();
-});
+    // Scroll button
+    const btnBajar = document.querySelector('.btn-bajar');
+    if (btnBajar) {
+        btnBajar.addEventListener('click', () => {
+            window.scrollTo({
+                top: window.innerHeight,
+                behavior: 'smooth'
+            });
+        });
+    }
 
-// Fallback for browsers that don't support DOMContentLoaded properly
-if (document.readyState === 'complete' || document.readyState === 'interactive') {
-    setupIntersectionObserver();
-}
+    // Initialize
+    document.addEventListener('DOMContentLoaded', () => {
+        setupIntersectionObserver();
+    });
+
+    // Fallback for browsers that don't support DOMContentLoaded properly
+    if (document.readyState === 'complete' || document.readyState === 'interactive') {
+        setupIntersectionObserver();
+    }
