@@ -154,12 +154,12 @@ const candidatos = [
     
 
     candidatos.forEach((c, idx) => {
-        // Insertar el logo en la posición correcta (después del candidato 31, índice 30)
+        // Insertar el logo en la posiciÃ³n correcta (despuÃ©s del candidato 31, Ã­ndice 30)
         // Para que quede centrado en la fila 3: 5 candidatos + logo (span 3) + 5 candidatos
         if (idx === 18) {
             const logoDiv = document.createElement('div');
             logoDiv.className = 'hero-logo-cell';
-            logoDiv.innerHTML = `<img src="./img/logo-tu-decides.jpg" alt="Tú decides" class="hero-logo-integrated">`;
+            logoDiv.innerHTML = `<img src="./img/logo-tu-decides.jpg" alt="TÃº decides" class="hero-logo-integrated">`;
             heroGrid.appendChild(logoDiv);
         }
 
@@ -205,13 +205,98 @@ const candidatos = [
     });
 
     // Create fixed grid for data sections
+    // Crear array de índices aleatorios para posiciones iniciales
+    const shuffledIndices = [...Array(candidatos.length).keys()];
+    for (let i = shuffledIndices.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffledIndices[i], shuffledIndices[j]] = [shuffledIndices[j], shuffledIndices[i]];
+    }
+    
+    // Función para obtener número de columnas según el tamaño de pantalla
+    function getGridColumns() {
+        const width = window.innerWidth;
+        if (width <= 640) return 5;
+        if (width <= 768) return 6;
+        return 8;
+    }
+    
+    // Función para calcular y aplicar offsets aleatorios (intercambio exacto de celdas)
+    function calculateRandomOffsets() {
+        const gridCandidates = fixedGrid.querySelectorAll('.data-candidate-fixed');
+        if (gridCandidates.length < 2) return;
+        
+        const columns = getGridColumns();
+        
+        // Obtener tamaño real de celda midiendo los primeros dos elementos
+        const firstCell = gridCandidates[0];
+        const secondCell = gridCandidates[1];
+        const firstRect = firstCell.getBoundingClientRect();
+        const secondRect = secondCell.getBoundingClientRect();
+        
+        // El cellSize es la diferencia entre las posiciones X de celdas consecutivas
+        const cellWidth = secondRect.left - firstRect.left;
+        // Para la altura, comparamos con el elemento de la siguiente fila
+        const nextRowCell = gridCandidates[columns];
+        const cellHeight = nextRowCell ? 
+            nextRowCell.getBoundingClientRect().top - firstRect.top : 
+            cellWidth; // Asumir cuadrado si no hay siguiente fila
+        
+        gridCandidates.forEach((div, idx) => {
+            // Posición donde debería ir esta cara en el orden aleatorio
+            const randomIdx = shuffledIndices[idx];
+            
+            // Calcular fila y columna original
+            const originalRow = Math.floor(idx / columns);
+            const originalCol = idx % columns;
+            
+            // Calcular fila y columna destino (aleatorio)
+            const randomRow = Math.floor(randomIdx / columns);
+            const randomCol = randomIdx % columns;
+            
+            // Calcular desplazamiento exacto en píxeles (celda a celda)
+            const offsetX = (randomCol - originalCol) * cellWidth;
+            const offsetY = (randomRow - originalRow) * cellHeight;
+            
+            div.dataset.randomOffsetX = offsetX;
+            div.dataset.randomOffsetY = offsetY;
+            
+            // Solo aplicar si el grid está en estado aleatorio
+            if (fixedGrid.classList.contains('randomized')) {
+                div.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+            }
+        });
+    }
+    
     candidatos.forEach((c, idx) => {
         const div = document.createElement('div');
         div.className = 'data-candidate-fixed';
         div.dataset.index = idx;
+        div.dataset.originalIndex = idx;
         const candidatePhoto = getCandidatePhoto(c);
         div.style.backgroundImage = `url(${candidatePhoto})`;
         fixedGrid.appendChild(div);
+    });
+    
+    // Marcar grid como aleatorio inicialmente
+    fixedGrid.classList.add('randomized');
+    
+    // Variable para rastrear si ya se ordenó
+    let isGridOrdered = false;
+    
+    // Esperar a que el layout esté completo para calcular tamaños
+    setTimeout(() => {
+        calculateRandomOffsets();
+    }, 100);
+    
+    // Recalcular offsets en resize (con debounce)
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            if (fixedGrid.classList.contains('randomized')) {
+                calculateRandomOffsets();
+            }
+        }, 200);
     });
 
     // Create carousel
@@ -258,7 +343,7 @@ const candidatos = [
         document.getElementById('modalFormacion').textContent = candidato.formacion || candidato.profesion || 'No disponible';
         document.getElementById('modalEspecializacion').textContent = candidato.especializacion || 'No disponible';
         
-        document.getElementById('modalExpPublica').textContent = candidato.expPublica || (candidato.experiencia ? 'Sí' : 'No');
+        document.getElementById('modalExpPublica').textContent = candidato.expPublica || (candidato.experiencia ? 'SÃ­' : 'No');
         document.getElementById('modalRolRelevante').textContent = candidato.rolRelevante || candidato.experienciaLaboral || 'No disponible';
         document.getElementById('modalExpInternacional').textContent = candidato.expInternacional || 'No registra';
         
@@ -275,7 +360,7 @@ const candidatos = [
         document.getElementById('modalInmuebles').textContent = candidato.inmuebles || 'No disponible';
         document.getElementById('modalMuebles').textContent = candidato.muebles || 'No disponible';
         
-        document.getElementById('modalResumen').textContent = candidato.resumen || candidato.bio || 'Información no disponible.';
+        document.getElementById('modalResumen').textContent = candidato.resumen || candidato.bio || 'InformaciÃ³n no disponible.';
         
         const pdfLink = document.getElementById('modalPdfLink');
         if (candidato.pdfLink) {
@@ -303,6 +388,11 @@ const candidatos = [
 
     // Section highlight configurations
     const sectionConfigs = {
+        'previo': {
+            filter: () => false, // No highlights, solo muestra caras aleatorias
+            color: null,
+            isTransition: true // Marca para la transición
+        },
         'extranjero': {
             filter: (c) => c.extranjero,
             color: 'active-yellow'
@@ -318,6 +408,11 @@ const candidatos = [
         'millennial': {
             filter: (c) => c.millennial,
             color: 'active-yellow'
+        },
+        'informativo1': {
+            filter: () => false, // No highlights para informativos
+            color: null,
+            keepPrevious: true // Mantener highlights previos
         },
         'movilidad': {
             filter: (c) => c.movilidad,
@@ -344,6 +439,11 @@ const candidatos = [
             filter: (c) => c.delitos,
             color: 'active-red'
         },
+        'informativo2': {
+            filter: () => false, // No highlights para informativos
+            color: null,
+            keepPrevious: true // Mantener highlights previos
+        },
         'reincidencia': {
             filter: (c) => c.reincidencia,
             color: 'active-red'
@@ -355,6 +455,11 @@ const candidatos = [
                 'civil': 'active-blue',
                 'sin': null
             }
+        },
+        'informativo3': {
+            filter: () => false, // No highlights para informativos
+            color: null,
+            keepPrevious: true // Mantener highlights previos
         }
     };
 
@@ -368,10 +473,43 @@ const candidatos = [
 
     // Apply highlights for a section
     function applyHighlights(sectionName) {
-        clearHighlights();
-        
         const config = sectionConfigs[sectionName];
         if (!config) return;
+        
+        // Si es section previo, mantener caras aleatorias
+        if (config.isTransition) {
+            // Asegurarse de que el grid está en estado aleatorio
+            if (!fixedGrid.classList.contains('randomized')) {
+                fixedGrid.classList.add('randomized');
+                fixedGrid.classList.remove('ordered');
+                const gridCandidates = fixedGrid.querySelectorAll('.data-candidate-fixed');
+                gridCandidates.forEach(el => {
+                    const offsetX = el.dataset.randomOffsetX || 0;
+                    const offsetY = el.dataset.randomOffsetY || 0;
+                    el.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+                });
+            }
+            clearHighlights();
+            return;
+        }
+        
+        // Si es section informativo, mantener highlights previos
+        if (config.keepPrevious) {
+            return; // No hacer nada, mantener estado actual
+        }
+        
+        // Ordenar el grid si aún está aleatorio
+        if (fixedGrid.classList.contains('randomized')) {
+            fixedGrid.classList.remove('randomized');
+            fixedGrid.classList.add('ordered');
+            const gridCandidates = fixedGrid.querySelectorAll('.data-candidate-fixed');
+            gridCandidates.forEach(el => {
+                el.style.transform = 'translate(0, 0)';
+            });
+            isGridOrdered = true;
+        }
+        
+        clearHighlights();
         
         const gridCandidates = fixedGrid.querySelectorAll('.data-candidate-fixed');
         
@@ -394,7 +532,7 @@ const candidatos = [
                 }
             } else {
                 // Single color
-                if (config.filter(candidato)) {
+                if (config.filter(candidato) && config.color) {
                     el.classList.add(config.color);
                 }
             }
