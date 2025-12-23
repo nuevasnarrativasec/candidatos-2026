@@ -4,256 +4,282 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Candidatos 2026</title>
-    <link rel="stylesheet" href="./css/style.css?v40">
+    <link rel="stylesheet" href="./css/style.css?v42">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="scroll-container">
-        <div class="fixed-stages">
-            <div class="stage-wrapper">
+    <!-- Hero Section -->
+    <section class="hero-section" id="heroSection">
+        <div class="candidate-grid-hero" id="heroGrid"></div>
+        
+        <img src="./img/logo-tu-decides.jpg" alt="Tú decides" class="hero-logo">
+        
+        <h1 class="hero-title">36 candidatos presidenciales, un solo voto</h1>
+        <h2 class="hero-subtitle">¿Sabes a quién elegir?</h2>
+        
+        <div class="hero-description">
+            <p>Analizamos las hojas de vida presentadas ante el JNE y condensamos lo esencial de los aspirantes al sillón presidencial 2026-2031 para ayudarte a decidir con información clave.</p>
+            <img src="./img/btn-bajar.png" alt="" width="100%" class="btn-bajar">
+        </div>
+    </section>
 
-                <!-- Hero Section -->
-                <section class="hero-section" id="heroSection">
-                    <div class="candidate-grid-hero" id="heroGrid"></div>
-                    
-                    <img src="./img/logo-tu-decides.jpg" alt="Tú decides" class="hero-logo">
-                    
-                    <h1 class="hero-title">36 candidatos presidenciales, un solo voto</h1>
-                    <h2 class="hero-subtitle">¿Sabes a quién elegir?</h2>
-                    
-                    <div class="hero-description">
-                        <p>Analizamos las hojas de vida presentadas ante el JNE y condensamos lo esencial de los aspirantes al sillón presidencial 2026-2031 para ayudarte a decidir con información clave.</p>
-                        <img src="./img/btn-bajar.png" alt="" width="100%" class="btn-bajar">
-                    </div>
-                </section>
+    <!-- Data Sections Container -->
+    <div class="data-sections-wrapper">
+        <!-- Fixed Grid Background -->
+        <div class="fixed-grid-background">
+            <div class="data-grid-fixed" id="fixedGrid"></div>
+        </div>
 
-                <!-- Data Section 1 -->
-                <section class="data-section" id="dataSection1">
-                    <div class="data-container">
-                        <!--<div class="data-grid" id="dataGrid1">
-                            <div class="box-info-data-grid-1">
-                                <span>No solo peruanos</span>
-                                <span class="separador"></span>
-                                <p>
-                                    <b>38 de los 39 candidatos nacieron en Perú.</b>
-                                    Sin embargo, un postulante (2.6%) registra nacimiento en el extranjero.
-                                </p>
+        <!-- Scrollable Content -->
+        <div class="scroll-content">
+            <!-- Section 1: No solo peruanos -->
+            <section class="data-section-new" data-section="extranjero">
+                <div class="info-box-centered">
+                    <h2>No solo peruanos</h2>
+                    <p><b>38 de los 39 candidatos nacieron en Perú.</b> Sin embargo, <b>un postulante (2.6%)</b> registra nacimiento en el extranjero.</p>
+                </div>
+            </section>
+
+            <!-- Section 2: Cerca de la paridad -->
+            <section class="data-section-new" data-section="mujeres">
+                <div class="info-box-centered">
+                    <h2>Cerca de la paridad</h2>
+                    <p><b>De los 39 candidatos, 4 son mujeres,</b> lo que representa un 48.7% del total.</p>
+                </div>
+            </section>
+
+            <!-- Section 3: Formación Internacional -->
+            <section class="data-section-new" data-section="internacional">
+                <div class="info-box-centered">
+                    <h2>Formación Internacional</h2>
+                    <p>De todos los registros académicos, solo se reportan 2 casos de estudios fuera de Perú: <b>uno en Colombia y uno en España.</b></p>
+                </div>
+            </section>
+
+            <!-- Section 4: Generación Millennial -->
+            <section class="data-section-new" data-section="millennial">
+                <div class="info-box-centered">
+                    <h2>La generación millennial lidera</h2>
+                    <p><b>Los millennials (15 candidatos), constituyen el 38.5% del total.</b> Seguidos de cerca por la Generación X (33.3%). Juntos, estos dos grupos representan más del 71% de todos los postulantes.</p>
+                </div>
+            </section>
+
+            <!-- Section 5: Alta Movilidad Geográfica -->
+            <section class="data-section-new" data-section="movilidad">
+                <div class="info-box-centered">
+                    <h2>Alta Movilidad Geográfica</h2>
+                    <p><b>72% de los candidatos (28 de 36)</b> reside actualmente en un departamento distinto al que nació, lo que evidencia una altísima movilidad geográfica en sus trayectorias de vida.</p>
+                </div>
+            </section>
+
+            <!-- Section 6: Grado Alcanzado -->
+            <section class="data-section-new" data-section="educacion">
+                <div class="info-box-centered info-box-large">
+                    <h2>Grado Alcanzado</h2>
+                    <p>El nivel de formación es variado. El grupo más grande, <b>15 candidatos (38.5%)</b>, tiene un grado <b>Universitario (Bachiller o Licenciado)</b>. Solo 8 candidatos (20.5%) han alcanzado un <b>Postgrado (Maestría o Doctorado)</b>.</p>
+                    
+                    <div class="barras-educacion">
+                        <div class="barra-item">
+                            <span class="barra-label">Maestro</span>
+                            <div class="barra-track">
+                                <div class="barra-fill" style="width: 62.5%; background: #ffd700;"></div>
                             </div>
-                        </div>-->
-                        <div class="data-grid-wrapper">
-                            <div class="data-grid" id="dataGrid1"></div>
-                            <div class="box-info-data-grid-1">
-                                <span>No solo peruanos</span>
-                                <span class="separador"></span>
-                                <p>
-                                    <b>38 de los 39 candidatos nacieron en Perú.</b>
-                                    Sin embargo, un postulante (2.6%) registra nacimiento en el extranjero.
-                                </p>
+                            <span class="barra-value">5</span>
+                        </div>
+                        <div class="barra-item">
+                            <span class="barra-label">Bachiller</span>
+                            <div class="barra-track">
+                                <div class="barra-fill" style="width: 50%; background: #ff1493;"></div>
                             </div>
+                            <span class="barra-value">4</span>
+                        </div>
+                        <div class="barra-item">
+                            <span class="barra-label">Licenciado</span>
+                            <div class="barra-track">
+                                <div class="barra-fill" style="width: 50%; background: #ff7f00;"></div>
+                            </div>
+                            <span class="barra-value">4</span>
+                        </div>
+                        <div class="barra-item">
+                            <span class="barra-label">Universitario</span>
+                            <div class="barra-track">
+                                <div class="barra-fill" style="width: 50%; background: #22c55e;"></div>
+                            </div>
+                            <span class="barra-value">4</span>
+                        </div>
+                        <div class="barra-item">
+                            <span class="barra-label">No universitario</span>
+                            <div class="barra-track">
+                                <div class="barra-fill" style="width: 37.5%; background: #3b82f6;"></div>
+                            </div>
+                            <span class="barra-value">3</span>
+                        </div>
+                        <div class="barra-item">
+                            <span class="barra-label">Técnico</span>
+                            <div class="barra-track">
+                                <div class="barra-fill" style="width: 37.5%; background: #3b82f6;"></div>
+                            </div>
+                            <span class="barra-value">3</span>
+                        </div>
+                        <div class="barra-item">
+                            <span class="barra-label">Secundaria</span>
+                            <div class="barra-track">
+                                <div class="barra-fill" style="width: 25%; background: #ef4444;"></div>
+                            </div>
+                            <span class="barra-value">2</span>
+                        </div>
+                        <div class="barra-item">
+                            <span class="barra-label">Primaria</span>
+                            <div class="barra-track">
+                                <div class="barra-fill" style="width: 12.5%; background: #84cc16;"></div>
+                            </div>
+                            <span class="barra-value">1</span>
                         </div>
                     </div>
-                </section>
+                </div>
+            </section>
 
-                <!-- Data Section 2 -->
-                <section class="data-section" id="dataSection2">
-                    <div class="data-container">
-                        <div class="data-grid large-grid" id="dataGrid2"></div>
-                        <div class="data-content">
-                            <h2>Grado Alcanzado</h2>
-                            <p>El nivel de formación es variado. El grupo más grande, <b>15 candidatos (38.5%)</b>, tiene un grado <b>Universitario (Bachiller o Licenciado)</b>. Solo 8 candidatos (20.5%) han alcanzado un <b>Postgrado (Maestría o Doctorado)</b>.</p>
-                            
-                            <div style="display: flex; flex-direction: column; gap: 15px;" class="main-grados">
-                                <div style="display: flex; align-items: center; gap: 10px;" class="barra-grados">
-                                    <span style="min-width: 120px; font-size: 14px;" class="grado">Maestro</span>
-                                    <div class="box-barra-grado" style="flex: 1; background: #e0e0e0; height: 8px; border-radius: 4px; position: relative;">
-                                        <div style="position: absolute; left: 0; top: 0; height: 100%; width: 19.2%; background: #ffd700; border-radius: 4px;"></div>
-                                    </div>
-                                    <span style="min-width: 30px; text-align: right; font-weight: bold;">5</span>
-                                </div>
-                                
-                                <div style="display: flex; align-items: center; gap: 10px;" class="barra-grados">
-                                    <span style="min-width: 120px; font-size: 14px;" class="grado">Bachiller</span>
-                                    <div class="box-barra-grado"  style="flex: 1; background: #e0e0e0; height: 8px; border-radius: 4px; position: relative;">
-                                        <div style="position: absolute; left: 0; top: 0; height: 100%; width: 15.4%; background: #ff1493; border-radius: 4px;"></div>
-                                    </div>
-                                    <span style="min-width: 30px; text-align: right; font-weight: bold;">4</span>
-                                </div>
-                                
-                                <div style="display: flex; align-items: center; gap: 10px;" class="barra-grados">
-                                    <span style="min-width: 120px; font-size: 14px;" class="grado">Licenciado</span>
-                                    <div class="box-barra-grado" style="flex: 1; background: #e0e0e0; height: 8px; border-radius: 4px; position: relative;">
-                                        <div style="position: absolute; left: 0; top: 0; height: 100%; width: 15.4%; background: #ff7f00; border-radius: 4px;"></div>
-                                    </div>
-                                    <span style="min-width: 30px; text-align: right; font-weight: bold;">4</span>
-                                </div>
-                                
-                                <div style="display: flex; align-items: center; gap: 10px;" class="barra-grados">
-                                    <span style="min-width: 120px; font-size: 14px;" class="grado">Universitario</span>
-                                    <div class="box-barra-grado" style="flex: 1; background: #e0e0e0; height: 8px; border-radius: 4px; position: relative;">
-                                        <div style="position: absolute; left: 0; top: 0; height: 100%; width: 15.4%; background: #22c55e; border-radius: 4px;"></div>
-                                    </div>
-                                    <span style="min-width: 30px; text-align: right; font-weight: bold;">4</span>
-                                </div>
-                                
-                                <div style="display: flex; align-items: center; gap: 10px;" class="barra-grados">
-                                    <span style="min-width: 120px; font-size: 14px;" class="grado">No universitario</span>
-                                    <div class="box-barra-grado" style="flex: 1; background: #e0e0e0; height: 8px; border-radius: 4px; position: relative;">
-                                        <div style="position: absolute; left: 0; top: 0; height: 100%; width: 11.5%; background: #3b82f6; border-radius: 4px;"></div>
-                                    </div>
-                                    <span style="min-width: 30px; text-align: right; font-weight: bold;">3</span>
-                                </div>
-                                
-                                <div style="display: flex; align-items: center; gap: 10px;" class="barra-grados">
-                                    <span style="min-width: 120px; font-size: 14px;" class="grado">Técnico</span>
-                                    <div class="box-barra-grado" style="flex: 1; background: #e0e0e0; height: 8px; border-radius: 4px; position: relative;">
-                                        <div style="position: absolute; left: 0; top: 0; height: 100%; width: 11.5%; background: #8b5cf6; border-radius: 4px;"></div>
-                                    </div>
-                                    <span style="min-width: 30px; text-align: right; font-weight: bold;">3</span>
-                                </div>
-                                
-                                <div style="display: flex; align-items: center; gap: 10px;" class="barra-grados">
-                                    <span style="min-width: 120px; font-size: 14px;" class="grado">Secundaria</span>
-                                    <div class="box-barra-grado" style="flex: 1; background: #e0e0e0; height: 8px; border-radius: 4px; position: relative;">
-                                        <div style="position: absolute; left: 0; top: 0; height: 100%; width: 7.7%; background: #ef4444; border-radius: 4px;"></div>
-                                    </div>
-                                    <span style="min-width: 30px; text-align: right; font-weight: bold;">2</span>
-                                </div>
-                                
-                                <div style="display: flex; align-items: center; gap: 10px;" class="barra-grados">
-                                    <span style="min-width: 120px; font-size: 14px;" class="grado">Primaria</span>
-                                    <div class="box-barra-grado" style="flex: 1; background: #e0e0e0; height: 8px; border-radius: 4px; position: relative;">
-                                        <div style="position: absolute; left: 0; top: 0; height: 100%; width: 3.8%; background: #84cc16; border-radius: 4px;"></div>
-                                    </div>
-                                    <span style="min-width: 30px; text-align: right; font-weight: bold;">1</span>
-                                </div>
-                            </div>
+            <!-- Section 7: Estudios Inconclusos -->
+            <section class="data-section-new" data-section="inconclusos">
+                <div class="info-box-centered">
+                    <h2>Estudios Inconclusos</h2>
+                    <p>Se evidencia una tendencia de estudios no finalizados. <b>10 candidatos reportan tener estudios de maestría en estado "inconcluso".</b></p>
+                </div>
+            </section>
+
+            <!-- Section 8: Tipos de Delitos -->
+            <section class="data-section-new" data-section="delitos">
+                <div class="info-box-centered">
+                    <h2>Tipos de Delitos</h2>
+                    <p>El análisis de los 12 delitos <b>(pertenecientes a los 10 candidatos)</b> revela que las faltas más recurrentes son <b>difamación, falsedad ideológica, falsificación de documentos, incumplimiento de deberes.</b></p>
+                </div>
+            </section>
+
+            <!-- Section 9: Nivel de reincidencia -->
+            <section class="data-section-new" data-section="reincidencia">
+                <div class="info-box-centered">
+                    <h2>Nivel de reincidencia</h2>
+                    <p>Se detectó dos candidatos con reincidencia, <b>acumulando 2 sentencias cada uno.</b></p>
+                </div>
+            </section>
+
+            <!-- Section 10: Bajo la lupa -->
+            <section class="data-section-new" data-section="sentencias">
+                <div class="info-box-centered">
+                    <h2>Bajo la lupa</h2>
+                    <p><b>4 de los 39 candidatos (un 25.6%)</b> reportan antecedentes judiciales, contando con al menos una sentencia registrada. <b>Los 29 candidatos restantes (74.4%) figuran "sin sentencias".</b></p>
+                    <div class="stats-row-centered">
+                        <div class="stat-item-c">
+                            <div class="stat-number-c penal">5</div>
+                            <div class="stat-label-c penal">Penal</div>
+                        </div>
+                        <div class="stat-item-c">
+                            <div class="stat-number-c civil">1</div>
+                            <div class="stat-label-c civil">civil</div>
+                        </div>
+                        <div class="stat-item-c">
+                            <div class="stat-number-c sin">35</div>
+                            <div class="stat-label-c sin">Sin sentencia</div>
                         </div>
                     </div>
-                </section>
+                </div>
+            </section>
+        </div>
+    </div>
+         
+    <!-- Search Section -->
+    <section class="search-section" id="searchSection">
+        <div class="search-container">
+            <div class="search-intro">
+                <h3>A tener en cuenta</h3>
 
-                <!-- Data Section 3 -->
-                <section class="data-section" id="dataSection3">
-                    <div class="data-container full-grid">
-                        <div class="data-grid large-grid" id="dataGrid3"></div>
-                        <div class="info-box">
-                            <h2>Bajo la lupa</h2>
-                            <p>4 de los 39 candidatos (un 25.6%) reportan antecedentes judiciales, contando con al menos una sentencia registrada. Los 29 candidatos restantes (74.4%) "señalan no tener sentencias".</p>
-                            <div class="stats-row">
-                                <div class="stat-item">
-                                    <div class="stat-number penal">5</div>
-                                    <div class="stat-label penal">Penal</div>
-                                </div>
-                                <div class="stat-item">
-                                    <div class="stat-number civil">1</div>
-                                    <div class="stat-label civil">civil</div>
-                                </div>
-                                <div class="stat-item">
-                                    <div class="stat-number sin">35</div>
-                                    <div class="stat-label sin">Sin sentencia</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                <p><strong>Fuentes y alcance.</strong> Las hojas de vida que cada postulante presentó al JNE al inscribirse representan una fotografía oficial de todos los candidatos, con valor legal, y sirven como base inmediata para comparar perfiles y alertar una posterior verificación. <strong>Al ser auto-declaradas, pueden incluir omisiones, imprecisiones o criterios dispares y reflejan un corte temporal al momento de su presentación, previo a verificación y tachas.</strong></p>
+                    
+                <p><strong>Oferta en competencia.</strong> En estas elecciones participan 38 organizaciones políticas habilitadas para participar en las elecciones generales. Sin embargo, Frepap y Ciudadanos por el Perú no registraron plancha presidencial, siendo 36 candidatos al sillón presidencial. Esta radiografía incluye agrupaciones recientemente incorporadas al Registro de Organizaciones Políticas (2024–2025), tras los cierres de inscripción y la ventana de conformación de alianzas.</p>
+                    
+                <p><strong>Doble Valla.</strong> En Perú, el voto presidencial no garantiza escaños en el Congreso. Con la doble valla, un partido solo entra al reparto si supera 5% de votos y alcanza un mínimo de escaños. Así, incluso con 30% de votos en presidencial, puede quedarse sin bancada congresal.</p>
+                    
+                <p><strong>Cabezas de lista.</strong> Dieciséis postulantes a la vicepresidencia llevarán el número 1 en una lista congresal para maximizar sus opciones de ingresar a alguna de las dos cámaras del nuevo Parlamento. Además, al menos 11 partidos han reservado el número 1 de su lista al Senado por Lima para un invitado (afiliado o no afiliado).</p>
+            </div>
 
+            <div class="search-box">
+                <input type="text" class="search-input" id="searchInput" placeholder="Candidato o Partido">
+                <svg class="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+            </div>
+
+            <div class="box-indicacion">
+                <img src="./img/icon-click.png" alt="" width="100%">
+                <p class="search-hint">Selecciona un candidato</p>
+            </div>                
+
+            <div class="candidates-carousel" id="candidatesCarousel"></div>
+
+            <div class="box-metodologia">
+                <h6>metodología</h6>
+                <p>
+                    Este especial se elaboró con información pública del JNE (Hojas de Vidas presentadas por los aspirantes a la presidencia). La recolección se realizó de forma automatizada, con corte al 23 de diciembre de 2026. El uso de N8N permitió crear un flujo de la limpieza, normalización y unificación de datos. El análisis combinó código y agentes de IA, trabajadas gracias al fondo obtenido en el AI Catalyst de WAN-IFRA, en alianza con OpenAI. Todos los resultados pasaron por revisión editorial antes de su publicación. 
+                </p>
             </div>
         </div>
-        <!-- fixed stages-->    
-         
-        <!-- Search Section -->
-        <section class="search-section" id="searchSection">
-            <div class="search-container">
-                <div class="search-intro">
-                    <h3>A tener en cuenta</h3>
 
-                    <p><strong>Fuentes y alcance.</strong> Las hojas de vida que cada postulante presentó al JNE al inscribirse representan una fotografía oficial de todos los candidatos, con valor legal, y sirven como base inmediata para comparar perfiles y alertar una posterior verificación. <strong>Al ser auto-declaradas, pueden incluir omisiones, imprecisiones o criterios dispares y reflejan un corte temporal al momento de su presentación, previo a verificación y tachas.</strong></p>
-                        
-                    <p><strong>Oferta en competencia.</strong> En estas elecciones participan 38 organizaciones políticas habilitadas para participar en las elecciones generales. Sin embargo, Frepap y Ciudadanos por el Perú no registraron plancha presidencial, siendo 36 candidatos al sillón presidencial. Esta radiografía incluye agrupaciones recientemente incorporadas al Registro de Organizaciones Políticas (2024–2025), tras los cierres de inscripción y la ventana de conformación de alianzas.</p>
-                        
-                    <p><strong>Doble Valla.</strong> En Perú, el voto presidencial no garantiza escaños en el Congreso. Con la doble valla, un partido solo entra al reparto si supera 5% de votos y alcanza un mínimo de escaños. Así, incluso con 30% de votos en presidencial, puede quedarse sin bancada congresal.</p>
-                        
-                    <p><strong>Cabezas de lista.</strong> Dieciséis postulantes a la vicepresidencia llevarán el número 1 en una lista congresal para maximizar sus opciones de ingresar a alguna de las dos cámaras del nuevo Parlamento. Además, al menos 11 partidos han reservado el número 1 de su lista al Senado por Lima para un invitado (afiliado o no afiliado).</p>
-                </div>
+        <div class="footer-section">
+            <div class="footer-content">
+                <span class="separador-logo"></span>
+                <img src="https://nuevasnarrativasec.github.io/conclave/img/logo-comercio.png" alt="El Comercio" width="100%" class="logo-comercio">
+                <span class="separador-logo"></span>   
 
-                <div class="search-box">
-                    <input type="text" class="search-input" id="searchInput" placeholder="Candidato o Partido">
-                    <svg class="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                    </svg>
-                </div>
+                <ul>
+                    <li>
+                        <h4>Investigación y verificación:</h4>
+                        <p>Gisella Salmón</p>
+                        <p>Mayte Ciriaco</p>
+                        <p>Lorena Obregón</p>
+                    </li>
+                    <li>
+                        <h4>Edición:</h4>
+                        <p>Héctor Villalobos</p>
+                    </li>
+                    <li>
+                        <h4>Arquitectura de automatización (n8n + IA)</h4>
+                        <p>Gisella Salmón</p>
+                        <p>Armando Scargglioni C.</p>
+                    </li>
+                    <li>
+                        <h4>Programación:</h4>
+                        <p>Armando Scargglioni C.</p>
+                    </li>                        
+                </ul>
 
-                <div class="box-indicacion">
-                    <img src="./img/icon-click.png" alt="" width="100%">
-                    <p class="search-hint">Selecciona un candidato</p>
-                </div>                
-
-                <div class="candidates-carousel" id="candidatesCarousel"></div>
-
-                <div class="box-metodologia">
-                    <h6>metodología</h6>
-                    <p>
-                        Este especial se elaboró con información pública del JNE (Hojas de Vidas presentadas por los aspirantes a la presidencia). La recolección se realizó de forma automatizada, con corte al 23 de diciembre de 2026. El uso de N8N permitió crear un flujo de la limpieza, normalización y unificación de datos. El análisis combinó código y agentes de IA, trabajadas gracias al fondo obtenido en el AI Catalyst de WAN-IFRA, en alianza con OpenAI. Todos los resultados pasaron por revisión editorial antes de su publicación. 
-                    </p>
-                </div>
+                <ul>
+                    <li>
+                        <h4>Edición visual:</h4>
+                        <p>Ángela Peña</p>
+                    </li>
+                    <li>
+                        <h4>Diseño:</h4>
+                        <p>Marcelo Hidalgo</p>
+                    </li>
+                    <li>
+                        <h4>Ilustraciones y animación:</h4>
+                        <p>Kiomy Kanashiro</p>
+                    </li>
+                    <li>
+                        <h4>Producción general:</h4>
+                        <p>Gisella Salmón</p>
+                    </li>
+                    <li>
+                        <h4>Director periodístico:</h4>
+                        <p>Juan Aurelio Arévalo</p>
+                    </li>
+                </ul>
             </div>
-
-            <div class="footer-section">
-                <div class="footer-content">
-                    <span class="separador-logo"></span>
-                    <img src="https://nuevasnarrativasec.github.io/conclave/img/logo-comercio.png" alt="El Comercio" width="100%" class="logo-comercio">
-                    <span class="separador-logo"></span>   
-
-                    <ul>
-                        <li>
-                            <h4>Investigación y verificación:</h4>
-                            <p>Gisella Salmón</p>
-                            <p>Mayte Ciriaco</p>
-                            <p>Lorena Obregón</p>
-                        </li>
-                        <li>
-                            <h4>Edición:</h4>
-                            <p>Héctor Villalobos</p>
-                        </li>
-                        <li>
-                            <h4>Arquitectura de automatización (n8n + IA)</h4>
-                            <p>Gisella Salmón</p>
-                            <p>Armando Scargglioni C.</p>
-                        </li>
-                        <li>
-                            <h4>Programación:</h4>
-                            <p>Armando Scargglioni C.</p>
-                        </li>                        
-                    </ul>
-
-                    <ul>
-                        <li>
-                            <h4>Edición visual:</h4>
-                            <p>Ángela Peña</p>
-                        </li>
-                        <li>
-                            <h4>Diseño:</h4>
-                            <p>Marcelo Hidalgo</p>
-                        </li>
-                        <li>
-                            <h4>Ilustraciones y animación:</h4>
-                            <p>Kiomy Kanashiro</p>
-                        </li>
-                        <li>
-                            <h4>Producción general:</h4>
-                            <p>Gisella Salmón</p>
-                        </li>
-                        <li>
-                            <h4>Director periodístico:</h4>
-                            <p>Juan Aurelio Arévalo</p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-    </div>    
+        </div>
+    </section>
 
     <!-- Modal -->
     <div class="modal-overlay" id="modalOverlay"></div>
@@ -434,6 +460,6 @@
         </div>
     </div>
 
-    <script src="./js/main.js?v17"></script>
+    <script src="./js/main.js?v21"></script>
 </body>
 </html>
