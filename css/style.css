@@ -1405,6 +1405,7 @@ img.hero-logo {
             transition: opacity 1s ease, transform 1s ease;
             /*pointer-events: none;*/
             background: white;
+            padding-top: 50px;
         }
 
         .search-section.visible {
@@ -3311,5 +3312,83 @@ span.separador-logo {
 
     .hero-subtitle {
         margin-bottom: 15px;
+    }
+}
+
+/* ============================================
+   SECTIONS INFORMATIVOS (sin grid highlight)
+============================================ */
+.data-section-informativo {
+    background-color: #f5f5f5;
+    pointer-events: auto;
+}
+
+.info-box-informativo {
+    background: #f5f5f5;
+    border-top: 1px solid #c7c7c7;
+    border-bottom: 1px solid #c7c7c7;
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+    box-shadow: none;
+    max-width: 580px;
+    padding: 40px;
+}
+
+.info-box-informativo p {
+    font: 1rem/1.7 'Roboto', sans-serif;
+    color: #333;
+    margin: 0;
+    text-align: left;
+}
+
+.info-box-informativo p strong {
+    font-weight: 700;
+    color: #000;
+}
+
+/* ============================================
+   SECTION PREVIO - CARAS ALEATORIAS
+============================================ */
+.data-section-previo {
+    pointer-events: auto;
+}
+
+/* Estado aleatorio del grid */
+.data-grid-fixed.randomized .data-candidate-fixed {
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), 
+                opacity 0.6s ease;
+}
+
+/* Estado ordenado (después de la animación) */
+.data-grid-fixed.ordered .data-candidate-fixed {
+    transform: translate(0, 0) !important;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), 
+                opacity 0.6s ease;
+}
+
+/* Animación suave para el grid */
+.data-grid-fixed {
+    transition: opacity 0.3s ease;
+}
+
+/* ============================================
+   RESPONSIVE PARA SECTIONS INFORMATIVOS
+============================================ */
+@media (max-width: 768px) {
+    .info-box-informativo {
+        max-width: 100%;
+        padding: 30px 20px;
+        margin: 0 20px;
+    }
+}
+
+@media (max-width: 640px) {
+    .info-box-informativo {
+        padding: 25px 15px;
+    }
+    
+    .info-box-informativo p {
+        font-size: 0.9rem;
     }
 }
