@@ -64,7 +64,7 @@ const partyStyles = {
     'Perú Primero': { abbr: 'PP', color: '#e53935', logo: './img/logos/peru-primero.jpg' },    
     'Podemos Perú': { abbr: 'PP', color: '#ff7a00', logo: './img/logos/podemos-peru.jpg' },    
     'Primero la gente': { abbr: 'PL', color: '#e53935', logo: './img/logos/primero-la-gente.jpg' },   
-    'PRIN': { abbr: 'PRIN', color: '#ff7a00', logo: './img/logos/prin.jpg' },
+    'Partido Político PRIN': { abbr: 'PRIN', color: '#ff7a00', logo: './img/logos/prin.jpg' },
     'Progresemos': { abbr: 'P', color: '#e53935', logo: './img/logos/progresemos.jpg' },   
     'Renovación Popular': { abbr: 'RP', color: '#22c55e', logo: './img/logos/renovacion-popular.jpg' },
     'Salvemos al Perú': { abbr: 'SAP', color: '#ff7a00', logo: './img/logos/salvemos-al-peru.jpg' },    
@@ -100,7 +100,7 @@ const candidatos = [
         inmuebles: 'Sí registra bienes inmuebles',
         muebles: 'Sí registra',
         bio: 'Ingeniero de sistemas con enfoque en políticas de innovación tecnológica.',
-        pdfLink: 'https://drive.google.com/file/d/1UXqW050ZnRkQJs5Pp4m_oLEwDrJObYlX/view',
+        pdfLink: 'https://drive.google.com/file/d/16IfX4meSvODhTsxNO9B7NO6jkq2GTuNf/view',
         // Atributos para secciones
         extranjero: false,
         millennial: true,
@@ -136,7 +136,7 @@ const candidatos = [
         inmuebles: 'Sí registra bienes inmuebles',
         muebles: 'Sí registra',
         bio: 'Ingeniero de sistemas con enfoque en políticas de innovación tecnológica.',
-        pdfLink: 'https://drive.google.com/file/d/1UXqW050ZnRkQJs5Pp4m_oLEwDrJObYlX/view',
+        pdfLink: 'https://drive.google.com/file/d/13Ms7rBVzk5fovhowIGv6_8mekrukY4w9/view',
         // Atributos para secciones
         extranjero: false,
         millennial: true,
@@ -172,7 +172,7 @@ const candidatos = [
         inmuebles: 'Sí registra bienes inmuebles',
         muebles: 'Sí registra',
         bio: 'Ingeniero de sistemas con enfoque en políticas de innovación tecnológica.',
-        pdfLink: 'https://drive.google.com/file/d/1UXqW050ZnRkQJs5Pp4m_oLEwDrJObYlX/view',
+        pdfLink: 'https://drive.google.com/file/d/1PlpQG05cMdfa_IXQfSlfUZG353zovAS1/view',
         // Atributos para secciones
         extranjero: false,
         millennial: true,
@@ -208,7 +208,7 @@ const candidatos = [
         inmuebles: 'Sí registra bienes inmuebles',
         muebles: 'Sí registra',
         bio: 'Ingeniero de sistemas con enfoque en políticas de innovación tecnológica.',
-        pdfLink: 'https://drive.google.com/file/d/1UXqW050ZnRkQJs5Pp4m_oLEwDrJObYlX/view',
+        pdfLink: '#',
         // Atributos para secciones
         extranjero: false,
         millennial: true,
@@ -244,7 +244,7 @@ const candidatos = [
         inmuebles: 'Sí registra bienes inmuebles',
         muebles: 'Sí registra',
         bio: 'Ingeniero de sistemas con enfoque en políticas de innovación tecnológica.',
-        pdfLink: 'https://drive.google.com/file/d/1UXqW050ZnRkQJs5Pp4m_oLEwDrJObYlX/view',
+        pdfLink: 'https://drive.google.com/file/d/1xvyBa_hpwYft-LCc7xpdaL_COji3dPiG/view',
         // Atributos para secciones
         extranjero: false,
         millennial: true,
@@ -280,7 +280,7 @@ const candidatos = [
         inmuebles: 'Sí registra bienes inmuebles',
         muebles: 'Sí registra',
         bio: 'Ingeniero de sistemas con enfoque en políticas de innovación tecnológica.',
-        pdfLink: 'https://drive.google.com/file/d/1UXqW050ZnRkQJs5Pp4m_oLEwDrJObYlX/view',
+        pdfLink: 'https://drive.google.com/file/d/1Q4NcUkbKbIXdzyyukHiBXrWRM1YArQBZ/view',
         // Atributos para secciones
         extranjero: false,
         millennial: true,
@@ -316,7 +316,7 @@ const candidatos = [
         inmuebles: 'Sí registra bienes inmuebles',
         muebles: 'Sí registra',
         bio: 'Ingeniero de sistemas con enfoque en políticas de innovación tecnológica.',
-        pdfLink: 'https://drive.google.com/file/d/1UXqW050ZnRkQJs5Pp4m_oLEwDrJObYlX/view',
+        pdfLink: 'https://drive.google.com/file/d/1ltB6GeG-wy7Q_p_1oXelue4lZQzwFgaD/view',
         // Atributos para secciones
         extranjero: false,
         millennial: true,
@@ -352,7 +352,7 @@ const candidatos = [
         inmuebles: 'Sí registra bienes inmuebles',
         muebles: 'Sí registra',
         bio: 'Ingeniero de sistemas con enfoque en políticas de innovación tecnológica.',
-        pdfLink: 'https://drive.google.com/file/d/1UXqW050ZnRkQJs5Pp4m_oLEwDrJObYlX/view',
+        pdfLink: 'https://drive.google.com/file/d/1zfgfBtR-BmoBc5jSO0tIslhzTnqsaCcT/view',
         // Atributos para secciones
         extranjero: false,
         millennial: true,
@@ -388,7 +388,7 @@ const candidatos = [
         inmuebles: 'Sí registra bienes inmuebles',
         muebles: 'Sí registra',
         bio: 'Ingeniero de sistemas con enfoque en políticas de innovación tecnológica.',
-        pdfLink: 'https://drive.google.com/file/d/1UXqW050ZnRkQJs5Pp4m_oLEwDrJObYlX/view',
+        pdfLink: 'https://drive.google.com/file/d/1PpZOYerTU0T86TKCnUZfof-rgIcbWF7-/view',
         // Atributos para secciones
         extranjero: false,
         millennial: true,
@@ -406,25 +406,26 @@ const candidatos = [
         edad: 57, 
         reeleccion: true, 
         experiencia: true, 
-        partido: 'PRIN', 
+        partido: 'Partido Político PRIN', 
         vicepresidentes: 'Julio Alberto Vega Ybañez y Mayra Lizeth Vargas Gil',
         departamento: 'Lima', 
-        profesion: 'Ingeniero de Sistemas', 
-        formacion: 'Universidad Nacional de Ingeniería',
-        especializacion: 'Políticas de Innovación Tecnológica',
-        experienciaLaboral: 'Conductor en Compañía Latinoamericana de Radiodifusión SA', 
+        profesion: 'Contador Público', 
+        formacion: 'Bachiller en Contabilidad y Finanzas',
+        especializacion: 'Gestión Pública',
+        expPublica: 'Sí',
+        experienciaLaboral: 'Director General del Gobierno del Interior', 
         expInternacional: 'No',
         cargosEleccion: 'No registra',
-        cargosPartidarios: 'No registra cargos partidarios relevantes',
+        cargosPartidarios: 'Fundador del Partido Político PRIN',
         continuidad: 'No se declara militancia previa distinta a la actual',
         sentencias: 'No registra sentencias', 
         demandas: 'No registra demandas',
-        ingresos: 'S/.150,000', 
-        origenIngresos: 'Sector público y ejercicio profesional',
+        ingresos: 'S/24,000', 
+        origenIngresos: 'Sector privado',
         inmuebles: 'Sí registra bienes inmuebles',
         muebles: 'Sí registra',
-        bio: 'Ingeniero de sistemas con enfoque en políticas de innovación tecnológica.',
-        pdfLink: 'https://drive.google.com/file/d/1UXqW050ZnRkQJs5Pp4m_oLEwDrJObYlX/view',
+        bio: 'Perfil con trayectoria en el sector defensa. No registra sentencias judiciales y sus ingresos declarados son coherentes con su carrera en el Estado.',
+        pdfLink: 'https://drive.google.com/file/d/1MRZc0Nd4lZIwZY_AZmN7j8ANU8rdJP7z/view',
         // Atributos para secciones
         extranjero: false,
         millennial: true,
@@ -460,7 +461,7 @@ const candidatos = [
         inmuebles: 'Sí registra bienes inmuebles',
         muebles: 'Sí registra',
         bio: 'Ingeniero de sistemas con enfoque en políticas de innovación tecnológica.',
-        pdfLink: 'https://drive.google.com/file/d/1UXqW050ZnRkQJs5Pp4m_oLEwDrJObYlX/view',
+        pdfLink: 'https://drive.google.com/file/d/1compmiHFO7MtUjiopYSYuli-nuXaoksb/view',
         // Atributos para secciones
         extranjero: false,
         millennial: true,
@@ -496,7 +497,7 @@ const candidatos = [
         inmuebles: 'Sí registra bienes inmuebles',
         muebles: 'Sí registra',
         bio: 'Ingeniero de sistemas con enfoque en políticas de innovación tecnológica.',
-        pdfLink: 'https://drive.google.com/file/d/1UXqW050ZnRkQJs5Pp4m_oLEwDrJObYlX/view',
+        pdfLink: 'https://drive.google.com/file/d/19ZA0ZoKdOZunVpYKZvlUJvu5U7rUnMmP/view',
         // Atributos para secciones
         extranjero: false,
         millennial: true,
@@ -532,7 +533,7 @@ const candidatos = [
         inmuebles: 'Sí registra bienes inmuebles',
         muebles: 'Sí registra',
         bio: 'Ingeniero de sistemas con enfoque en políticas de innovación tecnológica.',
-        pdfLink: 'https://drive.google.com/file/d/1UXqW050ZnRkQJs5Pp4m_oLEwDrJObYlX/view',
+        pdfLink: 'https://drive.google.com/file/d/17ThSfgJb9Z29xVI7zh_RwH0OFA3h34jl/view',
         // Atributos para secciones
         extranjero: false,
         millennial: true,
@@ -568,7 +569,7 @@ const candidatos = [
         inmuebles: 'Sí registra bienes inmuebles',
         muebles: 'Sí registra',
         bio: 'Ingeniero de sistemas con enfoque en políticas de innovación tecnológica.',
-        pdfLink: 'https://drive.google.com/file/d/1UXqW050ZnRkQJs5Pp4m_oLEwDrJObYlX/view',
+        pdfLink: 'https://drive.google.com/file/d/1ivpsLhlCXoF8fflnpyyq7UuYH7G3d3VO/view',
         // Atributos para secciones
         extranjero: false,
         millennial: true,
@@ -604,7 +605,7 @@ const candidatos = [
         inmuebles: 'Sí registra bienes inmuebles',
         muebles: 'Sí registra',
         bio: 'Ingeniero de sistemas con enfoque en políticas de innovación tecnológica.',
-        pdfLink: 'https://drive.google.com/file/d/1UXqW050ZnRkQJs5Pp4m_oLEwDrJObYlX/view',
+        pdfLink: 'https://drive.google.com/file/d/1Nh92gi9lSbrRbqU7Rbula5Zr2frrEUcv/view',
         // Atributos para secciones
         extranjero: false,
         millennial: true,
@@ -640,7 +641,7 @@ const candidatos = [
         inmuebles: 'Sí registra bienes inmuebles',
         muebles: 'Sí registra',
         bio: 'Ingeniero de sistemas con enfoque en políticas de innovación tecnológica.',
-        pdfLink: 'https://drive.google.com/file/d/1UXqW050ZnRkQJs5Pp4m_oLEwDrJObYlX/view',
+        pdfLink: 'https://drive.google.com/file/d/1v-FJEk5j5o8WbeUnwU4xprtF4RpX2AmH/view',
         // Atributos para secciones
         extranjero: false,
         millennial: true,
@@ -676,7 +677,7 @@ const candidatos = [
         inmuebles: 'Sí registra bienes inmuebles',
         muebles: 'Sí registra',
         bio: 'Ingeniero de sistemas con enfoque en políticas de innovación tecnológica.',
-        pdfLink: 'https://drive.google.com/file/d/1UXqW050ZnRkQJs5Pp4m_oLEwDrJObYlX/view',
+        pdfLink: 'https://drive.google.com/file/d/13W-GlA5IC1_aH6EnSa5KzCcQB2aJBkKf/view',
         // Atributos para secciones
         extranjero: false,
         millennial: true,
@@ -712,7 +713,7 @@ const candidatos = [
         inmuebles: 'Sí registra bienes inmuebles',
         muebles: 'Sí registra',
         bio: 'Ingeniero de sistemas con enfoque en políticas de innovación tecnológica.',
-        pdfLink: 'https://drive.google.com/file/d/1UXqW050ZnRkQJs5Pp4m_oLEwDrJObYlX/view',
+        pdfLink: 'https://drive.google.com/file/d/1x_aTCzNQywIgFJcPWF0EekLg2GfmaBt7/view',
         // Atributos para secciones
         extranjero: false,
         millennial: true,
@@ -748,7 +749,7 @@ const candidatos = [
         inmuebles: 'Sí registra bienes inmuebles',
         muebles: 'Sí registra',
         bio: 'Ingeniero de sistemas con enfoque en políticas de innovación tecnológica.',
-        pdfLink: 'https://drive.google.com/file/d/1UXqW050ZnRkQJs5Pp4m_oLEwDrJObYlX/view',
+        pdfLink: 'https://drive.google.com/file/d/1T2vyfnCTt0rgUeN1LDVXKkonJUVVNZHf/view',
         // Atributos para secciones
         extranjero: false,
         millennial: true,
@@ -784,7 +785,7 @@ const candidatos = [
         inmuebles: 'Sí registra bienes inmuebles',
         muebles: 'Sí registra',
         bio: 'Ingeniero de sistemas con enfoque en políticas de innovación tecnológica.',
-        pdfLink: 'https://drive.google.com/file/d/1UXqW050ZnRkQJs5Pp4m_oLEwDrJObYlX/view',
+        pdfLink: 'https://drive.google.com/file/d/1KVGFzDB2aC20faDmv61XbnheZnTKsV84/view',
         // Atributos para secciones
         extranjero: false,
         millennial: true,
@@ -820,7 +821,7 @@ const candidatos = [
         inmuebles: 'Sí registra bienes inmuebles',
         muebles: 'Sí registra',
         bio: 'Ingeniero de sistemas con enfoque en políticas de innovación tecnológica.',
-        pdfLink: 'https://drive.google.com/file/d/1UXqW050ZnRkQJs5Pp4m_oLEwDrJObYlX/view',
+        pdfLink: 'https://drive.google.com/file/d/1ZfJPqfAVkI5vEvIGK4L6wkES3wwkijh7/view',
         // Atributos para secciones
         extranjero: false,
         millennial: true,
@@ -856,7 +857,7 @@ const candidatos = [
         inmuebles: 'Sí registra bienes inmuebles',
         muebles: 'Sí registra',
         bio: 'Ingeniero de sistemas con enfoque en políticas de innovación tecnológica.',
-        pdfLink: 'https://drive.google.com/file/d/1UXqW050ZnRkQJs5Pp4m_oLEwDrJObYlX/view',
+        pdfLink: 'https://drive.google.com/file/d/138_gdqIYZB-IY3B52-AKumvMiQvOjyA0/view',
         // Atributos para secciones
         extranjero: false,
         millennial: true,
@@ -892,7 +893,7 @@ const candidatos = [
         inmuebles: 'Sí registra bienes inmuebles',
         muebles: 'Sí registra',
         bio: 'Ingeniero de sistemas con enfoque en políticas de innovación tecnológica.',
-        pdfLink: 'https://drive.google.com/file/d/1UXqW050ZnRkQJs5Pp4m_oLEwDrJObYlX/view',
+        pdfLink: 'https://drive.google.com/file/d/1K5t1zA-kFv_BhIleX-NixzdpbMUe1eeT/view',
         // Atributos para secciones
         extranjero: false,
         millennial: true,
@@ -928,7 +929,7 @@ const candidatos = [
         inmuebles: 'Sí registra bienes inmuebles',
         muebles: 'Sí registra',
         bio: 'Ingeniero de sistemas con enfoque en políticas de innovación tecnológica.',
-        pdfLink: 'https://drive.google.com/file/d/1UXqW050ZnRkQJs5Pp4m_oLEwDrJObYlX/view',
+        pdfLink: 'https://drive.google.com/file/d/1Xq78QPt4Msns_5EOvVoRWjqM4sD6vi_h/view',
         // Atributos para secciones
         extranjero: false,
         millennial: true,
@@ -964,7 +965,7 @@ const candidatos = [
         inmuebles: 'Sí registra bienes inmuebles',
         muebles: 'Sí registra',
         bio: 'Ingeniero de sistemas con enfoque en políticas de innovación tecnológica.',
-        pdfLink: 'https://drive.google.com/file/d/1UXqW050ZnRkQJs5Pp4m_oLEwDrJObYlX/view',
+        pdfLink: 'https://drive.google.com/file/d/1X0o82pKXDfnNkpAd0EZLWnwke3rj3vzJ/view',
         // Atributos para secciones
         extranjero: false,
         millennial: true,
@@ -1000,7 +1001,7 @@ const candidatos = [
         inmuebles: 'Sí registra bienes inmuebles',
         muebles: 'Sí registra',
         bio: 'Ingeniero de sistemas con enfoque en políticas de innovación tecnológica.',
-        pdfLink: 'https://drive.google.com/file/d/1UXqW050ZnRkQJs5Pp4m_oLEwDrJObYlX/view',
+        pdfLink: 'https://drive.google.com/file/d/142Ok8pgATCnSGAM0rbJZfegykVfe72lT/view',
         // Atributos para secciones
         extranjero: false,
         millennial: true,
@@ -1036,7 +1037,7 @@ const candidatos = [
         inmuebles: 'Sí registra bienes inmuebles',
         muebles: 'Sí registra',
         bio: 'Ingeniero de sistemas con enfoque en políticas de innovación tecnológica.',
-        pdfLink: 'https://drive.google.com/file/d/1UXqW050ZnRkQJs5Pp4m_oLEwDrJObYlX/view',
+        pdfLink: 'https://drive.google.com/file/d/1vgwV2NAlW2APhI3KWvX54iMO0eJ6ffWj/view',
         // Atributos para secciones
         extranjero: false,
         millennial: true,
@@ -1108,7 +1109,7 @@ const candidatos = [
         inmuebles: 'Sí registra bienes inmuebles',
         muebles: 'Sí registra',
         bio: 'Ingeniero de sistemas con enfoque en políticas de innovación tecnológica.',
-        pdfLink: 'https://drive.google.com/file/d/1UXqW050ZnRkQJs5Pp4m_oLEwDrJObYlX/view',
+        pdfLink: 'https://drive.google.com/file/d/1r3YBW7ObdvwP81ZvXyR6bG_sls15NqSy/view',
         // Atributos para secciones
         extranjero: false,
         millennial: true,
@@ -1144,7 +1145,7 @@ const candidatos = [
         inmuebles: 'Sí registra bienes inmuebles',
         muebles: 'Sí registra',
         bio: 'Ingeniero de sistemas con enfoque en políticas de innovación tecnológica.',
-        pdfLink: 'https://drive.google.com/file/d/1UXqW050ZnRkQJs5Pp4m_oLEwDrJObYlX/view',
+        pdfLink: 'https://drive.google.com/file/d/1xNue9N_iQoGQlDMZk--Dg32I4-V6IBKM/view',
         // Atributos para secciones
         extranjero: false,
         millennial: true,
@@ -1180,7 +1181,7 @@ const candidatos = [
         inmuebles: 'Sí registra bienes inmuebles',
         muebles: 'Sí registra',
         bio: 'Ingeniero de sistemas con enfoque en políticas de innovación tecnológica.',
-        pdfLink: 'https://drive.google.com/file/d/1UXqW050ZnRkQJs5Pp4m_oLEwDrJObYlX/view',
+        pdfLink: 'https://drive.google.com/file/d/1K-ZbRGogF8lPeU9NDq3Cr9KtgdCCiF9T/view',
         // Atributos para secciones
         extranjero: false,
         millennial: true,
@@ -1216,7 +1217,7 @@ const candidatos = [
         inmuebles: 'Sí registra bienes inmuebles',
         muebles: 'Sí registra',
         bio: 'Ingeniero de sistemas con enfoque en políticas de innovación tecnológica.',
-        pdfLink: 'https://drive.google.com/file/d/1UXqW050ZnRkQJs5Pp4m_oLEwDrJObYlX/view',
+        pdfLink: '#',
         // Atributos para secciones
         extranjero: false,
         millennial: true,
@@ -1252,7 +1253,7 @@ const candidatos = [
         inmuebles: 'Sí registra bienes inmuebles',
         muebles: 'Sí registra',
         bio: 'Ingeniero de sistemas con enfoque en políticas de innovación tecnológica.',
-        pdfLink: 'https://drive.google.com/file/d/1UXqW050ZnRkQJs5Pp4m_oLEwDrJObYlX/view',
+        pdfLink: 'https://drive.google.com/file/d/1RwyJO4A9rcayVlh_O-FIeMRfCcAZ5hId/view',
         // Atributos para secciones
         extranjero: false,
         millennial: true,
@@ -1288,7 +1289,7 @@ const candidatos = [
         inmuebles: 'Sí registra bienes inmuebles',
         muebles: 'Sí registra',
         bio: 'Ingeniero de sistemas con enfoque en políticas de innovación tecnológica.',
-        pdfLink: 'https://drive.google.com/file/d/1UXqW050ZnRkQJs5Pp4m_oLEwDrJObYlX/view',
+        pdfLink: 'https://drive.google.com/file/d/1-rdnsLOoQTi3Lg6PRphLEV6wjc-YsbGO/view',
         // Atributos para secciones
         extranjero: false,
         millennial: true,
@@ -1324,7 +1325,7 @@ const candidatos = [
         inmuebles: 'Sí registra bienes inmuebles',
         muebles: 'Sí registra',
         bio: 'Ingeniero de sistemas con enfoque en políticas de innovación tecnológica.',
-        pdfLink: 'https://drive.google.com/file/d/1UXqW050ZnRkQJs5Pp4m_oLEwDrJObYlX/view',
+        pdfLink: 'https://drive.google.com/file/d/1EhgzrH-O8SrrZh0y_A1WZ39lzcjfP3fL/view',
         // Atributos para secciones
         extranjero: false,
         millennial: true,
@@ -1360,7 +1361,7 @@ const candidatos = [
         inmuebles: 'Sí registra bienes inmuebles',
         muebles: 'Sí registra',
         bio: 'Ingeniero de sistemas con enfoque en políticas de innovación tecnológica.',
-        pdfLink: 'https://drive.google.com/file/d/1UXqW050ZnRkQJs5Pp4m_oLEwDrJObYlX/view',
+        pdfLink: 'https://drive.google.com/file/d/1ZQK16mp5ZNby54huOQoemqu4V4Y9CT7k/view',
         // Atributos para secciones
         extranjero: false,
         millennial: true,
