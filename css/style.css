@@ -3332,6 +3332,11 @@ span.separador-logo {
         height: 32px;
         font-size: 20px;
     }
+
+    body .box-ingresos{
+        min-width: inherit;
+        width: 90%;
+    }
 }
 
 @media (max-height: 732px) {
