@@ -4,6 +4,8 @@
     box-sizing: border-box;
     font-weight: normal;
     font-style: normal;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 :root {
@@ -2472,7 +2474,7 @@ img.hero-logo{
 .data-candidate-fixed.active-blue {
     filter: grayscale(0%);
     opacity: 1;
-    background-color: #06b6d4;
+    background-color: #d54595;
     border-color: #000;
 }
 
@@ -2480,6 +2482,25 @@ img.hero-logo{
     filter: grayscale(0%);
     opacity: 1;
     background-color: #ff1493;
+    border-color: #000;
+}
+
+.active-bachiller {
+    filter: grayscale(0%);
+    opacity: 1;
+    background-color: #ff8c4c;
+    border-color: #000;
+}
+.active-licenciado {
+    filter: grayscale(0%);
+    opacity: 1;
+    background-color: #83e475;
+    border-color: #000;
+}
+.data-candidate-fixed.active-secundaria {
+    filter: grayscale(0%);
+    opacity: 1;
+    background-color: #5e62ef;
     border-color: #000;
 }
 
@@ -2508,6 +2529,13 @@ img.hero-logo{
     filter: grayscale(0%);
     opacity: 1;
     background-color: #5e62ef;
+    border-color: #000;
+}
+
+.data-candidate-fixed.active-black {
+    filter: grayscale(0%);
+    opacity: 1;
+    background-color: #000;
     border-color: #000;
 }
 
@@ -2697,6 +2725,7 @@ span.separador-logo {
 
 .footer-content ul li p {
     font: 0.9rem/1.6 'Roboto', sans-serif;
+    font-weight: 300;
 }
 
 /* ============================================
@@ -3442,3 +3471,12 @@ ul.generaciones{
         ul.generaciones li:nth-child(4){
             color: #da4a38;
         }
+
+.box-ingresos{
+    min-width: 800px;
+    padding: 20px;
+    width: 100%;
+}
+.box-embed{
+    width: 100%;
+}
