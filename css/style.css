@@ -3214,7 +3214,7 @@ span.separador-logo {
     .info-box-centered {
         padding: 20px 25px;
 
-        transition: opacity 0.8s ease .7s, transform 0.8s ease 0.6s; /* añadido delay 0.6s */
+        transition: opacity 0.8s ease .6s, transform 0.8s ease 0.6s; /* añadido delay 0.6s */
     }
 
     .info-box-centered h2 {
