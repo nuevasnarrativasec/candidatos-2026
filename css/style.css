@@ -1060,7 +1060,7 @@ img.hero-logo {
 
 .hero-description img {
     cursor: pointer;
-    margin: 10px auto;
+    margin: 20px auto;
     max-width: 40px;
 }
 
@@ -2088,10 +2088,7 @@ img.hero-logo {
         }
 
         @media (max-width: 1024px) {
-            .candidate-grid-hero {
-                grid-template-columns: repeat(12, 70px);
-                gap: 8px;
-            }
+            
 
             .candidate-hero {
                 width: 70px;
@@ -2155,7 +2152,7 @@ img.hero-logo {
 
             #dataSection3 .data-grid.large-grid{
                 grid-template-columns: repeat(9, 1fr);
-            }
+            }            
 
         }
 
@@ -2386,6 +2383,10 @@ img.hero-logo {
                 width: 32px;
                 height: 32px;
                 font-size: 20px;
+            }
+
+            .info-box-centered {
+                transition: opacity 0.8s ease 0.6s, transform 0.8s ease 0.6s; /* añadido delay 0.6s */
             }
                     
 
@@ -3078,7 +3079,7 @@ span.separador-logo {
 ============================================ */
 @media (max-width: 1024px) {
     .candidate-grid-hero {
-        grid-template-columns: repeat(12, 70px);
+        grid-template-columns: repeat(13, 65px);
         gap: 8px;
     }
 
@@ -3108,6 +3109,9 @@ span.separador-logo {
     .carousel-candidate {
         width: 70px;
         height: 70px;
+    }
+    p.bajada{
+        padding: 50px 180px;
     }
 }
 
@@ -3209,6 +3213,8 @@ span.separador-logo {
 
     .info-box-centered {
         padding: 20px 25px;
+
+        transition: opacity 0.8s ease .8s, transform 0.8s ease 0.6s; /* añadido delay 0.6s */
     }
 
     .info-box-centered h2 {
