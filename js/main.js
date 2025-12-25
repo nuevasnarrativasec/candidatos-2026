@@ -107,12 +107,13 @@ const candidatos = [
         extranjero: false,
         millennial: true,
         movilidad: true,
-        educacionGrupo: 'universitario',
-        inconclusos: false,
+        educacionGrupo: 'doctorado',
+        inconclusos: true,
         delitos: false,
         reincidencia: false,
-        sentenciaTipo: 'sin',
+        sentenciaTipo: 'penal',
         tipoCandidatura: 'senador',
+        tipoDelito: 'corrupcion',
     },
     { 
         nombre: 'Carlos Alvarez', 
@@ -145,11 +146,11 @@ const candidatos = [
         extranjero: false,
         millennial: true,
         movilidad: false,
-        educacionGrupo: 'universitario',
+        educacionGrupo: 'secundaria',
         inconclusos: false,
         delitos: false,
         reincidencia: false,
-        sentenciaTipo: 'sin'
+        sentenciaTipo: 'sin',
     },
     { 
         nombre: 'Ronald Atencio', 
@@ -182,7 +183,7 @@ const candidatos = [
         extranjero: false,
         millennial: true,
         movilidad: true,
-        educacionGrupo: 'universitario',
+        educacionGrupo: 'maestro',
         inconclusos: false,
         delitos: false,
         reincidencia: false,
@@ -220,7 +221,7 @@ const candidatos = [
         extranjero: false,
         millennial: true,
         movilidad: true,
-        educacionGrupo: 'universitario',
+        educacionGrupo: 'bachiller',
         inconclusos: false,
         delitos: false,
         reincidencia: false,
@@ -258,7 +259,7 @@ const candidatos = [
         extranjero: false,
         millennial: true,
         movilidad: false,
-        educacionGrupo: 'universitario',
+        educacionGrupo: 'bachiller',
         inconclusos: false,
         delitos: false,
         reincidencia: false,
@@ -295,7 +296,7 @@ const candidatos = [
         extranjero: false,
         millennial: false,
         movilidad: false,
-        educacionGrupo: 'universitario',
+        educacionGrupo: 'bachiller',
         inconclusos: false,
         delitos: false,
         reincidencia: false,
@@ -333,8 +334,8 @@ const candidatos = [
         extranjero: false,
         millennial: true,
         movilidad: true,
-        educacionGrupo: 'universitario',
-        inconclusos: false,
+        educacionGrupo: 'maestro',
+        inconclusos: true,
         delitos: false,
         reincidencia: false,
         sentenciaTipo: 'sin',
@@ -371,7 +372,7 @@ const candidatos = [
         extranjero: false,
         millennial: true,
         movilidad: true,
-        educacionGrupo: 'universitario',
+        educacionGrupo: 'doctorado',
         inconclusos: false,
         delitos: false,
         reincidencia: false,
@@ -409,7 +410,7 @@ const candidatos = [
         extranjero: false,
         millennial: true,
         movilidad: true,
-        educacionGrupo: 'universitario',
+        educacionGrupo: 'licenciado',
         inconclusos: false,
         delitos: false,
         reincidencia: false,
@@ -448,7 +449,7 @@ const candidatos = [
         extranjero: false,
         millennial: true,
         movilidad: true,
-        educacionGrupo: 'universitario',
+        educacionGrupo: 'maestro',
         inconclusos: false,
         delitos: false,
         reincidencia: false,
@@ -485,12 +486,13 @@ const candidatos = [
         extranjero: false,
         millennial: true,
         movilidad: false,
-        educacionGrupo: 'universitario',
-        inconclusos: false,
+        educacionGrupo: 'doctorado',
+        inconclusos: true,
         delitos: false,
         reincidencia: false,
-        sentenciaTipo: 'sin',
-        tipoCandidatura: 'senador'
+        sentenciaTipo: 'civil',
+        tipoCandidatura: 'senador',
+        tipoDelito: 'patrimonio',
     },
     { 
         nombre: 'Francisco Diez Canseco', 
@@ -523,7 +525,7 @@ const candidatos = [
         extranjero: false,
         millennial: true,
         movilidad: false,
-        educacionGrupo: 'universitario',
+        educacionGrupo: 'licenciado',
         inconclusos: false,
         delitos: false,
         reincidencia: false,
@@ -561,8 +563,8 @@ const candidatos = [
         extranjero: false,
         millennial: true,
         movilidad: false,
-        educacionGrupo: 'universitario',
-        inconclusos: false,
+        educacionGrupo: 'maestro',
+        inconclusos: true,
         delitos: false,
         reincidencia: false,
         sentenciaTipo: 'sin',
@@ -599,7 +601,7 @@ const candidatos = [
         extranjero: true,
         millennial: true,
         movilidad: false,
-        educacionGrupo: 'universitario',
+        educacionGrupo: 'bachiller',
         inconclusos: false,
         delitos: false,
         reincidencia: false,
@@ -638,7 +640,7 @@ const candidatos = [
         extranjero: false,
         millennial: true,
         movilidad: true,
-        educacionGrupo: 'universitario',
+        educacionGrupo: 'maestro',
         inconclusos: false,
         delitos: false,
         reincidencia: false,
@@ -676,8 +678,8 @@ const candidatos = [
         extranjero: true,
         millennial: true,
         movilidad: false,
-        educacionGrupo: 'universitario',
-        inconclusos: false,
+        educacionGrupo: 'maestro',
+        inconclusos: true,
         delitos: false,
         reincidencia: false,
         sentenciaTipo: 'sin' 
@@ -713,7 +715,7 @@ const candidatos = [
         extranjero: false,
         millennial: true,
         movilidad: false,
-        educacionGrupo: 'universitario',
+        educacionGrupo: 'bachiller',
         inconclusos: false,
         delitos: false,
         reincidencia: false,
@@ -751,8 +753,8 @@ const candidatos = [
         extranjero: false,
         millennial: true,
         movilidad: false,
-        educacionGrupo: 'universitario',
-        inconclusos: false,
+        educacionGrupo: 'doctorado',
+        inconclusos: true,
         delitos: false,
         reincidencia: false,
         sentenciaTipo: 'sin',
@@ -789,7 +791,7 @@ const candidatos = [
         extranjero: false,
         millennial: true,
         movilidad: true,
-        educacionGrupo: 'universitario',
+        educacionGrupo: 'maestro',
         inconclusos: false,
         delitos: false,
         reincidencia: false,
@@ -826,8 +828,8 @@ const candidatos = [
         extranjero: false,
         millennial: true,
         movilidad: true,
-        educacionGrupo: 'universitario',
-        inconclusos: false,
+        educacionGrupo: 'maestro',
+        inconclusos: true,
         delitos: false,
         reincidencia: false,
         sentenciaTipo: 'sin',
@@ -864,7 +866,7 @@ const candidatos = [
         extranjero: false,
         millennial: true,
         movilidad: false,
-        educacionGrupo: 'universitario',
+        educacionGrupo: 'maestro',
         inconclusos: false,
         delitos: false,
         reincidencia: false,
@@ -902,8 +904,8 @@ const candidatos = [
         extranjero: false,
         millennial: true,
         movilidad: true,
-        educacionGrupo: 'universitario',
-        inconclusos: false,
+        educacionGrupo: 'doctorado',
+        inconclusos: true,
         delitos: false,
         reincidencia: false,
         sentenciaTipo: 'sin',
@@ -941,7 +943,7 @@ const candidatos = [
         extranjero: false,
         millennial: true,
         movilidad: false,
-        educacionGrupo: 'universitario',
+        educacionGrupo: 'maestro',
         inconclusos: false,
         delitos: false,
         reincidencia: false,
@@ -979,8 +981,8 @@ const candidatos = [
         extranjero: false,
         millennial: true,
         movilidad: false,
-        educacionGrupo: 'universitario',
-        inconclusos: false,
+        educacionGrupo: 'doctorado',
+        inconclusos: true,
         delitos: false,
         reincidencia: false,
         sentenciaTipo: 'sin',
@@ -1017,7 +1019,7 @@ const candidatos = [
         extranjero: false,
         millennial: true,
         movilidad: false,
-        educacionGrupo: 'universitario',
+        educacionGrupo: 'doctorado',
         inconclusos: false,
         delitos: false,
         reincidencia: false,
@@ -1055,12 +1057,13 @@ const candidatos = [
         extranjero: false,
         millennial: true,
         movilidad: false,
-        educacionGrupo: 'universitario',
-        inconclusos: false,
+        educacionGrupo: 'maestro',
+        inconclusos: true,
         delitos: false,
         reincidencia: false,
-        sentenciaTipo: 'sin',
-        tipoCandidatura: 'senador'
+        sentenciaTipo: 'penal',
+        tipoCandidatura: 'senador',
+        tipoDelito: 'corrupcion',
     },
     { 
         nombre: 'Fiorella Molinelli', 
@@ -1093,8 +1096,8 @@ const candidatos = [
         extranjero: true,
         millennial: true,
         movilidad: false,
-        educacionGrupo: 'universitario',
-        inconclusos: false,
+        educacionGrupo: 'doctorado',
+        inconclusos: true,
         delitos: false,
         reincidencia: false,
         sentenciaTipo: 'sin',
@@ -1131,8 +1134,8 @@ const candidatos = [
         extranjero: false,
         millennial: true,
         movilidad: true,
-        educacionGrupo: 'universitario',
-        inconclusos: false,
+        educacionGrupo: 'doctorado',
+        inconclusos: true,
         delitos: false,
         reincidencia: false,
         sentenciaTipo: 'sin'
@@ -1168,7 +1171,7 @@ const candidatos = [
         extranjero: false,
         millennial: true,
         movilidad: false,
-        educacionGrupo: 'universitario',
+        educacionGrupo: 'bachiller',
         inconclusos: false,
         delitos: false,
         reincidencia: false,
@@ -1205,7 +1208,7 @@ const candidatos = [
         extranjero: false,
         millennial: true,
         movilidad: true,
-        educacionGrupo: 'universitario',
+        educacionGrupo: 'secundaria',
         inconclusos: false,
         delitos: false,
         reincidencia: false,
@@ -1242,7 +1245,7 @@ const candidatos = [
         extranjero: false,
         millennial: true,
         movilidad: false,
-        educacionGrupo: 'universitario',
+        educacionGrupo: 'maestro',
         inconclusos: false,
         delitos: false,
         reincidencia: false,
@@ -1316,7 +1319,7 @@ const candidatos = [
         extranjero: false,
         millennial: true,
         movilidad: false,
-        educacionGrupo: 'universitario',
+        educacionGrupo: 'maestro',
         inconclusos: false,
         delitos: false,
         reincidencia: false,
@@ -1354,8 +1357,8 @@ const candidatos = [
         extranjero: false,
         millennial: true,
         movilidad: false,
-        educacionGrupo: 'universitario',
-        inconclusos: false,
+        educacionGrupo: 'maestro',
+        inconclusos: true,
         delitos: false,
         reincidencia: false,
         sentenciaTipo: 'sin',
@@ -1392,12 +1395,13 @@ const candidatos = [
         extranjero: false,
         millennial: true,
         movilidad: false,
-        educacionGrupo: 'universitario',
+        educacionGrupo: 'maestro',
         inconclusos: false,
         delitos: false,
         reincidencia: false,
-        sentenciaTipo: 'sin',
-        tipoCandidatura: 'senador'
+        sentenciaTipo: 'civil',
+        tipoCandidatura: 'senador',
+        tipoDelito: 'patrimonio',
     },
     { 
         nombre: 'José Williams', 
@@ -1430,7 +1434,7 @@ const candidatos = [
         extranjero: false,
         millennial: true,
         movilidad: false,
-        educacionGrupo: 'universitario',
+        educacionGrupo: 'doctorado',
         inconclusos: false,
         delitos: false,
         reincidencia: false,
@@ -1442,12 +1446,12 @@ const candidatos = [
     
 
     candidatos.forEach((c, idx) => {
-        // Insertar el logo en la posiciÃ³n correcta (despuÃ©s del candidato 31, Ã­ndice 30)
+        // Insertar el logo en la posiciÃƒÂ³n correcta (despuÃƒÂ©s del candidato 31, ÃƒÂ­ndice 30)
         // Para que quede centrado en la fila 3: 5 candidatos + logo (span 3) + 5 candidatos
         if (idx === 18) {
             const logoDiv = document.createElement('div');
             logoDiv.className = 'hero-logo-cell';
-            logoDiv.innerHTML = `<img src="./img/logo-tu-decides.jpg" alt="TÃƒÂº decides" class="hero-logo-integrated">`;
+            logoDiv.innerHTML = `<img src="./img/logo-tu-decides.jpg" alt="TÃƒÆ’Ã‚Âº decides" class="hero-logo-integrated">`;
             heroGrid.appendChild(logoDiv);
         }
 
@@ -1493,14 +1497,14 @@ const candidatos = [
     });
 
     // Create fixed grid for data sections
-    // Crear array de Ã­ndices aleatorios para posiciones iniciales
+    // Crear array de ÃƒÂ­ndices aleatorios para posiciones iniciales
     const shuffledIndices = [...Array(candidatos.length).keys()];
     for (let i = shuffledIndices.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [shuffledIndices[i], shuffledIndices[j]] = [shuffledIndices[j], shuffledIndices[i]];
     }
     
-    // FunciÃ³n para obtener nÃºmero de columnas segÃºn el tamaÃ±o de pantalla
+    // FunciÃƒÂ³n para obtener nÃƒÂºmero de columnas segÃƒÂºn el tamaÃƒÂ±o de pantalla
     function getGridColumns() {
         const width = window.innerWidth;
         if (width <= 640) return 5;
@@ -1508,14 +1512,14 @@ const candidatos = [
         return 8;
     }
     
-    // FunciÃ³n para calcular y aplicar offsets aleatorios (intercambio exacto de celdas)
+    // FunciÃƒÂ³n para calcular y aplicar offsets aleatorios (intercambio exacto de celdas)
     function calculateRandomOffsets() {
         const gridCandidates = fixedGrid.querySelectorAll('.data-candidate-fixed');
         if (gridCandidates.length < 2) return;
         
         const columns = getGridColumns();
         
-        // Obtener tamaÃ±o real de celda midiendo los primeros dos elementos
+        // Obtener tamaÃƒÂ±o real de celda midiendo los primeros dos elementos
         const firstCell = gridCandidates[0];
         const secondCell = gridCandidates[1];
         const firstRect = firstCell.getBoundingClientRect();
@@ -1530,7 +1534,7 @@ const candidatos = [
             cellWidth; // Asumir cuadrado si no hay siguiente fila
         
         gridCandidates.forEach((div, idx) => {
-            // PosiciÃ³n donde deberÃ­a ir esta cara en el orden aleatorio
+            // PosiciÃƒÂ³n donde deberÃƒÂ­a ir esta cara en el orden aleatorio
             const randomIdx = shuffledIndices[idx];
             
             // Calcular fila y columna original
@@ -1541,14 +1545,14 @@ const candidatos = [
             const randomRow = Math.floor(randomIdx / columns);
             const randomCol = randomIdx % columns;
             
-            // Calcular desplazamiento exacto en pÃ­xeles (celda a celda)
+            // Calcular desplazamiento exacto en pÃƒÂ­xeles (celda a celda)
             const offsetX = (randomCol - originalCol) * cellWidth;
             const offsetY = (randomRow - originalRow) * cellHeight;
             
             div.dataset.randomOffsetX = offsetX;
             div.dataset.randomOffsetY = offsetY;
             
-            // Solo aplicar si el grid estÃ¡ en estado aleatorio
+            // Solo aplicar si el grid estÃƒÂ¡ en estado aleatorio
             if (fixedGrid.classList.contains('randomized')) {
                 div.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
             }
@@ -1568,10 +1572,10 @@ const candidatos = [
     // Marcar grid como aleatorio inicialmente
     fixedGrid.classList.add('randomized');
     
-    // Variable para rastrear si ya se ordenÃ³
+    // Variable para rastrear si ya se ordenÃƒÂ³
     let isGridOrdered = false;
     
-    // Esperar a que el layout estÃ© completo para calcular tamaÃ±os
+    // Esperar a que el layout estÃƒÂ© completo para calcular tamaÃƒÂ±os
     setTimeout(() => {
         calculateRandomOffsets();
     }, 100);
@@ -1633,7 +1637,7 @@ const candidatos = [
         document.getElementById('modalFormacion').textContent = candidato.formacion || candidato.profesion || 'No disponible';
         document.getElementById('modalEspecializacion').textContent = candidato.especializacion || 'No disponible';
         
-        document.getElementById('modalExpPublica').textContent = candidato.expPublica || (candidato.experiencia ? 'SÃ­Â­' : 'No');
+        document.getElementById('modalExpPublica').textContent = candidato.expPublica || (candidato.experiencia ? 'SÃƒÂ­Ã‚Â­' : 'No');
         document.getElementById('modalRolRelevante').textContent = candidato.rolRelevante || candidato.experienciaLaboral || 'No disponible';
         //document.getElementById('modalExpInternacional').textContent = candidato.expInternacional || 'No registra';
         
@@ -1650,7 +1654,7 @@ const candidatos = [
         document.getElementById('modalInmuebles').textContent = candidato.inmuebles || 'No disponible';
         document.getElementById('modalMuebles').textContent = candidato.muebles || 'No disponible';
         
-        document.getElementById('modalResumen').textContent = candidato.resumen || candidato.bio || 'InformaciÃƒÂ³n no disponible.';
+        document.getElementById('modalResumen').textContent = candidato.resumen || candidato.bio || 'InformaciÃƒÆ’Ã‚Â³n no disponible.';
         
         const pdfLink = document.getElementById('modalPdfLink');
         if (candidato.pdfLink) {
@@ -1728,18 +1732,18 @@ const candidatos = [
             filter: (c) => true, // All candidates
             colorMap: {
                 'maestro': 'active-yellow',
-                'bachiller': 'active-pink',
-                'licenciado': 'active-orange',
+                'doctorado': 'active-blue',
+                'bachiller': 'active-bachiller',
+                'licenciado': 'active-licenciado',
                 'universitario': 'active-green',
-                'no-universitario': 'active-blue',
-                'tecnico': 'active-blue',
-                'secundaria': 'active-red',
+                'no-universitario': 'active-blue',                
+                'secundaria': 'active-secundaria',
                 'primaria': 'active-lime'
             }
         },
         'inconclusos': {
             filter: (c) => c.inconclusos,
-            color: 'active-red'
+            color: 'active-yellow'
         },
         'delitos': {
             filter: (c) => c.delitos,
@@ -1758,7 +1762,15 @@ const candidatos = [
             filter: (c) => c.sentenciaTipo !== 'sin',
             colorMap: {
                 'penal': 'active-red',
-                'civil': 'active-blue',
+                'civil': 'active-black',
+                'sin': null
+            }
+        },
+        'tiposdelitos': {
+            filter: (c) => c.tipoDelito,
+            colorMap: {
+                'patrimonio': 'active-black',
+                'corrupcion': 'active-red',
                 'sin': null
             }
         },
@@ -1773,7 +1785,7 @@ const candidatos = [
     function clearHighlights() {
         const gridCandidates = fixedGrid.querySelectorAll('.data-candidate-fixed');
         gridCandidates.forEach(el => {
-            el.classList.remove('active-yellow', 'active-red', 'active-blue', 'active-pink', 'active-orange', 'active-green', 'active-lime', 'active-purple');
+            el.classList.remove('active-yellow', 'active-red', 'active-blue', 'active-pink', 'active-orange', 'active-green', 'active-lime', 'active-purple', 'active-bachiller', 'active-licenciado','active-secundaria', 'active-black');
         });
     }
 
@@ -1784,7 +1796,7 @@ const candidatos = [
         
         // Si es section previo, mantener caras aleatorias
         if (config.isTransition) {
-            // Asegurarse de que el grid estÃ¡ en estado aleatorio
+            // Asegurarse de que el grid estÃƒÂ¡ en estado aleatorio
             if (!fixedGrid.classList.contains('randomized')) {
                 fixedGrid.classList.add('randomized');
                 fixedGrid.classList.remove('ordered');
@@ -1804,7 +1816,7 @@ const candidatos = [
             return; // No hacer nada, mantener estado actual
         }
         
-        // Ordenar el grid si aÃºn estÃ¡ aleatorio
+        // Ordenar el grid si aÃƒÂºn estÃƒÂ¡ aleatorio
         if (fixedGrid.classList.contains('randomized')) {
             fixedGrid.classList.remove('randomized');
             fixedGrid.classList.add('ordered');
@@ -1836,7 +1848,7 @@ const candidatos = [
                         el.classList.add(colorClass);
                     }
                 } else if (sectionName === 'generaciones') {
-                    // Calcular generación basándose en la edad
+                    // Calcular generaciÃ³n basÃ¡ndose en la edad
                     const edad = candidato.edad;
                     let generacion;
                     if (edad >= 80) {
@@ -1859,6 +1871,15 @@ const candidatos = [
                         el.classList.add(config.colorMap['diputado']);
                     } else if (cargoExtra.toLowerCase().includes('senador')) {
                         el.classList.add(config.colorMap['senador']);
+                    }
+                } else if (sectionName === 'tiposdelitos') {
+                    // Determinar tipo de delito
+                    const tipoDelito = candidato.tipoDelito;
+                    if (tipoDelito) {
+                        const colorClass = config.colorMap[tipoDelito];
+                        if (colorClass) {
+                            el.classList.add(colorClass);
+                        }
                     }
                 }
             } else {
