@@ -1649,7 +1649,7 @@ const candidatos = [
         document.getElementById('modalFormacion').textContent = candidato.formacion || candidato.profesion || 'No disponible';
         document.getElementById('modalEspecializacion').textContent = candidato.especializacion || 'No disponible';
         
-        document.getElementById('modalExpPublica').textContent = candidato.expPublica || (candidato.experiencia ? 'SÃƒÂ­Ã‚Â­' : 'No');
+        document.getElementById('modalExpPublica').textContent = candidato.expPublica || (candidato.experiencia ? 'Sí' : 'No');
         document.getElementById('modalRolRelevante').textContent = candidato.rolRelevante || candidato.experienciaLaboral || 'No disponible';
         //document.getElementById('modalExpInternacional').textContent = candidato.expInternacional || 'No registra';
         
@@ -1666,7 +1666,7 @@ const candidatos = [
         document.getElementById('modalInmuebles').textContent = candidato.inmuebles || 'No disponible';
         document.getElementById('modalMuebles').textContent = candidato.muebles || 'No disponible';
         
-        document.getElementById('modalResumen').textContent = candidato.resumen || candidato.bio || 'InformaciÃƒÆ’Ã‚Â³n no disponible.';
+        document.getElementById('modalResumen').textContent = candidato.resumen || candidato.bio || 'Información no disponible.';
         
         const pdfLink = document.getElementById('modalPdfLink');
         if (candidato.pdfLink) {
