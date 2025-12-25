@@ -1519,10 +1519,10 @@ const candidatos = [
         
         const columns = getGridColumns();
         const screenWidth = window.innerWidth;
-        const totalRows = Math.ceil(gridCandidates.length / columns);
-        
-        // Desactivar efecto randomizado solo en móvil pequeño (menor a 640px)
-        if (screenWidth < 640) {
+
+        // Desactivar efecto randomizado en pantallas pequeñas (móvil y tablet)
+        // Solo aplicar en desktop (mayor a 1024px)
+        if (screenWidth <= 1024) {
             gridCandidates.forEach((div) => {
                 div.dataset.randomOffsetX = 0;
                 div.dataset.randomOffsetY = 0;
@@ -1546,7 +1546,7 @@ const candidatos = [
             cellWidth; // Asumir cuadrado si no hay siguiente fila
         
         gridCandidates.forEach((div, idx) => {
-            // Posición donde debería ir esta cara en el orden aleatorio
+            // PosiciÃƒÂ³n donde deberÃƒÂ­a ir esta cara en el orden aleatorio
             const randomIdx = shuffledIndices[idx];
             
             // Calcular fila y columna original
@@ -1557,35 +1557,14 @@ const candidatos = [
             const randomRow = Math.floor(randomIdx / columns);
             const randomCol = randomIdx % columns;
             
-            // Calcular diferencia de columnas y filas
-            let colDiff = randomCol - originalCol;
-            let rowDiff = randomRow - originalRow;
-            
-            // LIMITAR OFFSETS DINÁMICAMENTE según posición del elemento
-            // Para evitar que se salgan del grid visible
-            
-            // Límite izquierdo: no puede moverse más a la izquierda que su columna actual
-            const maxLeftOffset = -originalCol;
-            // Límite derecho: no puede moverse más allá de la última columna
-            const maxRightOffset = (columns - 1) - originalCol;
-            
-            // Límite superior: no puede moverse más arriba que su fila actual
-            const maxUpOffset = -originalRow;
-            // Límite inferior: no puede moverse más abajo que la última fila
-            const maxDownOffset = (totalRows - 1) - originalRow;
-            
-            // Aplicar límites
-            colDiff = Math.max(maxLeftOffset, Math.min(maxRightOffset, colDiff));
-            rowDiff = Math.max(maxUpOffset, Math.min(maxDownOffset, rowDiff));
-            
-            // Calcular desplazamiento en píxeles
-            const offsetX = colDiff * cellWidth;
-            const offsetY = rowDiff * cellHeight;
+            // Calcular desplazamiento exacto en pÃƒÂ­xeles (celda a celda)
+            const offsetX = (randomCol - originalCol) * cellWidth;
+            const offsetY = (randomRow - originalRow) * cellHeight;
             
             div.dataset.randomOffsetX = offsetX;
             div.dataset.randomOffsetY = offsetY;
             
-            // Solo aplicar si el grid está en estado aleatorio
+            // Solo aplicar si el grid estÃƒÂ¡ en estado aleatorio
             if (fixedGrid.classList.contains('randomized')) {
                 div.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
             }
