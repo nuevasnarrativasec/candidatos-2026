@@ -100,7 +100,7 @@ const candidatos = [
         ingresos: 'S/9,836,766', 
         origenIngresos: 'Sector público y privado',
         inmuebles: 'Registra 24 bienes inmuebles que sumados ascienden a S/58,257,047.79',
-        muebles: 'Registra 158 bienes muebles',
+        muebles: 'Registra 158 bienes muebles que sumados ascienden a S/15,113,167.06',
         bio: 'Perfil con trayectoria en gestión pública. Registra una sentencia declarada.',
         pdfLink: 'https://drive.google.com/file/d/16IfX4meSvODhTsxNO9B7NO6jkq2GTuNf/view',
         // Atributos para secciones
@@ -111,7 +111,8 @@ const candidatos = [
         inconclusos: false,
         delitos: false,
         reincidencia: false,
-        sentenciaTipo: 'sin'
+        sentenciaTipo: 'sin',
+        tipoCandidatura: 'senador',
     },
     { 
         nombre: 'Carlos Alvarez', 
@@ -143,7 +144,7 @@ const candidatos = [
         // Atributos para secciones
         extranjero: false,
         millennial: true,
-        movilidad: true,
+        movilidad: false,
         educacionGrupo: 'universitario',
         inconclusos: false,
         delitos: false,
@@ -185,7 +186,8 @@ const candidatos = [
         inconclusos: false,
         delitos: false,
         reincidencia: false,
-        sentenciaTipo: 'sin'
+        sentenciaTipo: 'sin',
+        tipoCandidatura: 'diputado'
     },
     { 
         nombre: 'Napoleón Becerra', 
@@ -199,7 +201,7 @@ const candidatos = [
         vicepresidentes: 'Winston Clemente Huamán Henríquez y Nelida Juliana Cuayla Cuayla',
         departamento: 'Lima', 
         profesion: 'Licenciado en Administración', 
-        formacion: 'Bachiller en ciencias administrativas',
+        formacion: 'Licenciado en Administración',
         especializacion: 'Administración',
         experienciaLaboral: 'Empleado en la Municipalidad de Lima', 
         expInternacional: 'No',
@@ -222,7 +224,8 @@ const candidatos = [
         inconclusos: false,
         delitos: false,
         reincidencia: false,
-        sentenciaTipo: 'sin'
+        sentenciaTipo: 'sin',
+        tipoCandidatura: 'senador',
     },
     { 
         nombre: 'Rafael Belaúnde', 
@@ -254,7 +257,7 @@ const candidatos = [
         // Atributos para secciones
         extranjero: false,
         millennial: true,
-        movilidad: true,
+        movilidad: false,
         educacionGrupo: 'universitario',
         inconclusos: false,
         delitos: false,
@@ -291,12 +294,13 @@ const candidatos = [
         // Atributos para secciones
         extranjero: false,
         millennial: false,
-        movilidad: true,
+        movilidad: false,
         educacionGrupo: 'universitario',
         inconclusos: false,
         delitos: false,
         reincidencia: false,
-        sentenciaTipo: 'sin'
+        sentenciaTipo: 'sin',
+        tipoCandidatura: 'senador'
     },
     { 
         nombre: 'Herbert Caller', 
@@ -333,7 +337,8 @@ const candidatos = [
         inconclusos: false,
         delitos: false,
         reincidencia: false,
-        sentenciaTipo: 'sin'
+        sentenciaTipo: 'sin',
+        tipoCandidatura: 'senador',
     },
     { 
         nombre: 'Charlie Carrasco', 
@@ -370,7 +375,8 @@ const candidatos = [
         inconclusos: false,
         delitos: false,
         reincidencia: false,
-        sentenciaTipo: 'sin'
+        sentenciaTipo: 'sin',
+        tipoCandidatura: 'senador'
     },
     { 
         nombre: 'Roberto Chiabra', 
@@ -407,7 +413,8 @@ const candidatos = [
         inconclusos: false,
         delitos: false,
         reincidencia: false,
-        sentenciaTipo: 'sin'
+        sentenciaTipo: 'sin',
+        tipoCandidatura: 'senador'
     },
     { 
         nombre: 'Walter Chirinos', 
@@ -477,12 +484,13 @@ const candidatos = [
         // Atributos para secciones
         extranjero: false,
         millennial: true,
-        movilidad: true,
+        movilidad: false,
         educacionGrupo: 'universitario',
         inconclusos: false,
         delitos: false,
         reincidencia: false,
-        sentenciaTipo: 'sin'
+        sentenciaTipo: 'sin',
+        tipoCandidatura: 'senador'
     },
     { 
         nombre: 'Francisco Diez Canseco', 
@@ -514,12 +522,13 @@ const candidatos = [
         // Atributos para secciones
         extranjero: false,
         millennial: true,
-        movilidad: true,
+        movilidad: false,
         educacionGrupo: 'universitario',
         inconclusos: false,
         delitos: false,
         reincidencia: false,
-        sentenciaTipo: 'sin'
+        sentenciaTipo: 'sin',
+        tipoCandidatura: 'senador'
     },
     { 
         nombre: 'Carlos Espá', 
@@ -532,7 +541,7 @@ const candidatos = [
         cargoExtra: 'También postula como Senador',
         vicepresidentes: 'Alejandro Agustín Santa María Silva y Melitza Melania Yanzich Villagarcía',
         departamento: 'Lima', 
-        profesion: 'Aboado', 
+        profesion: 'Abogado', 
         formacion: 'Master en Ciencia Política',
         especializacion: 'Derecho y Ciencias Políticas',
         experienciaLaboral: 'Director de Comunicaciones de la Embajada de Estados Unidos en Perú', 
@@ -551,12 +560,13 @@ const candidatos = [
         // Atributos para secciones
         extranjero: false,
         millennial: true,
-        movilidad: true,
+        movilidad: false,
         educacionGrupo: 'universitario',
         inconclusos: false,
         delitos: false,
         reincidencia: false,
-        sentenciaTipo: 'sin'
+        sentenciaTipo: 'sin',
+        tipoCandidatura: 'senador'
     },
     { 
         nombre: 'Rosario Fernández', 
@@ -586,14 +596,15 @@ const candidatos = [
         bio: 'Perfil con experiencia en Educación. No registra sentencias ni demandas.',
         pdfLink: 'https://drive.google.com/file/d/1ivpsLhlCXoF8fflnpyyq7UuYH7G3d3VO/view',
         // Atributos para secciones
-        extranjero: false,
+        extranjero: true,
         millennial: true,
-        movilidad: true,
+        movilidad: false,
         educacionGrupo: 'universitario',
         inconclusos: false,
         delitos: false,
         reincidencia: false,
-        sentenciaTipo: 'sin'
+        sentenciaTipo: 'sin',
+        tipoCandidatura: 'senador',
     },
     { 
         nombre: 'George Forsyth', 
@@ -623,6 +634,7 @@ const candidatos = [
         bio: 'Perfil con experiencia en Gestión Pública. No registra sentencias ni demandas.',
         pdfLink: 'https://drive.google.com/file/d/1Nh92gi9lSbrRbqU7Rbula5Zr2frrEUcv/view',
         // Atributos para secciones
+        internacional: true,
         extranjero: false,
         millennial: true,
         movilidad: true,
@@ -630,7 +642,8 @@ const candidatos = [
         inconclusos: false,
         delitos: false,
         reincidencia: false,
-        sentenciaTipo: 'sin' 
+        sentenciaTipo: 'sin',
+        tipoCandidatura: 'diputado' 
     },
     { 
         nombre: 'Keiko Fujimori', 
@@ -660,9 +673,9 @@ const candidatos = [
         bio: 'Perfil con experiencia en Gestión Pública. No registra sentencias ni demandas.',
         pdfLink: 'https://drive.google.com/file/d/1v-FJEk5j5o8WbeUnwU4xprtF4RpX2AmH/view',
         // Atributos para secciones
-        extranjero: false,
+        extranjero: true,
         millennial: true,
-        movilidad: true,
+        movilidad: false,
         educacionGrupo: 'universitario',
         inconclusos: false,
         delitos: false,
@@ -699,12 +712,13 @@ const candidatos = [
         // Atributos para secciones
         extranjero: false,
         millennial: true,
-        movilidad: true,
+        movilidad: false,
         educacionGrupo: 'universitario',
         inconclusos: false,
         delitos: false,
         reincidencia: false,
-        sentenciaTipo: 'sin'
+        sentenciaTipo: 'sin',
+        tipoCandidatura: 'senador',
     },
     { 
         nombre: 'Wolfgang Grozo', 
@@ -729,19 +743,20 @@ const candidatos = [
         demandas:  'Declara no tener demandas',
         ingresos: 'S/277,827,000', 
         origenIngresos: 'Sector público y privado',
-        inmuebles: 'Registra 4 bienes inmuebles que sumados ascienden a S/177,000',
+        inmuebles: 'Registra 4 bienes inmuebles que sumados ascienden a S/758,250',
         muebles: 'Registra 1 biene mueble valorizado en S/67,400',
         bio: 'Perfil con experiencia en Desarrollo y Seguridad. No registra sentencias ni demandas.',
         pdfLink: 'https://drive.google.com/file/d/1x_aTCzNQywIgFJcPWF0EekLg2GfmaBt7/view',
         // Atributos para secciones
         extranjero: false,
         millennial: true,
-        movilidad: true,
+        movilidad: false,
         educacionGrupo: 'universitario',
         inconclusos: false,
         delitos: false,
         reincidencia: false,
-        sentenciaTipo: 'sin'
+        sentenciaTipo: 'sin',
+        tipoCandidatura: 'senador'
     },
     { 
         nombre: 'Mesias Guevara', 
@@ -815,7 +830,8 @@ const candidatos = [
         inconclusos: false,
         delitos: false,
         reincidencia: false,
-        sentenciaTipo: 'sin'
+        sentenciaTipo: 'sin',
+        tipoCandidatura: 'senador'
     },
     { 
         nombre: 'Paul Jaimes', 
@@ -847,12 +863,13 @@ const candidatos = [
         // Atributos para secciones
         extranjero: false,
         millennial: true,
-        movilidad: true,
+        movilidad: false,
         educacionGrupo: 'universitario',
         inconclusos: false,
         delitos: false,
         reincidencia: false,
-        sentenciaTipo: 'sin'
+        sentenciaTipo: 'sin',
+        tipoCandidatura: 'diputado'
     },
     { 
         nombre: 'Yonhy Lescano',
@@ -889,7 +906,8 @@ const candidatos = [
         inconclusos: false,
         delitos: false,
         reincidencia: false,
-        sentenciaTipo: 'sin'
+        sentenciaTipo: 'sin',
+        tipoCandidatura: 'senador'
     },
     { 
         nombre: 'Rafael López Aliaga', 
@@ -906,6 +924,7 @@ const candidatos = [
         formacion: 'Magíster en Administración',
         especializacion: 'Administración',
         experienciaLaboral: 'Alcalde de Lima (2023-2025)', 
+        expPublica: 'Sí',
         expInternacional: 'No',
         cargosEleccion: 'Alcalde de Lima (2023-2025)',
         cargosPartidarios: 'Presidente de Renovación Popular',
@@ -921,18 +940,19 @@ const candidatos = [
         // Atributos para secciones
         extranjero: false,
         millennial: true,
-        movilidad: true,
+        movilidad: false,
         educacionGrupo: 'universitario',
         inconclusos: false,
         delitos: false,
         reincidencia: false,
-        sentenciaTipo: 'sin'
+        sentenciaTipo: 'sin',
+        tipoCandidatura: 'senador',
     },
     { 
         nombre: 'Alfonso Lopez Chau', 
         genero: 'M', 
         denuncias: true, 
-        edad: 28, 
+        edad: 75, 
         reeleccion: false, 
         experiencia: false, 
         partido: 'Ahora Nación', 
@@ -958,12 +978,13 @@ const candidatos = [
         // Atributos para secciones
         extranjero: false,
         millennial: true,
-        movilidad: true,
+        movilidad: false,
         educacionGrupo: 'universitario',
         inconclusos: false,
         delitos: false,
         reincidencia: false,
-        sentenciaTipo: 'sin'
+        sentenciaTipo: 'sin',
+        tipoCandidatura: 'senador',
     },
     { 
         nombre: 'José Luna Galvez', 
@@ -988,19 +1009,20 @@ const candidatos = [
         demandas:  'Declara no tener demandas',
         ingresos: 'S/11,409,038.64', 
         origenIngresos: 'Sector público y privado',
-        inmuebles: 'Registra 15 bienes inmuebles',
+        inmuebles: 'Registra 15 bienes inmuebles que sumados ascienden a S/30,415,324,5',
         muebles: 'Registra 12 bienes muebles que sumados ascienden a S/601,014.20',
         bio: 'Perfil con estudios en Economía. No registra sentencias ni demandas.',
         pdfLink: 'https://drive.google.com/file/d/1X0o82pKXDfnNkpAd0EZLWnwke3rj3vzJ/view',
         // Atributos para secciones
         extranjero: false,
         millennial: true,
-        movilidad: true,
+        movilidad: false,
         educacionGrupo: 'universitario',
         inconclusos: false,
         delitos: false,
         reincidencia: false,
-        sentenciaTipo: 'sin'
+        sentenciaTipo: 'sin',
+        tipoCandidatura: 'senador'
     },
     { 
         nombre: 'Armando Masse', 
@@ -1032,15 +1054,16 @@ const candidatos = [
         // Atributos para secciones
         extranjero: false,
         millennial: true,
-        movilidad: true,
+        movilidad: false,
         educacionGrupo: 'universitario',
         inconclusos: false,
         delitos: false,
         reincidencia: false,
-        sentenciaTipo: 'sin'
+        sentenciaTipo: 'sin',
+        tipoCandidatura: 'senador'
     },
     { 
-        nombre: 'Fiorella Mollineli', 
+        nombre: 'Fiorella Molinelli', 
         genero: 'F', 
         denuncias: true, 
         edad: 51, 
@@ -1067,14 +1090,15 @@ const candidatos = [
         bio: 'Perfil con experiencia en gestión pública. No registra sentencias ni demandas.',
         pdfLink: 'https://drive.google.com/file/d/1vgwV2NAlW2APhI3KWvX54iMO0eJ6ffWj/view',
         // Atributos para secciones
-        extranjero: false,
+        extranjero: true,
         millennial: true,
-        movilidad: true,
+        movilidad: false,
         educacionGrupo: 'universitario',
         inconclusos: false,
         delitos: false,
         reincidencia: false,
-        sentenciaTipo: 'sin'
+        sentenciaTipo: 'sin',
+        tipoCandidatura: 'senador'
     },
     { 
         nombre: 'Jorge Nieto', 
@@ -1143,7 +1167,7 @@ const candidatos = [
         // Atributos para secciones
         extranjero: false,
         millennial: true,
-        movilidad: true,
+        movilidad: false,
         educacionGrupo: 'universitario',
         inconclusos: false,
         delitos: false,
@@ -1210,19 +1234,20 @@ const candidatos = [
         demandas:  'Declara no tener demandas',
         ingresos: 'S/341,465', 
         origenIngresos: 'Sector privado',
-        inmuebles: 'Registra 20 bienes inmuebles',
+        inmuebles: 'Registra 20 bienes inmuebles que sumados ascienden a S/13,760,000,36',
         muebles: 'Registra 3 bienes muebles valorizados en S/216,000',
         bio: 'Perfil con experiencia en gestión pública. No registra sentencias ni demandas.',
         pdfLink: 'https://drive.google.com/file/d/1K-ZbRGogF8lPeU9NDq3Cr9KtgdCCiF9T/view',
         // Atributos para secciones
         extranjero: false,
         millennial: true,
-        movilidad: true,
+        movilidad: false,
         educacionGrupo: 'universitario',
         inconclusos: false,
         delitos: false,
         reincidencia: false,
-        sentenciaTipo: 'sin'
+        sentenciaTipo: 'sin',
+        tipoCandidatura: 'diputado'
     },
     { 
         nombre: 'Marisol Pérez Tello', 
@@ -1251,7 +1276,7 @@ const candidatos = [
         bio: 'Ingeniero de sistemas con enfoque en políticas de innovación tecnológica.',
         pdfLink: '#',
         // Atributos para secciones
-        extranjero: false,
+        extranjero: true,
         millennial: true,
         movilidad: true,
         educacionGrupo: 'universitario',
@@ -1290,12 +1315,13 @@ const candidatos = [
         // Atributos para secciones
         extranjero: false,
         millennial: true,
-        movilidad: true,
+        movilidad: false,
         educacionGrupo: 'universitario',
         inconclusos: false,
         delitos: false,
         reincidencia: false,
-        sentenciaTipo: 'sin'
+        sentenciaTipo: 'sin',
+        tipoCandidatura: 'diputado'
     },
     { 
         nombre: 'Enrique Valderrama', 
@@ -1327,12 +1353,13 @@ const candidatos = [
         // Atributos para secciones
         extranjero: false,
         millennial: true,
-        movilidad: true,
+        movilidad: false,
         educacionGrupo: 'universitario',
         inconclusos: false,
         delitos: false,
         reincidencia: false,
-        sentenciaTipo: 'sin'
+        sentenciaTipo: 'sin',
+        tipoCandidatura: 'diputado'
     },
     { 
         nombre: 'Mario Vizcarra', 
@@ -1364,12 +1391,13 @@ const candidatos = [
         // Atributos para secciones
         extranjero: false,
         millennial: true,
-        movilidad: true,
+        movilidad: false,
         educacionGrupo: 'universitario',
         inconclusos: false,
         delitos: false,
         reincidencia: false,
-        sentenciaTipo: 'sin'
+        sentenciaTipo: 'sin',
+        tipoCandidatura: 'senador'
     },
     { 
         nombre: 'José Williams', 
@@ -1401,24 +1429,25 @@ const candidatos = [
         // Atributos para secciones
         extranjero: false,
         millennial: true,
-        movilidad: true,
+        movilidad: false,
         educacionGrupo: 'universitario',
         inconclusos: false,
         delitos: false,
         reincidencia: false,
-        sentenciaTipo: 'sin'
+        sentenciaTipo: 'sin',
+        tipoCandidatura: 'senador'
     }   
 ];
 
     
 
     candidatos.forEach((c, idx) => {
-        // Insertar el logo en la posición correcta (después del candidato 31, índice 30)
+        // Insertar el logo en la posiciÃ³n correcta (despuÃ©s del candidato 31, Ã­ndice 30)
         // Para que quede centrado en la fila 3: 5 candidatos + logo (span 3) + 5 candidatos
         if (idx === 18) {
             const logoDiv = document.createElement('div');
             logoDiv.className = 'hero-logo-cell';
-            logoDiv.innerHTML = `<img src="./img/logo-tu-decides.jpg" alt="TÃº decides" class="hero-logo-integrated">`;
+            logoDiv.innerHTML = `<img src="./img/logo-tu-decides.jpg" alt="TÃƒÂº decides" class="hero-logo-integrated">`;
             heroGrid.appendChild(logoDiv);
         }
 
@@ -1464,14 +1493,14 @@ const candidatos = [
     });
 
     // Create fixed grid for data sections
-    // Crear array de índices aleatorios para posiciones iniciales
+    // Crear array de Ã­ndices aleatorios para posiciones iniciales
     const shuffledIndices = [...Array(candidatos.length).keys()];
     for (let i = shuffledIndices.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [shuffledIndices[i], shuffledIndices[j]] = [shuffledIndices[j], shuffledIndices[i]];
     }
     
-    // Función para obtener número de columnas según el tamaño de pantalla
+    // FunciÃ³n para obtener nÃºmero de columnas segÃºn el tamaÃ±o de pantalla
     function getGridColumns() {
         const width = window.innerWidth;
         if (width <= 640) return 5;
@@ -1479,14 +1508,14 @@ const candidatos = [
         return 8;
     }
     
-    // Función para calcular y aplicar offsets aleatorios (intercambio exacto de celdas)
+    // FunciÃ³n para calcular y aplicar offsets aleatorios (intercambio exacto de celdas)
     function calculateRandomOffsets() {
         const gridCandidates = fixedGrid.querySelectorAll('.data-candidate-fixed');
         if (gridCandidates.length < 2) return;
         
         const columns = getGridColumns();
         
-        // Obtener tamaño real de celda midiendo los primeros dos elementos
+        // Obtener tamaÃ±o real de celda midiendo los primeros dos elementos
         const firstCell = gridCandidates[0];
         const secondCell = gridCandidates[1];
         const firstRect = firstCell.getBoundingClientRect();
@@ -1501,7 +1530,7 @@ const candidatos = [
             cellWidth; // Asumir cuadrado si no hay siguiente fila
         
         gridCandidates.forEach((div, idx) => {
-            // Posición donde debería ir esta cara en el orden aleatorio
+            // PosiciÃ³n donde deberÃ­a ir esta cara en el orden aleatorio
             const randomIdx = shuffledIndices[idx];
             
             // Calcular fila y columna original
@@ -1512,14 +1541,14 @@ const candidatos = [
             const randomRow = Math.floor(randomIdx / columns);
             const randomCol = randomIdx % columns;
             
-            // Calcular desplazamiento exacto en píxeles (celda a celda)
+            // Calcular desplazamiento exacto en pÃ­xeles (celda a celda)
             const offsetX = (randomCol - originalCol) * cellWidth;
             const offsetY = (randomRow - originalRow) * cellHeight;
             
             div.dataset.randomOffsetX = offsetX;
             div.dataset.randomOffsetY = offsetY;
             
-            // Solo aplicar si el grid está en estado aleatorio
+            // Solo aplicar si el grid estÃ¡ en estado aleatorio
             if (fixedGrid.classList.contains('randomized')) {
                 div.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
             }
@@ -1539,10 +1568,10 @@ const candidatos = [
     // Marcar grid como aleatorio inicialmente
     fixedGrid.classList.add('randomized');
     
-    // Variable para rastrear si ya se ordenó
+    // Variable para rastrear si ya se ordenÃ³
     let isGridOrdered = false;
     
-    // Esperar a que el layout esté completo para calcular tamaños
+    // Esperar a que el layout estÃ© completo para calcular tamaÃ±os
     setTimeout(() => {
         calculateRandomOffsets();
     }, 100);
@@ -1604,7 +1633,7 @@ const candidatos = [
         document.getElementById('modalFormacion').textContent = candidato.formacion || candidato.profesion || 'No disponible';
         document.getElementById('modalEspecializacion').textContent = candidato.especializacion || 'No disponible';
         
-        document.getElementById('modalExpPublica').textContent = candidato.expPublica || (candidato.experiencia ? 'Sí­' : 'No');
+        document.getElementById('modalExpPublica').textContent = candidato.expPublica || (candidato.experiencia ? 'SÃ­Â­' : 'No');
         document.getElementById('modalRolRelevante').textContent = candidato.rolRelevante || candidato.experienciaLaboral || 'No disponible';
         //document.getElementById('modalExpInternacional').textContent = candidato.expInternacional || 'No registra';
         
@@ -1621,7 +1650,7 @@ const candidatos = [
         document.getElementById('modalInmuebles').textContent = candidato.inmuebles || 'No disponible';
         document.getElementById('modalMuebles').textContent = candidato.muebles || 'No disponible';
         
-        document.getElementById('modalResumen').textContent = candidato.resumen || candidato.bio || 'InformaciÃ³n no disponible.';
+        document.getElementById('modalResumen').textContent = candidato.resumen || candidato.bio || 'InformaciÃƒÂ³n no disponible.';
         
         const pdfLink = document.getElementById('modalPdfLink');
         if (candidato.pdfLink) {
@@ -1652,7 +1681,7 @@ const candidatos = [
         'previo': {
             filter: () => false, // No highlights, solo muestra caras aleatorias
             color: null,
-            isTransition: true // Marca para la transición
+            isTransition: true // Marca para la transiciÃ³n
         },
         'extranjero': {
             filter: (c) => c.extranjero,
@@ -1662,6 +1691,13 @@ const candidatos = [
             filter: (c) => c.genero === 'F',
             color: 'active-yellow'
         },
+        'dobleambicion': {
+            filter: (c) => c.cargoExtra && c.cargoExtra.trim() !== '',
+            colorMap: {
+                'diputado': 'active-orange',
+                'senador': 'active-purple'
+            }
+        },
         'internacional': {
             filter: (c) => c.internacional,
             color: 'active-yellow'
@@ -1669,6 +1705,15 @@ const candidatos = [
         'millennial': {
             filter: (c) => c.millennial,
             color: 'active-yellow'
+        },
+        'generaciones': {
+            filter: (c) => true, // Todos los candidatos
+            colorMap: {
+                'silenciosa': 'active-red',
+                'boomer': 'active-orange',
+                'genx': 'active-pink',
+                'millennial': 'active-purple'
+            }
         },
         'informativo1': {
             filter: () => false, // No highlights para informativos
@@ -1728,7 +1773,7 @@ const candidatos = [
     function clearHighlights() {
         const gridCandidates = fixedGrid.querySelectorAll('.data-candidate-fixed');
         gridCandidates.forEach(el => {
-            el.classList.remove('active-yellow', 'active-red', 'active-blue', 'active-pink', 'active-orange', 'active-green', 'active-lime');
+            el.classList.remove('active-yellow', 'active-red', 'active-blue', 'active-pink', 'active-orange', 'active-green', 'active-lime', 'active-purple');
         });
     }
 
@@ -1739,7 +1784,7 @@ const candidatos = [
         
         // Si es section previo, mantener caras aleatorias
         if (config.isTransition) {
-            // Asegurarse de que el grid está en estado aleatorio
+            // Asegurarse de que el grid estÃ¡ en estado aleatorio
             if (!fixedGrid.classList.contains('randomized')) {
                 fixedGrid.classList.add('randomized');
                 fixedGrid.classList.remove('ordered');
@@ -1759,7 +1804,7 @@ const candidatos = [
             return; // No hacer nada, mantener estado actual
         }
         
-        // Ordenar el grid si aún está aleatorio
+        // Ordenar el grid si aÃºn estÃ¡ aleatorio
         if (fixedGrid.classList.contains('randomized')) {
             fixedGrid.classList.remove('randomized');
             fixedGrid.classList.add('ordered');
@@ -1789,6 +1834,31 @@ const candidatos = [
                     const colorClass = config.colorMap[candidato.sentenciaTipo];
                     if (colorClass) {
                         el.classList.add(colorClass);
+                    }
+                } else if (sectionName === 'generaciones') {
+                    // Calcular generación basándose en la edad
+                    const edad = candidato.edad;
+                    let generacion;
+                    if (edad >= 80) {
+                        generacion = 'silenciosa';
+                    } else if (edad >= 61) {
+                        generacion = 'boomer';
+                    } else if (edad >= 45) {
+                        generacion = 'genx';
+                    } else {
+                        generacion = 'millennial';
+                    }
+                    const colorClass = config.colorMap[generacion];
+                    if (colorClass) {
+                        el.classList.add(colorClass);
+                    }
+                } else if (sectionName === 'dobleambicion') {
+                    // Determinar tipo de cargo adicional
+                    const cargoExtra = candidato.cargoExtra || '';
+                    if (cargoExtra.toLowerCase().includes('diputado')) {
+                        el.classList.add(config.colorMap['diputado']);
+                    } else if (cargoExtra.toLowerCase().includes('senador')) {
+                        el.classList.add(config.colorMap['senador']);
                     }
                 }
             } else {
