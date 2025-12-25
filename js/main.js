@@ -194,7 +194,7 @@ const candidatos = [
         nombre: 'Napoleón Becerra', 
         genero: 'M', 
         denuncias: true, 
-        edad: 44, 
+        edad: 61, 
         reeleccion: true, 
         experiencia: true, 
         partido: 'Partido de los Trabajadores y Emprendedores', 
