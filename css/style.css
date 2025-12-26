@@ -3511,3 +3511,7 @@ span.leyenda{
     font: .9rem / 1.2 'Roboto', sans-serif;
     font-weight: 300;
 }
+span.asterisco-bienes{
+    display: block;
+    margin-top: 10px;
+}
