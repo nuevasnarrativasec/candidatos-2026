@@ -3491,3 +3491,23 @@ ul.generaciones{
 .box-embed{
     width: 100%;
 }
+p.fallo{
+
+}
+    p.fallo span,
+    p.informacion span,
+    p.cumplimiento span,
+    p.acciones span{
+        font-weight: 600;
+    }
+    .regular{
+        font-weight: 400;
+    }
+#modalAcciones{
+    display: block;
+    margin-top: 10px;
+}
+span.leyenda{
+    font: .9rem / 1.2 'Roboto', sans-serif;
+    font-weight: 300;
+}
