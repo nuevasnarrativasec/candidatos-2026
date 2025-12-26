@@ -114,6 +114,10 @@ const candidatos = [
         sentenciaTipo: 'penal',
         tipoCandidatura: 'senador',
         tipoDelito: 'corrupcion',
+        detalles: 'Declara contar con sentencia por incumplimiento de obligaciones familiares.',
+        fallo: '<p class="fallo"><span>Fallo:</span> Confirma la sentencia expedida</p>',
+        informacion: '<p class="informacion"><span>Información complementaria:</span> Ordena que la parte demandada César Acuña preste en forma mensual y adelantada.</p> ',
+        acciones: '<p class="acciones"><span>Declara participación accionaria en 4 empresas.</span> La información consignada corresponde al valor nominal de las acciones y no permite conocer su valor económico efectivo.</p>'
     },
     { 
         nombre: 'Carlos Alvarez', 
@@ -188,7 +192,8 @@ const candidatos = [
         delitos: false,
         reincidencia: false,
         sentenciaTipo: 'sin',
-        tipoCandidatura: 'diputado'
+        tipoCandidatura: 'diputado',
+        acciones: '<p class="acciones"><span>Declara participación accionaria en 1 empresa.</span> La información consignada corresponde al valor nominal de las acciones y no permite conocer su valor económico efectivo.</p>'
     },
     { 
         nombre: 'Napoleón Becerra', 
@@ -263,7 +268,8 @@ const candidatos = [
         inconclusos: false,
         delitos: false,
         reincidencia: false,
-        sentenciaTipo: 'sin'
+        sentenciaTipo: 'sin',
+        acciones: '<p class="acciones"><span>Declara participación accionaria en 8 empresas.</span> La información consignada corresponde al valor nominal de las acciones y no permite conocer su valor económico efectivo.</p>'
     },
     { 
         nombre: 'Ricardo Belmont', 
@@ -301,7 +307,8 @@ const candidatos = [
         delitos: false,
         reincidencia: false,
         sentenciaTipo: 'sin',
-        tipoCandidatura: 'senador'
+        tipoCandidatura: 'senador',
+        acciones: '<p class="acciones"><span>Declara participación accionaria en 1 empresa.</span> La información consignada corresponde al valor nominal de las acciones y no permite conocer su valor económico efectivo.</p>'
     },
     { 
         nombre: 'Herbert Caller', 
@@ -340,6 +347,7 @@ const candidatos = [
         reincidencia: false,
         sentenciaTipo: 'sin',
         tipoCandidatura: 'senador',
+        acciones: '<p class="acciones"><span>Declara participación accionaria en 2 empresas.</span> La información consignada corresponde al valor nominal de las acciones y no permite conocer su valor económico efectivo.</p>'
     },
     { 
         nombre: 'Charlie Carrasco', 
@@ -377,7 +385,8 @@ const candidatos = [
         delitos: false,
         reincidencia: false,
         sentenciaTipo: 'sin',
-        tipoCandidatura: 'senador'
+        tipoCandidatura: 'senador',
+        acciones: '<p class="acciones"><span>Declara participación accionaria en 8 empresas.</span> La información consignada corresponde al valor nominal de las acciones y no permite conocer su valor económico efectivo.</p>'
     },
     { 
         nombre: 'Roberto Chiabra', 
@@ -493,6 +502,14 @@ const candidatos = [
         sentenciaTipo: 'civil',
         tipoCandidatura: 'senador',
         tipoDelito: 'patrimonio',
+        detalles: 'Declara contar con sentencia en modalidad suspendida por negociación incompatible. ',
+        fallo: '<p class="fallo"><span>Fallo:</span> 4 años de pena privativa</p>',
+        cumplimiento: '<p class="cumplimiento"><span>Cumplimiento:</span> Pena cumplida</p> ',
+        informacion: '<p class="informacion"><span>Información complementaria:</span> Sentencia anulada por el TC.</p> ',
+        detallesDos: 'Declara contar con sentencia en modalidad efectiva por colusión ',
+        falloDos: '<p class="fallo"><span>Fallo:</span> 3 años 6 meses</p>',
+        cumplimientoDos: '<p class="cumplimiento"><span>Cumplimiento:</span> Pena cumplida</p> ',
+        informacionDos: '<p class="informacion"><span>Información complementaria:</span> Absuelto de sentencia penal por recurso de casación.</p> ',
     },
     { 
         nombre: 'Francisco Diez Canseco', 
@@ -568,7 +585,8 @@ const candidatos = [
         delitos: false,
         reincidencia: false,
         sentenciaTipo: 'sin',
-        tipoCandidatura: 'senador'
+        tipoCandidatura: 'senador',
+        acciones: '<p class="acciones"><span>Declara participación accionaria en 7 empresas.</span> La información consignada corresponde al valor nominal de las acciones y no permite conocer su valor económico efectivo.</p>'
     },
     { 
         nombre: 'Rosario Fernández', 
@@ -645,7 +663,8 @@ const candidatos = [
         delitos: false,
         reincidencia: false,
         sentenciaTipo: 'sin',
-        tipoCandidatura: 'diputado' 
+        tipoCandidatura: 'diputado',
+        acciones: '<p class="acciones"><span>Declara participación accionaria en 1 empresa.</span> La información consignada corresponde al valor nominal de las acciones y no permite conocer su valor económico efectivo.</p>'
     },
     { 
         nombre: 'Keiko Fujimori', 
@@ -721,6 +740,7 @@ const candidatos = [
         reincidencia: false,
         sentenciaTipo: 'sin',
         tipoCandidatura: 'senador',
+        acciones: '<p class="acciones"><span>Declara participación accionaria en 4 empresas.</span> La información consignada corresponde al valor nominal de las acciones y no permite conocer su valor económico efectivo.</p>'
     },
     { 
         nombre: 'Wolfgang Grozo', 
@@ -833,7 +853,8 @@ const candidatos = [
         delitos: false,
         reincidencia: false,
         sentenciaTipo: 'sin',
-        tipoCandidatura: 'senador'
+        tipoCandidatura: 'senador',
+        acciones: '<p class="acciones"><span>Declara participación accionaria en 1 empresa.</span> La información consignada corresponde al valor nominal de las acciones y no permite conocer su valor económico efectivo.</p>'
     },
     { 
         nombre: 'Paul Jaimes', 
@@ -871,7 +892,8 @@ const candidatos = [
         delitos: false,
         reincidencia: false,
         sentenciaTipo: 'sin',
-        tipoCandidatura: 'diputado'
+        tipoCandidatura: 'diputado',
+        acciones: '<p class="acciones"><span>Declara participación accionaria en 6 empresas.</span> La información consignada corresponde al valor nominal de las acciones y no permite conocer su valor económico efectivo.</p>' 
     },
     { 
         nombre: 'Yonhy Lescano',
@@ -949,6 +971,7 @@ const candidatos = [
         reincidencia: false,
         sentenciaTipo: 'sin',
         tipoCandidatura: 'senador',
+        acciones: '<p class="acciones"><span>Declara participación accionaria en 10 empresas.</span> La información consignada corresponde al valor nominal de las acciones y no permite conocer su valor económico efectivo.</p>' 
     },
     { 
         nombre: 'Alfonso Lopez Chau', 
@@ -1024,7 +1047,8 @@ const candidatos = [
         delitos: false,
         reincidencia: false,
         sentenciaTipo: 'sin',
-        tipoCandidatura: 'senador'
+        tipoCandidatura: 'senador',
+        acciones: '<p class="acciones"><span>Declara participación accionaria en 5 empresas.</span> La información consignada corresponde al valor nominal de las acciones y no permite conocer su valor económico efectivo.</p>'
     },
     { 
         nombre: 'Armando Masse', 
@@ -1064,6 +1088,13 @@ const candidatos = [
         sentenciaTipo: 'penal',
         tipoCandidatura: 'senador',
         tipoDelito: 'corrupcion',
+        detalles: 'Declara contar con sentencia en modalidad sobreseida por delito contra el patrimonio. ',
+        fallo: '<p class="fallo"><span>Fallo:</span> Sobreseida</p>',
+        cumplimiento: '<p class="cumplimiento"><span>Cumplimiento:</span> Pena cumplida</p> ',        
+        detallesDos: 'Declara contar con sentencia en modalidad absuelto por delito de fraude en la Adm. de las personas.',
+        falloDos: '<p class="fallo"><span>Fallo:</span> Absuelto Archivado</p>',
+        cumplimientoDos: '<p class="cumplimiento"><span>Estado:</span> Pena cumplida</p> ',      
+        acciones: '<p class="acciones"><span>Declara participación accionaria en 6 empresas.</span> La información consignada corresponde al valor nominal de las acciones y no permite conocer su valor económico efectivo.</p>'  
     },
     { 
         nombre: 'Fiorella Molinelli', 
@@ -1212,7 +1243,8 @@ const candidatos = [
         inconclusos: false,
         delitos: false,
         reincidencia: false,
-        sentenciaTipo: 'sin'
+        sentenciaTipo: 'sin',
+        acciones: '<p class="acciones"><span>Declara participación accionaria en 5 empresas.</span> La información consignada corresponde al valor nominal de las acciones y no permite conocer su valor económico efectivo.</p>'
     },
     { 
         nombre: 'Alvaro Paz de la Barra', 
@@ -1250,7 +1282,8 @@ const candidatos = [
         delitos: false,
         reincidencia: false,
         sentenciaTipo: 'sin',
-        tipoCandidatura: 'diputado'
+        tipoCandidatura: 'diputado',
+        acciones: '<p class="acciones"><span>Declara participación accionaria en 4 empresas.</span> La información consignada corresponde al valor nominal de las acciones y no permite conocer su valor económico efectivo.</p>' 
     },
     { 
         nombre: 'Marisol Pérez Tello', 
@@ -1362,7 +1395,8 @@ const candidatos = [
         delitos: false,
         reincidencia: false,
         sentenciaTipo: 'sin',
-        tipoCandidatura: 'diputado'
+        tipoCandidatura: 'diputado',
+        acciones: '<p class="acciones"><span>Declara participación accionaria en 1 empresa.</span> La información consignada corresponde al valor nominal de las acciones y no permite conocer su valor económico efectivo.</p>'
     },
     { 
         nombre: 'Mario Vizcarra', 
@@ -1402,6 +1436,11 @@ const candidatos = [
         sentenciaTipo: 'civil',
         tipoCandidatura: 'senador',
         tipoDelito: 'patrimonio',
+        detalles: 'Declara contar con sentencia en modalidad suspendida por delito de peculado.',
+        fallo: '<p class="fallo"><span>Fallo:</span> Pena privativa</p>',
+        cumplimiento: '<p class="cumplimiento"><span>Cumplimiento:</span> Pena cumplida</p> ',
+        informacion: '<p class="informacion"><span>Información complementaria:</span> Me encuentro habilitado</p> ',
+        acciones: '<p class="acciones"><span>Declara participación accionaria en 5 empresas.</span> La información consignada corresponde al valor nominal de las acciones y no permite conocer su valor económico efectivo.</p>'
     },
     { 
         nombre: 'José Williams', 
@@ -1584,7 +1623,7 @@ const candidatos = [
     // Marcar grid como aleatorio inicialmente
     fixedGrid.classList.add('randomized');
     
-    // Variable para rastrear si ya se ordenÃƒÂ³
+    // Variable para rastrear si ya se ordena
     let isGridOrdered = false;
     
     // Esperar a que el layout estÃƒÂ© completo para calcular tamaÃƒÂ±os
@@ -1668,6 +1707,18 @@ const candidatos = [
         
         document.getElementById('modalResumen').textContent = candidato.resumen || candidato.bio || 'Información no disponible.';
         
+        document.getElementById('modalDetalles').textContent = candidato.detalles || ' ';
+        document.getElementById('modalFallo').innerHTML = candidato.fallo || ' ';
+        document.getElementById('modalCumplimiento').innerHTML = candidato.cumplimiento || ' ';
+        document.getElementById('modalInformacion').innerHTML = candidato.informacion || ' ';
+
+        document.getElementById('modalDetallesDos').textContent = candidato.detallesDos || ' ';
+        document.getElementById('modalFalloDos').innerHTML = candidato.falloDos || ' ';
+        document.getElementById('modalCumplimientoDos').innerHTML = candidato.cumplimientoDos || ' ';
+        document.getElementById('modalInformacionDos').innerHTML = candidato.informacionDos || ' ';
+
+        document.getElementById('modalAcciones').innerHTML = candidato.acciones || ' ';
+
         const pdfLink = document.getElementById('modalPdfLink');
         if (candidato.pdfLink) {
             pdfLink.href = candidato.pdfLink;
