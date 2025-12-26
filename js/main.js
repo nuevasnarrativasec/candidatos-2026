@@ -763,7 +763,8 @@ const candidatos = [
         continuidad: 'No se declara militancia previa distinta a la actual',
         sentencias: 'Declara no tener sentencias', 
         demandas:  'Declara no tener demandas',
-        ingresos: 'S/277,827,000', 
+        ingresos: 'S/277,827,000*', 
+        notaIngresos: '*Este es el monto consignado por el candidato en su hoja de vida. Sin embargo, en su partido señalan que se trata de un error y que la cifra real es S/277.827',
         origenIngresos: 'Sector público y privado',
         inmuebles: 'Registra 4 bienes inmuebles que sumados ascienden a S/758,250',
         muebles: 'Registra 1 biene mueble valorizado en S/67,400',
@@ -1701,6 +1702,7 @@ const candidatos = [
         
         document.getElementById('modalIngresos').textContent = candidato.ingresos;
         document.getElementById('modalOrigenIngresos').textContent = candidato.origenIngresos || 'No especificado';
+        document.getElementById('modalNotaIngresos').textContent = candidato.notaIngresos;
         
         document.getElementById('modalInmuebles').textContent = candidato.inmuebles || 'No disponible';
         document.getElementById('modalMuebles').textContent = candidato.muebles || 'No disponible';
