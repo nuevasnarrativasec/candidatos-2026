@@ -764,7 +764,7 @@ const candidatos = [
         sentencias: 'Declara no tener sentencias', 
         demandas:  'Declara no tener demandas',
         ingresos: 'S/277,827,000*', 
-        notaIngresos: '*Este es el monto consignado por el candidato en su hoja de vida. Sin embargo, en su partido señalan que se trata de un error y que la cifra real es S/277.827',
+        notaIngresos: '*Este es el monto consignado por el candidato en su hoja de vida. Sin embargo, en su partido señalan que se trata de un error y que la cifra real es S/277,827',
         origenIngresos: 'Sector público y privado',
         inmuebles: 'Registra 4 bienes inmuebles que sumados ascienden a S/758,250',
         muebles: 'Registra 1 biene mueble valorizado en S/67,400',
