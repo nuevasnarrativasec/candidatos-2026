@@ -17,7 +17,7 @@ function getCandidatePhoto(candidato) {
         .normalize('NFD')
         .replace(/[\u0300-\u036f]/g, '')
         .replace(/\s+/g, '-');
-    return `./img/candidatos/${nombreNormalizado}.png`;
+    return `https://nuevasnarrativasec.github.io/candidatos-2026/img/candidatos/${nombreNormalizado}.png`;
 }
 
 // Helper function to get party logo path
