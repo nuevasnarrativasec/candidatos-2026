@@ -1070,7 +1070,7 @@ const candidatos = [
         cargosEleccion: 'No registra',
         cargosPartidarios: 'Fundador del Partido Político Democrático Federal',
         continuidad: 'No se declara militancia previa distinta a la actual',
-        sentencias: 'Registra 2 sentencias con penas cumplicas', 
+        sentencias: 'Registra 2 sentencias. Una absolutoria y la otra sobreseída', 
         demandas: 'No registra demandas',
         ingresos: 'S/682,626', 
         origenIngresos: 'Sector privado',
