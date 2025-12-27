@@ -489,7 +489,7 @@ const candidatos = [
         origenIngresos: 'No registra',
         inmuebles: 'Registra en total 1 bien inmueble valorizado en S/396,811.03.  <span class="asterisco-bienes"> *Estos bienes se refieren a terrenos, casas, departamentos, edificios, fábricas, estacionamientos, depósitos, etc.</span>',
         muebles: 'No registra',
-        bio: 'Perfil con estudios en medicina humana y fundador del Partido Perú Libre. Registra 2 sentencias judiciales.',
+        bio: 'Perfil con estudios en medicina humana y fundador del Partido Perú Libre. Registra 1 sentencia anulada por el TC y otra pena absuelta por recurso de casación.',
         pdfLink: 'https://drive.google.com/file/d/1compmiHFO7MtUjiopYSYuli-nuXaoksb/view',
         // Atributos para secciones
         extranjero: false,
@@ -1076,7 +1076,7 @@ const candidatos = [
         origenIngresos: 'Sector privado',
         inmuebles: 'Registra 15 bienes inmuebles que sumados ascienden a S/1,177,163.51.  <span class="asterisco-bienes"> *Estos bienes se refieren a terrenos, casas, departamentos, edificios, fábricas, estacionamientos, depósitos, etc.</span>',
         muebles: 'Registra 5 bienes muebles que sumados ascienden a S/91,500',
-        bio: 'Perfil con estudios en Gestión de empresas. Registra 2 sentencias cumplidas.',
+        bio: 'Perfil con estudios en Gestión de empresas. Registra 2 sentencias, una absolutoria y la otra sobreseída.',
         pdfLink: 'https://drive.google.com/file/d/142Ok8pgATCnSGAM0rbJZfegykVfe72lT/view',
         // Atributos para secciones
         extranjero: false,
@@ -1424,7 +1424,7 @@ const candidatos = [
         origenIngresos: 'Sector privado',
         inmuebles: 'Registra 6 bienes inmuebles que sumados ascienden a S/441,894.96.  <span class="asterisco-bienes"> *Estos bienes se refieren a terrenos, casas, departamentos, edificios, fábricas, estacionamientos, depósitos, etc.</span>',
         muebles: 'Registra 1 bien mueble valorizado en S/10,000',
-        bio: 'Perfil sin experiencia en gestión pública. Registra una sentencia cumplida.',
+        bio: 'Perfil sin experiencia en gestión pública. Registra una sentencia suspendida cumplida.',
         pdfLink: 'https://drive.google.com/file/d/1EhgzrH-O8SrrZh0y_A1WZ39lzcjfP3fL/view',
         // Atributos para secciones
         extranjero: false,
