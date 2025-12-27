@@ -1,3 +1,46 @@
+// ============================================
+// FIX PARA 100vh EN MÓVILES (HyperOS, iOS Safari, etc.)
+// ============================================
+(function() {
+    // Función para calcular y establecer el viewport height real
+    function setViewportHeight() {
+        // Obtener el alto real del viewport visible
+        const vh = window.innerHeight * 0.01;
+        // Establecer la variable CSS --vh
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+        // También establecer --app-height como alternativa
+        document.documentElement.style.setProperty('--app-height', `${window.innerHeight}px`);
+    }
+    
+    // Ejecutar al cargar
+    setViewportHeight();
+    
+    // Ejecutar en resize (con debounce para mejor rendimiento)
+    let resizeTimer;
+    window.addEventListener('resize', function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(setViewportHeight, 100);
+    });
+    
+    // Ejecutar cuando cambia la orientación
+    window.addEventListener('orientationchange', function() {
+        setTimeout(setViewportHeight, 200);
+    });
+    
+    // Ejecutar cuando el navegador muestra/oculta barras (scroll)
+    let lastScrollY = window.scrollY;
+    window.addEventListener('scroll', function() {
+        // Solo recalcular si hay un cambio significativo en scroll
+        // que podría indicar que las barras aparecieron/desaparecieron
+        if (Math.abs(window.scrollY - lastScrollY) > 50) {
+            lastScrollY = window.scrollY;
+            // Pequeño delay para esperar a que las barras terminen de animarse
+            setTimeout(setViewportHeight, 150);
+        }
+    }, { passive: true });
+})();
+
+
 // DOM Elements
 const heroSection = document.getElementById('heroSection');
 const heroGrid = document.getElementById('heroGrid');
