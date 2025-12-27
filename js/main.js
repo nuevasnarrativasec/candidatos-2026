@@ -1491,7 +1491,7 @@ const candidatos = [
         if (idx === 18) {
             const logoDiv = document.createElement('div');
             logoDiv.className = 'hero-logo-cell';
-            logoDiv.innerHTML = `<img src="./img/logo-tu-decides.jpg" alt="Tú Decides" class="hero-logo-integrated">`;
+            logoDiv.innerHTML = `<img src="https://nuevasnarrativasec.github.io/candidatos-2026/img/logo-tu-decides.jpg" alt="Tú Decides" class="hero-logo-integrated">`;
             heroGrid.appendChild(logoDiv);
         }
 
