@@ -617,7 +617,7 @@ const candidatos = [
         origenIngresos: 'Sector privado',
         inmuebles: 'Registra 5 bienes inmuebles que sumados ascienden a S/639,105.6.  <span class="asterisco-bienes"> *Estos bienes se refieren a terrenos, casas, departamentos, edificios, fábricas, estacionamientos, depósitos, etc.</span>',
         muebles: 'Registra 2 bienes muebles que sumados ascienden a S/45,000',
-        bio: 'Perfil con estudios en Ciencias Políticas. No registra sentencias ni demandas.',
+        bio: 'Perfil sin experiencia en gestión pública. No registra sentencias ni demandas.',
         pdfLink: 'https://drive.google.com/file/d/17ThSfgJb9Z29xVI7zh_RwH0OFA3h34jl/view',
         // Atributos para secciones
         extranjero: false,
